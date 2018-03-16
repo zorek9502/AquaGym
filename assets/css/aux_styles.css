@@ -1,0 +1,35 @@
+#bottombar {
+    background-color: #fff;
+}
+
+.tab-content, .tab-pane {
+    height: 100%;
+}
+
+.tab-pane > img {
+    width: 100%;
+    height: 50%;
+}
+
+#title {
+    font-size: 1.5rem;
+}
+
+#content {
+    height: 82%;
+}
+
+@media only screen and (min-width: 768px) {
+    #title {
+        font-size: 2.2rem;
+        margin: 1% 0 1% 0;
+    }
+
+    #content {
+        height: 88%;
+    }
+}
+
+.nav-item {
+    width: 23%;
+}
