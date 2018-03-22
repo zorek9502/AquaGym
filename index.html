@@ -184,6 +184,19 @@
             </div>
         </div>
         <div class="tab-pane" id="promos">
+            <audio id="audioPromos" src="assets/audio/promos/audioPromos.mp3"></audio>
+            <nav class="navbar navbar-expand-lg">
+                <div class="container">
+                    <div class="navbar-translate">
+                        <strong class="navbar-brand">Promociones
+
+                                <i class="fas fa-volume-up" onclick="document.getElementById('audioPromos').play()"></i>
+                            
+                        </strong>
+                    </div>
+
+                </div>
+            </nav>
             <div id="carouselIndicators" class="carousel slide" data-ride="carousel">
                 <div class="carousel-inner">
                     <div class="carousel-item active">
@@ -267,7 +280,7 @@
         var infowindow = new google.maps.InfoWindow({
             content: "AquaGym!"
         });
-        infowindow.open(map,marker);
+        infowindow.open(map, marker);
     }
 </script>
 <script async defer
