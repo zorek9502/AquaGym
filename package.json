@@ -1,0 +1,24 @@
+{
+    "name": "com.aquagym.app",
+    "displayName": "AquaGym",
+    "version": "1.0.0",
+    "description": "AquaGym app",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1"
+    },
+    "author": "AquaGym Team",
+    "license": "Apache-2.0",
+    "dependencies": {
+        "cordova-ios": "^4.5.4",
+        "cordova-plugin-whitelist": "^1.3.3"
+    },
+    "cordova": {
+        "plugins": {
+            "cordova-plugin-whitelist": {}
+        },
+        "platforms": [
+            "ios"
+        ]
+    }
+}
