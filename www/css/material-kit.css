@@ -8753,7 +8753,7 @@ a.text-dark:focus {
 
 .text-muted,
 .bmd-help {
-    color: #6c757d !important;
+    color: #fff !important;///////////
 }
 
 .text-hide {
@@ -14795,7 +14795,7 @@ textarea {
 }
 
 .info .icon {
-    color: #999999;
+    /*color: #999999;*/
 }
 
 .info .icon>i {
@@ -14803,12 +14803,12 @@ textarea {
 }
 
 .info .info-title {
-    color: #3C4858;
+    color: white; ////////////////
     margin: 1.75rem 0 0.875rem;
 }
 
 .info p {
-    color: #999999;
+    color: white; //////////////
 }
 
 .info-horizontal .icon {
@@ -14968,7 +14968,7 @@ small,
 .footer-big h4 a,
 .media .media-heading,
 .media .media-heading a {
-    color: #3C4858;
+    color: #fff;/////////////////
     text-decoration: none;
 }
 
@@ -14979,7 +14979,7 @@ h2.title {
 .description,
 .card-description,
 .footer-big p {
-    color: #999;
+    color: #fff; ////////
 }
 
 .text-warning {
