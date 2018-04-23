@@ -328,13 +328,18 @@ function datosPntConf() {
     var h_selected = document.getElementById("select_horario")[hindex].text;
     var mindex = document.getElementById("select_meses").selectedIndex;
     var m_selected = document.getElementById("select_meses")[mindex].text;
+    var m_costos = obtenerCostos();
+    var membresia = m_costos.get(membresia);
+    var mensualidad = m_costos.get(mensualidad);
+    var total = m_costos.get(total);
+        
     if (document.getElementById("inputCupon").value === "") {
         $("#inputCupon").text("");
     } else {
         $("#C_cupon").text($("#inputCupon").val());
     }
     $("#C_nombre").text(nombre);
-    $("#C_apellido").text(apellido);
+    $("#C_apellidos").text(apellido);
     $("#C_telefono").text(telefono);
     $("#C_email").text(email);
     $("#C_fnac").text(f_nac);
@@ -345,7 +350,7 @@ function datosPntConf() {
     $("#C_disciplina").text(d_selected);
     $("#C_horario").text(h_selected);
     $("#C_meses").text(m_selected);
-    $("#C_inscripcion").text("200");
-    $("#C_mensualidad").text("500");
-    $("#C_total").text("700");
+    $("#C_membresia").text(membresia);
+    $("#C_mensualidad").text(mensualidad);
+    $("#C_total").text(total);
 }
