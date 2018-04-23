@@ -67,6 +67,7 @@
 }
 
 .confirmacion {
+    overflow:  scroll; 
     
     font-weight: bold;
     color: white;
@@ -77,9 +78,72 @@
 }
 
 .d-flex.justify-content-between.align-items-center{
-    
-    margin-bottom: 5px;
-    
-    
+    margin-bottom: 5px;   
+}
+.error{
+    background: red;
+    box-shadow: 0 0 5px #d45252;
+    font-size: .8rem;
+    color: #fff;
+    display: none;
+    position: absolute;
+    margin-left: 5%;
+    margin-top: 60px;    
 }
 
+.errorSelection{
+    box-shadow:0px 0px 9px 5px #d45252;
+   
+}
+
+.okSelection{
+    box-shadow:0px 0px 7px 2px #28a745;    
+}
+
+.errorInput{
+    background: #fff url(../assets/formularios/invalid.png)!important;
+    background-size: 13px!important;
+    background-repeat: no-repeat!important;
+    background-position-x: 98%!important;
+    background-position-y: 50%!important;
+    box-shadow: 0 0 5px #d45252!important;
+    border-color: #b03535!important
+}
+.okInput{
+    background: #fff url(../assets/formularios/valid.png)!important;
+    background-size: 15px!important;
+    background-repeat: no-repeat!important;
+    background-position-x: 98%!important;
+    background-position-y: 50%!important; 
+    box-shadow: 0 0 5px #5cd053!important;
+    border-color: #28921f!important;
+}
+
+input:required {
+    background: #fff url(../assets/formularios/asterisco-rojo.png);
+    background-size: 10px;
+    background-repeat: no-repeat;
+    background-position-x: 98%;
+    background-position-y: 50%;
+}
+
+
+input:focus:invalid, select:focus:invalid { /* when a field is considered invalid by the browser */
+    background: #fff url(../assets/formularios/invalid.png);
+    background-size: 13px;
+    background-repeat: no-repeat;
+    background-position-x: 98%;
+    background-position-y: 50%;
+    box-shadow: 0 0 5px #d45252;
+    border-color: #b03535
+}
+
+input:required:valid, textarea:required:valid { /* when a field is considered valid by the browser */
+    background: #fff url(../assets/formularios/valid.png);
+    background-size: 15px;
+    background-repeat: no-repeat;
+    background-position-x: 98%;
+    background-position-y: 50%; 
+    box-shadow: 0 0 5px #5cd053;
+    border-color: #28921f;
+}
