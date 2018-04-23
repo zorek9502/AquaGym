@@ -21,13 +21,13 @@ $(document).ready(function () {
     });
     if (screen.height <= 1024) {
         $("#Horarios").on('swipeup', function (e) {
-            $("#tMatutino").animate({height: 0}, "fast");
+            $("#tMatutino").animate({ height: 0 }, "fast");
         });
         $("#Horarios").on('swipedown', function (e) {
             if (screen.width < 700) {
-                $("#tMatutino").animate({height: "344px"}, "fast");
+                $("#tMatutino").animate({ height: "344px" }, "fast");
             } else {
-                $("#tMatutino").animate({height: "428px"}, "fast");
+                $("#tMatutino").animate({ height: "428px" }, "fast");
             }
         });
     }
@@ -190,10 +190,10 @@ $(document).ready(function () {
 
     $("#btnNextF0").on('click', function () {
         $("#Form0").css("display", "none");
-        $(".bgFormulario").css("background-image", "url('assets/bg_form4.jpg ')",);
+        $(".bgFormulario").css("background-image", "url('assets/bg_form4.jpg ')", );
         $("#Form1").css("display", "block");
         $("#barraProgreso").attr("style", "width:25%");
-        $("#Form1").animate({opacity: '1'});
+        $("#Form1").animate({ opacity: '1' });
     });
 
     $("#btnBackF1").on('click', function () {
@@ -201,7 +201,7 @@ $(document).ready(function () {
         $(".bgFormulario").css("background-image", "url('assets/bg_form0.jpg ')");
         $("#Form0").css("display", "block");
         $("#barraProgreso").attr("style", "width:0%");
-        $("#Form0").animate({opacity: '1'});
+        $("#Form0").animate({ opacity: '1' });
     });
 
     $("#btnNextF1").on('click', function () {
@@ -209,7 +209,7 @@ $(document).ready(function () {
         $("#Form1").css("display", "none");
         $("#Form2").css("display", "block");
         $("#barraProgreso").attr("style", "width:50%");
-        $("#Form2").animate({opacity: '1'});
+        $("#Form2").animate({ opacity: '1' });
     });
 
     $("#btnBackF2").on('click', function () {
@@ -217,16 +217,17 @@ $(document).ready(function () {
         $("#Form2").css("display", "none");
         $("#Form1").css("display", "block");
         $("#barraProgreso").attr("style", "width:25%");
-        $("#Form1").animate({opacity: '1'});
+        $("#Form1").animate({ opacity: '1' });
     });
 
     $("#btnNextF2").on('click', function () {
         $(".bgFormulario").css("background-image", "url('assets/bg_form6.jpg ')");
+        datosPntConf();
         $("#Form2").css("display", "none");
         $("#Form3").css("display", "block");
         $("#head_inscripcion").text("Verifica tus datos");
         $("#barraProgreso").attr("style", "width:100%");
-        $("#Form3").animate({opacity: '1'});
+        $("#Form3").animate({ opacity: '1' });
 
     });
 
@@ -236,7 +237,7 @@ $(document).ready(function () {
         $("#head_inscripcion").text("¡¡¡INSCRIBETE!!!");
         $("#Form2").css("display", "block");
         $("#barraProgreso").attr("style", "width:50%");
-        $("#Form2").animate({opacity: '1'});
+        $("#Form2").animate({ opacity: '1' });
     });
 
 
@@ -258,5 +259,97 @@ $(document).ready(function () {
         $(".swichtab-contents").css("margin-bottom", "auto");
         $("#touchSlider").css("display", "none");
     });
+
+    $("select").on("focusout", function () {
+        var sindex = document.getElementById("select_disciplina").selectedIndex;
+        var hindex = document.getElementById("select_horario").selectedIndex;
+        var mindex = document.getElementById("select_meses").selectedIndex;
+        if (sindex != 0 && hindex != 0 && mindex!=0) {
+            $("#btnNextF0").prop('disabled', false);
+        } else {
+            $("#btnNextF0").prop('disabled', true);
+        }
+        if (sindex != 0) { $("#select_disciplina").addClass("okSelection");$("#select_disciplina").removeClass("errorSelection");}
+        if (hindex != 0) { $("#select_horario").addClass("okSelection");$("#select_horario").removeClass("errorSelection"); }
+        if (mindex != 0) { $("#select_meses").addClass("okSelection");$("#select_meses").removeClass("errorSelection"); }
+        if (sindex == 0) { $("#select_disciplina").addClass("errorSelection");$("#select_disciplina").removeClass("okSelection"); }
+        if (hindex == 0) { $("#select_horario").addClass("errorSelection");$("#select_horario").removeClass("okSelection"); }
+        if (mindex == 0) { $("#select_meses").addClass("errorSelection");$("#select_meses").removeClass("okSelection"); }
+    });
+
+    $("input").on("focusin focusout", function () {        
+        var expr = /^[a-zA-Z0-9_\.\-]+@[a-zA-Z0-9\-]+\.[a-zA-Z0-9\-\.]+$/;
+        var nombre = document.getElementById("inputName").value;
+        var apellido = document.getElementById("inputLastname").value;
+        var email = document.getElementById("inputEmail").value;
+        var telefono = document.getElementById("inputPhone").value;
+        var f_nac = document.getElementById("inputf_nac").value;
+        var calle = document.getElementById("inputCalle").value;
+        var colonia = document.getElementById("inputColonia").value;
+        var no_casa = document.getElementById("inputNumcasa").value;
+        var cp = document.getElementById("inputCP").value;
+        var texto = this.value;
+        console.log(texto);
+        if (nombre != "" && apellido != "" && telefono != "" && f_nac != "") {
+            $("#btnNextF1").prop('disabled', false);
+        } else {
+            $("#btnNextF1").prop('disabled', true);
+        }
+        if (this.id == "inputEmail") {
+            if (email == "" || !expr.test(email)) {
+                $("#btnNextF1").prop('disabled', true);
+                $("#inputEmail").removeClass("okInput");                
+                $("#inputEmail").addClass("errorInput");                
+                console.log("ingresa un correo valido pto");
+            }else{                 
+                $("#btnNextF1").prop('disabled', false);           
+                $("#inputEmail").removeClass("errorInput");  
+                $("#inputEmail").addClass("okInput");
+                console.log("buen chico");   
+            }
+        }
+        if (calle != "" && colonia != "" && no_casa != "" && cp != "") {
+            $("#btnNextF2").prop('disabled', false);
+        } else {
+            $("#btnNextF2").prop('disabled', true);
+        }
+    });
 });
 
+function datosPntConf() {
+    var nombre = document.getElementById("inputName").value;
+    var apellido = document.getElementById("inputLastname").value;
+    var email = document.getElementById("inputEmail").value;
+    var telefono = document.getElementById("inputPhone").value;
+    var f_nac = document.getElementById("inputf_nac").value;
+    var calle = document.getElementById("inputCalle").value;
+    var colonia = document.getElementById("inputColonia").value;
+    var no_casa = document.getElementById("inputNumcasa").value;
+    var cp = document.getElementById("inputCP").value;
+    var diciplina_code = document.getElementById("select_disciplina").selectedIndex;
+    var d_selected = document.getElementById("select_disciplina")[diciplina_code].text;
+    var hindex = document.getElementById("select_horario").selectedIndex;
+    var h_selected = document.getElementById("select_horario")[hindex].text;
+    var mindex = document.getElementById("select_meses").selectedIndex;
+    var m_selected = document.getElementById("select_meses")[mindex].text;
+    if (document.getElementById("inputCupon").value === "") {
+        $("#inputCupon").val(" ")
+    } else {
+        $("#C_cupon").text($("#inputCupon").val());
+    }
+    $("#C_nombre").text(nombre);
+    $("#C_apellido").text(apellido);
+    $("#C_telefono").text(telefono);
+    $("#C_email").text(email);
+    $("#C_fnac").text(f_nac);
+    $("#C_calle").text(calle);
+    $("#C_colonia").text(colonia);
+    $("#C_numcasa").text(no_casa);
+    $("#C_cp").text(cp);
+    $("#C_disciplina").text(d_selected);
+    $("#C_horario").text(h_selected);
+    $("#C_meses").text(m_selected);
+    $("#C_inscripcion").text("200");
+    $("#C_mensualidad").text("500");
+    $("#C_total").text("700");
+}
