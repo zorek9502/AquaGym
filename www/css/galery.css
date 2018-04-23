@@ -1,0 +1,26 @@
+.carousel {
+    background: black;
+}
+
+.video-gal{
+    width: 75%;
+    height: 100%;
+    bottom: 60px;
+}
+
+#galVideo{
+    height: 97%!important;
+    width: 70%!important;
+}
+
+
+.imgGalery{
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover;
+    background-attachment: fixed;
+    background-color: #000;
+    width: 100%;
+    height: 100%;
+}
+

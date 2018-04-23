@@ -1,0 +1,103 @@
+@media (max-width: 1025px) {
+    .circle-img {
+        width: 60%
+    }
+    #Horarios ul li {
+        font-size: 18pt;
+    }
+    #descripcion {
+        font-size: 15pt;
+    }
+    .card-title {
+        font-size: 4.5rem;
+        ;
+    }
+    .card-img-overlay {
+        margin: 20%;
+    }
+    .confirmacion {
+        font-size: 1.2rem!important;
+    }
+}
+
+@media (max-height: 1366px){
+    .confirmacion{
+        font-size: 1.5rem!important;
+    }
+}
+
+@media (max-height: 823px){
+    .confirmacion{
+        font-size: 1rem!important;
+    }
+}
+
+@media (max-height: 736px){
+    .confirmacion{
+        font-size: 1rem!important;
+    }
+}
+
+@media (max-height: 667px){
+    .confirmacion{
+        font-size: .9rem!important;
+    }
+}
+
+@media (max-height: 568px){
+    .confirmacion{
+        font-size: .7rem!important;
+    }
+}
+
+@media (max-width: 720px) {
+    .circle-img {
+        width: 50%
+    }
+    #Horarios ul li {
+        font-size: 14pt;
+    }
+    #descripcion {
+        font-size: 14pt;
+    }
+    .card-title {
+        font-size: 2.5rem;
+        ;
+    }
+    .card-img-overlay {
+        margin: 15%;
+    }
+    .confirmacion {
+        font-size: .8rem;
+    }
+    
+}
+
+@media (max-width: 640px) {
+    .circle-img {
+        width: 40%
+    }
+    #Horarios ul li {
+        font-size: 12pt;
+    }
+    #descripcion {
+        font-size: 11.5pt;
+    }
+}
+
+@media (max-width: 412px) {
+    .circle-img {
+        width: 30%
+    }
+    #Horarios ul li {
+        font-size: 12pt;
+    }
+    #descripcion {
+        font-size: 10pt;
+    }
+    #head_inscripcion {
+        text-align: center;
+        font-size: 1.8rem;
+        margin-bottom: 1.5rem;
+    }
+}

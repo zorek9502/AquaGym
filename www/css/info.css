@@ -1,0 +1,150 @@
+#carouselInfo {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    bottom: 0px;
+}
+
+#info-historia-bg {
+    background-image: url("../assets/info/info.jpg");
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center center;
+}
+
+#encabezado-info-s1 {
+    font-weight: bolder;
+    font-size: 3rem;
+    line-height: 3.5rem;
+    font-family: "Roboto Slab", "Times New Roman", serif;
+    margin-bottom: 2.3rem;
+}
+
+#texto-info-s1 {
+    font-size: 1.15rem;
+    font-family: "Helvetica";
+}
+
+#info-membresia-bg {
+    background-image: url("../assets/info/membresia.jpg");
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center center;
+}
+
+#info-tour-bg {
+    background-image: url("../assets/info/tour.jpg");
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center center;
+}
+
+.info-historia-content {
+    text-align: left;
+    padding: 30% 10% 0% 13%;
+    height: 100%;
+    background: #0000008c;
+    color: white;
+}
+
+.fondo_obscuro{
+    background: #0000008c;
+    height: 100%;
+}
+
+#encabezado-info-s2 {
+    font-size: 2rem;
+    line-height: 3rem;
+    font-family: "Roboto Slab", "Times New Roman", serif;
+    margin-bottom: 2.3rem;
+}
+
+#tour_header{
+    text-align: center;
+    padding: 1rem;
+    color: white;
+    font-family: "Roboto Slab", "Times New Roman", serif;
+    
+}
+
+.info{
+    max-width: 360px;
+    margin:0 auto;
+    padding: 70px 0px 30px;
+    text-align: center;
+}
+
+.info p{
+    color: white;
+}
+.info.info-title{
+    color: white;
+}
+
+.info-title{
+    color: white;
+}
+
+.serv-desc {
+    font-size: 1.2rem;
+}
+.serv-text {
+    font-size: 1.1rem;
+}
+
+.icon.icon-warning {
+    color: #ff9800;
+}
+.icon.icon-green {
+    color: lawngreen;
+}
+.icon.icon-brightpink {
+    color: #ff2acc;
+}
+
+.caract{
+    margin-top: 2.7rem;    
+}
+#map {
+    height: 100%;
+    width: 100%;
+    position: static!important;
+}
+
+
+
+#encabezado-info-s3 {
+    font-weight: bolder;
+    font-size: 3rem;
+    line-height: 3.5rem;
+    margin-top: -20%;
+    font-family: "Roboto Slab", "Times New Roman", serif;
+    margin-bottom: 2.3rem;
+}
+
+.description {
+    font-weight: normal;
+    text-align: left;
+    font-family: "Helvetica";
+}
+
+iframe.virtual-guide {
+    margin-bottom: 1.5rem;
+    width: 110%;
+    height: 40%;
+}
+
+#info-carateristicas-bg{
+    background-image: url("../assets/info/caracteristicas.jpg");
+    width: 100%;
+    height: 100%;
+    background-size: cover;
+    background-position: center center;
+}
+
+#info-mapa-bg{
+    background: #003a34;
+}

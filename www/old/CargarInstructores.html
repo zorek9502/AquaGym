@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cargar Instructores</title>
+
+    <script src="https://sdk.amazonaws.com/js/aws-sdk-2.224.1.min.js"></script>
+
+    <script type="text/javascript">
+        AWS.config.update({
+            region: "us-west-2",
+            endpoint: 'http://localhost:8000',
+            // accessKeyId default can be used while using the downloadable version of DynamoDB.
+            // For security reasons, do not store AWS Credentials in your files. Use Amazon Cognito instead.
+            accessKeyId: "fakeMyKeyId",
+            // secretAccessKey default can be used while using the downloadable version of DynamoDB.
+            // For security reasons, do not store AWS Credentials in your files. Use Amazon Cognito instead.
+            secretAccessKey: "fakeSecretAccessKey"
+        });
+
+        var docClient = new AWS.DynamoDB.DocumentClient();
+
+        function processFile(evt) {
+            document.getElementById('textarea').innerHTML = "";
+            document.getElementById('textarea').innerHTML += "Importando instructores" + "\n";
+            var file = evt.target.files[0];
+            if (file) {
+                var r = new FileReader();
+                r.onload = function (e) {
+                    var contents = e.target.result;
+                    var allInstructors = JSON.parse(contents);
+
+                    allInstructors.forEach(function (instructor) {
+                        var params = {
+                            TableName: "Instructor",
+                            Item: {
+                                "disciplina": instructor.disciplina,
+                                "grupo": instructor.grupo,
+                                "info": instructor.info
+                            }
+                        };
+                        docClient.put(params, function (err, data) {
+                            if (err) {
+                                document.getElementById('textarea').innerHTML += "Unable to add: "
+                                    + count + instructor.disciplina + instructor.grupo + "\n";
+                                document.getElementById('textarea').innerHTML += "Error JSON: " + JSON.stringify(err) + "\n";
+                            } else {
+                                document.getElementById('textarea').innerHTML += "PutItem succeeded: "
+                                    + instructor.disciplina + instructor.grupo + "\n";
+                                textarea.scrollTop = textarea.scrollHeight;
+                            }
+                        });
+                    });
+                };
+                r.readAsText(file);
+            } else {
+                alert("Could not read data file");
+            }
+        }
+
+    </script>
+</head>
+<body>
+<input type="file" id="fileinput" accept='application/json'/>
+<br><br>
+<textarea readonly id="textarea" style="width:400px; height:800px"></textarea>
+
+<script>
+    document.getElementById('fileinput').addEventListener('change', processFile, false);
+</script>
+</body>
+</html>

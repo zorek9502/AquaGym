@@ -1,0 +1,24 @@
+.card-img-overlay>h1 {
+    display: flex;
+    justify-content: center;
+    
+}
+
+img[class ~= "card-img"] {
+    filter: blur(0.5px);
+}
+
+.fondo_trasparente{
+    background-color: #0000005c;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+.flotante{
+    top: 15%;
+    position: absolute;
+    left: 80%;
+}
+.speak-icon{
+    font-size: 1.5rem;
+}

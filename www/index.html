@@ -1,288 +1,470 @@
-<!doctype html>
-<html lang="en">
+<!DOCTYPE html PUBLIC>
+<html>
+
 <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8"/>
     <title>AquaGym</title>
-    <!-- Required meta tags -->
-    <meta charset="utf-8">
-    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=0" name="viewport"/>
-
-    <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1"/>
-
-    <!--     Fonts and icons     -->
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0, user-scalable=no, target-densitydpi=medium-dpi"
+    />
+    <link rel="stylesheet" href="css/common.css" type="text/css"/>
+    <link rel="stylesheet" href="css/touchslider.css">
+    <link rel="stylesheet" href="css/mediaquerys.css">
+    <link rel="stylesheet" href="css/swichTab.css">
+    <link rel="stylesheet" href="css/main_disciplines.css">
+    <link rel="stylesheet" href="css/formularios.css">
+    <link rel="stylesheet" href="css/galery.css">
+    <link rel="stylesheet" href="css/info.css">
     <link rel="stylesheet" type="text/css"
-          href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons"/>
-    <!--<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/latest/css/font-awesome.min.css"/>-->
-
-    <!-- font awesome -->
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/solid.css"
-          integrity="sha384-v2Tw72dyUXeU3y4aM2Y0tBJQkGfplr39mxZqlTBDUZAb9BGoC40+rdFCG0m10lXk" crossorigin="anonymous">
-    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.8/css/fontawesome.css"
-          integrity="sha384-q3jl8XQu1OpdLgGFvNRnPdj5VIlCvgsDQTQB6owSOHWlAurxul7f+JpUOVdAiJ5P" crossorigin="anonymous">
-
-    <!-- Material Kit CSS -->
-    <link rel="stylesheet" href="css/aux_styles.css">
-    <link rel="stylesheet" href="css/material-kit.css">
-
+          href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons"
+    />
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+          crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet">
 </head>
 
-
 <body>
-<div id="content">
-    <div class="tab-content">
-        <div class="tab-pane active" id="inicio">
-            <div id="titlebar">
-                <nav class="navbar bg-primary justify-content-center">
-                    <strong id="title">AquaGym</strong>
-                </nav>
-            </div>
-            <img src="img/inicio/alberca.png">
-            <img src="img/inicio/gym.png">
-        </div>
-        <div class="tab-pane" id="inscripcion">
-            <div class="section section-signup page-header"
-                 style="background-image: url('img/unete/gimnasio_acuatico.jpg');">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-12 ml-auto mr-auto">
-                            <div class="card card-signup">
-                                <form class="form" method="post" action="formulario-personal.html">
-                                    <div class="card-header card-header-primary text-center">
-                                        <h4>INSCRÍBETE
-                                            <a class="btn btn-link btn-just-icon">
-                                                <i style="color: white" class="fa fa-edit"></i>
-                                            </a>
-                                        </h4>
-                                    </div>
-                                    <div style="margin: 20px 35px 0 35px" class="progress">
-                                        <div class="progress-bar bg-info" role="progressbar" style="width: 33%"
-                                             aria-valuenow="33" aria-valuemin="0" aria-valuemax="100"></div>
-                                    </div>
-                                    <div class="card-body justify-content-center">
-                                        <div style="text-align: center;">
-                                            <select class="btn btn-primary">
-                                                <span class="fas fa-angle-down"></span>
-                                                <option selected>Natación</option>
-                                                <option>Waterpolo</option>
-                                                <option>Bodybuilding</option>
-                                                <option>Gimnasio</option>
-                                            </select>
-                                        </div>
-                                        <div class="card-footer justify-content-center">
-                                            <button type="submit" class="btn btn-primary btn-round">SIGUIENTE</button>
-                                        </div>
-                                    </div>
-                                </form>
+<div class="tabGroup tabGroup2">
+    <div class="swichtab-contents ">
+        <div id="disciplinas" class="swichtab-panel" data-swichtab="target">
+            <div style="background:black;">
+                <div class="row">
+                    <div class="col-12">
+                        <div id="Natacion" class="card bg-dark text-white my-auto">
+                            <img class="card-img" src="assets/natacion_index.jpg">
+                            <div class="fondo_trasparente">
+                                <div class="card-img-overlay">
+                                    <h1 class="card-title">NATACION</h1>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="Waterpolo" class="card bg-dark text-white my-auto ">
+                            <img class="card-img" src="assets/waterpolo_index.jpg">
+                            <div class="fondo_trasparente">
+                                <div class="card-img-overlay ">
+                                    <h1 class="card-title">WATERPOLO</h1>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="Bodybuilding" class="card bg-dark text-white my-auto">
+                            <img class="card-img" src="assets/bodybuilding_index.jpg">
+                            <div class="fondo_trasparente">
+                                <div class="card-img-overlay">
+                                    <h1 class="card-title">BODYBUILDING</h1>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="Crossfit" class="card bg-dark text-white my-auto">
+                            <img class="card-img" src="assets/crossfit_index.jpg">
+                            <div class="fondo_trasparente">
+                                <div class="card-img-overlay">
+                                    <h1 class="card-title">CROSSFIT</h1>
+                                </div>
+                            </div>
+                        </div>
+                        <div id="Gym" class="card bg-dark text-white my-auto">
+                            <img class="card-img" src="assets/gym_index.jpg">
+                            <div class="fondo_trasparente">
+                                <div class="card-img-overlay">
+                                    <h1 class="card-title">GYM</h1>
+                                </div>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-
-        <div class="tab-pane" id="conocenos">
-            <nav class="navbar navbar-color-on-scroll navbar-transparent fixed-top  navbar-expand-lg "
-                 color-on-scroll="100" id="sectionsNav">
-                <div class="container">
-                    <div class="navbar-translate">
-                        <a class="navbar-brand">AquaGym</a>
+        <div id="inscripcion" class="swichtab-panel" data-swichtab="target" style="width:100%;">
+            <div class="bgFormulario">
+                <div id="Finscripcion">
+                    <h1 id="head_inscripcion">¡¡¡INSCRIBETE!!!</h1>
+                    <div class="progress">
+                        <div id="barraProgreso" class="progress-bar bg-danger" role="progressbar" style="width: 5%"
+                             aria-valuenow="41" aria-valuemin="0"
+                             aria-valuemax="100"></div>
                     </div>
-                </div>
-            </nav>
-            <div class="page-header header-filter" data-parallax="true"
-                 style="background-image: url('img/info/info.jpg'); ">
-                <div class="container">
-                    <div class="row">
-                        <div class="col-md-6">
-                            <h1 class="title">Tu historia comienza con nosotros</h1>
-                            <p class="intro">Encontrarás tu punto de partida
-                                <br>
-                                Construirás tu camino
-                                <br>
-                                Te orientaremos a través de éste
-                                <br>
-                                Estaremos contigo en cada paso
-                            </p>
-                            <br>
+                    <!--Formulario donde se elije la disciplina-->
+                    <div id="Form0">
+                        <div class="form-group row datosFormulario">
+                            <select id="select_disciplina" class="custom-select">
+                                <option selected>Selecciona una disciplina</option>
+                                <option id="sel-natacion" value="natacion">Natacion</option>
+                                <option id="sel-waterpolo" value="waterpolo">Waterpolo</option>
+                                <option id="sel-body" value="bodybuilding">Bodybuilding</option>
+                                <option id="sel-cross" value="crossfit">Crossfit</option>
+                                <option id="sel-gym" value="gym">Gym</option>
+                            </select>
+
+                            <select id="select_horario" class="custom-select">
+                                <option selected>Selecciona tu horario</option>
+                                <option value="A">6:00 - 7:00</option>
+                                <option value="B">7:00 - 8:00</option>
+                                <option value="C">8:00 - 9:00</option>
+                                >
+                                <option value="D">9:00 - 10:00</option>
+                                <option value="E">10:00 - 11:00</option>
+                                <option value="F">11:00 - 12:00</option>
+                                <option value="G">12:00 - 13:00</option>
+                                <option value="H">13:00 - 14:00</option>
+                                <option value="I">14:00 - 15:00</option>
+                                <option value="J">15:00 - 16:00</option>
+                                <option value="K">16:00 - 17:00</option>
+                                <option value="L">17:00 - 18:00</option>
+                                <option value="M">18:00 - 19:00</option>
+                                <option value="N">19:00 - 20:00</option>
+                                <option value="O">20:00 - 21:00</option>
+                                <option value="P">21:00 - 22:00</option>
+                            </select>
+
+                            <label for="inputCupon" class="col-sm-4 col-form-label">¿Cuantos meses?</label>
+                            <select id="select_meses" class="custom-select">
+                                <option value="1" selected>1 Mes</option>
+                                <option value="2">2 Meses</option>
+                                <option value="3">3 Meses</option>
+                                <option value="4">4 Meses</option>
+                                <option value="5">5 Meses</option>
+                                <option value="6">6 Meses</option>
+                                <option value="7">7 Meses</option>
+                                <option value="8">8 Meses</option>
+                                <option value="9">9 Meses</option>
+                                <option value="10">10 Meses</option>
+                                <option value="11">11 Meses</option>
+                                <option value="12">12 Meses</option>
+                            </select>
+
+                            <label for="inputCupon" class="col-sm-4 col-form-label">¿Tienes un cupón?</label>
+                            <div class="col-sm-12">
+                                <input class="form-control" type="text" id="inputCupon"
+                                       placeholder="Ingresa aqui tu cupon Ej. AQUAGYM">
+                            </div>
+
+                        </div>
+                        <div class="form-group row fixed-bottom" id="botones_inferiores">
+                            <div class="col-8 offset-2">
+                                <button id="btnNextF0" class="btn btn-block btn-primary">Siguente</button>
+                            </div>
                         </div>
                     </div>
+                    <!--Formulario de datos personales-->
+                    <div id="Form1">
+                        <div class="form-group row datosFormulario">
+                            <label for="inputName" class="col-sm-4 col-form-label">Nombre</label>
+                            <div class="col-sm-12">
+                                <input type="text" class="form-control" id="inputName" required="true"
+                                       placeholder="Ingresa tu nombre">
+                            </div>
+                            <label for="inputLastname" class="col-sm-4 col-form-label">Apellidos</label>
+                            <div class="col-sm-12">
+                                <input type="text" class="form-control" id="inputLastname" required="true"
+                                       placeholder="Ingresa tus apellidos">
+                            </div>
+                            <label for="inputEmail" class="col-sm-4 col-form-label">Email</label>
+                            <div class="col-sm-12">
+                                <input type="email" class="form-control" id="inputEmail" required="true"
+                                       placeholder="correo electronico">
+                            </div>
+                            <label for="inputPhone" class="col-sm-4 col-form-label">Télefono</label>
+                            <div class="col-sm-12">
+                                <input type="tel" class="form-control" id="inputPhone" required="true"
+                                       placeholder="Ingresa tu numero telefonico">
+                            </div>
+                            <label for="inputf_nac" class="col-sm-4 col-form-label">Fecha de nacimiento</label>
+                            <div class="col-sm-12">
+                                <input type="date" class="form-control" id="inputf_nac" required="true"
+                                       placeholder="Selecciona tu fecha de nacimiento">
+                            </div>
+                        </div>
+                        <div class="form-group row fixed-bottom" id="botones_inferiores">
+                            <div class="col-3 offset-2">
+                                <button id="btnBackF1" class="btn btn-primary">Regresar</button>
+                            </div>
+                            <div class="col-3 offset-2">
+                                <button id="btnNextF1" class="btn btn-primary">Siguente</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!--Formulario Datos domiciliarios-->
+                    <div id="Form2">
+                        <div class="form-group row datosFormulario">
+                            <label for="inputCalle" class="col-sm-4 col-form-label">Calle</label>
+                            <div class="col-sm-12">
+                                <input type="text" class="form-control" id="inputCalle" required="true"
+                                       placeholder="Nombre de calle">
+                            </div>
+                            <label for="inputNumcasa" class="col-sm-4 col-form-label">Numero casa</label>
+                            <div class="col-sm-12">
+                                <input type="text" class="form-control" id="inputNumcasa" required="true"
+                                       placeholder="Numero de casa">
+                            </div>
+                            <label for="inputColonia" class="col-sm-4 col-form-label">Colonia</label>
+                            <div class="col-sm-12">
+                                <input type="text" class="form-control" id="inputColonia" required="true"
+                                       placeholder="Nombre de colonia">
+                            </div>
+                            <label for="inputCP" class="col-sm-4 col-form-label">Codigo Postal</label>
+                            <div class="col-sm-12">
+                                <input type="text" maxlength="5" class="form-control" id="inputCP" required="true"
+                                       placeholder="Codigo postal">
+                            </div>
+                        </div>
+                        <div class="form-group row fixed-bottom" id="botones_inferiores">
+                            <div class="col-3 offset-2">
+                                <button id="btnBackF2" class="btn	 btn-primary">Regresar</button>
+                            </div>
+                            <div class="col-3 offset-2">
+                                <button id="btnNextF2" class="btn	 btn-primary">Siguente</button>
+                            </div>
+                        </div>
+                    </div>
+                    <div id="Form3">
+                        <div class="row" style="margin-bottom: 10px;margin-top: 10px;">
+
+                        </div>
+                        <div class="row confirmacion">
+                            <div class="col-12 ">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    Nombre:
+                                    <span id="C_nombre">ovuvuevuevue enyetuenwuevue</span>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    Apellidos:
+                                    <span id="C_apellidos">ugbemugbem osas</span>
+                                </div>
+
+                                <div class="d-flex justify-content-between align-items-center">
+                                    Telefono:
+                                    <span id="C_telefono">4491045697</span>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    Email:
+                                    <span id="C_email">pe@ne.com</span>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    Fecha nacimiento:
+                                    <span id="C_fnac">aqui</span>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    Calle:
+                                    <span id="C_calle">Av. TuChy</span>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    Colonia:
+                                    <span id="C_colonia">Lomas Ajeas</span>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    # Casa:
+                                    <span id="C_numcasa">216</span>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    C.P.:
+                                    <span id="C_cp">20169</span>
+                                </div>
+                            </div>
+
+                            <div class="col-12 ">
+                                <div class="d-flex justify-content-between align-items-center">
+                                    Disciplina:
+                                    <span id="C_disciplina">Natacion</span>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    Horario:
+                                    <span id="C_horario">20:00 - 21:00</span>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    Inscripcion:
+                                    <span id="C_inscripcion">1,000</span>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    Mesualidad: $
+                                    <span id="C_mensualidad">400</span>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    Cupon:
+                                    <span id="C_cupon">PROMO10</span>
+                                </div>
+                                <div class="d-flex justify-content-between align-items-center">
+                                    Total a pagar: $
+                                    <span id="C_total">1,200</span>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="form-group row fixed-bottom" id="botones_inferiores">
+                            <div class="col-3 offset-1 col-md-4 offset-md-2">
+                                <a id="btnBackF3" class="btn btn-primary">Regresar</a>
+                            </div>
+                            <div class="col-3 offset-2 col-md-4 offset-md-2">
+                                <button id="btnConfirmacion" class="btn	 btn-danger" onclick="registrar()">
+                                    ¡INSCRIBIRME!
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+
                 </div>
             </div>
-            <div class="main main-raised">
-                <div class="container blue-background">
-                    <div class="section text-center">
-                        <h2 class="title">Nuestros servicios</h2>
-                        <div class="row">
-                            <div class="col-md-4">
-                                <div class="card card-plain">
-                                    <div class="col-md-6 ml-auto mr-auto">
-                                        <img src="img/info/natacion_thumb.jpg" alt="Natación"
-                                             class="img-raised rounded-circle img-fluid">
-                                    </div>
-                                    <h4 class="card-title serv-title">Natación
-                                        <br>
-                                        <small class="card-description text-muted serv-desc">Enseñado por expertos
-                                        </small>
-                                    </h4>
-                                    <div class="card-body">
-                                        <p class="card-description serv-text">Ya sea que nades por ejercicio o por
-                                            diversión, que
-                                            sepas lo básico o estés empezando, ofrecemos clases para personas de todas
-                                            las edades y aptitudes.
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="card card-plain">
-                                    <div class="col-md-6 ml-auto mr-auto">
-                                        <img src="img/info/gym_thumb.jpg" alt="Gimnasio"
-                                             class="img-raised rounded-circle img-fluid">
-                                    </div>
-                                    <h4 class="card-title serv-title">Gimnasio
-                                        <br>
-                                        <small class="card-description text-muted serv-desc">¡Entrena aquí!</small>
-                                    </h4>
-                                    <div class="card-body">
-                                        <p class="card-description serv-text">Nuestros entrenadores pueden ayudarte a
-                                            ponerte
-                                            activo y saludable. ¡Con planes personalizados según tus necesidades!
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-md-4">
-                                <div class="card card-plain">
-                                    <div class="col-md-6 ml-auto mr-auto">
-                                        <img src="img/info/waterpolo_thumb.jpg" alt="Water Polo"
-                                             class="img-raised rounded-circle img-fluid">
-                                    </div>
-                                    <h4 class="card-title serv-title">Water Polo
-                                        <br>
-                                        <small class="card-description text-muted serv-desc">Juega con los mejores
-                                        </small>
-                                    </h4>
-                                    <div class="card-body">
-                                        <p class="card-description serv-text">Aprende este deporte en equipo de alta
-                                            energía. Los
-                                            jugadores aprenderán estrategia, técnicas de nado, y lanzamiento mientras se
-                                            mantienen a flote.
-                                        </p>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                        <h2 class="title">Toma un tour️</h2>
-                        <div class="row">
-                            <div class="col-md-12">
-                                <iframe class="virtual-guide"
-                                        src="https://www.360cities.net/embed_iframe/swimming-pool-waterpolo-eger"
-                                        frameborder="0" bgcolor="#000000" target="_blank"
-                                        allowfullscreen webkitallowfullscreen mozallowfullscreen></iframe>
 
-                                <iframe class="virtual-guide"
-                                        src="https://www.360cities.net/embed_iframe/gym-hotel-belroy-four-stars-close-to-the-beach-in-benidorm-alicante"
-                                        frameborder="0" bgcolor="#000000" target="_blank"
-                                        allowfullscreen webkitallowfullscreen mozallowfullscreen></iframe>
-                                <iframe class="video-guide"
-                                        src="https://player.vimeo.com/video/17583356?title=0&byline=0&portrait=0"
-                                        frameborder="0" webkitallowfullscreen
-                                        mozallowfullscreen allowfullscreen></iframe>
-                                <iframe class="video-guide"
-                                        src="https://player.vimeo.com/video/177130731?title=0&byline=0&portrait=0"
-                                        frameborder="0" webkitallowfullscreen
-                                        mozallowfullscreen allowfullscreen></iframe>
+        </div>
+        <div id="informacion" class="swichtab-panel" data-swichtab="target">
+            <div class="row">
+                <div id="carouselInfo" class="carousel slide" data-interval="false">
+                    <ol class="carousel-indicators">
+                        <li data-target="#carouselInfo" data-slide-to="0" class="active"></li>
+                        <li data-target="#carouselInfo" data-slide-to="1"></li>
+                        <li data-target="#carouselInfo" data-slide-to="2"></li>
+                        <li data-target="#carouselInfo" data-slide-to="3"></li>
+                        <li data-target="#carouselInfo" data-slide-to="4"></li>
+                    </ol>
+                    <div class="carousel-inner" role="listbox">
+                        <div class="carousel-item active">
+                            <div id="info-historia-bg">
+                                <div class="info-historia-content info-bg-filter">
+                                    <h1 id="encabezado-info-s1">Tu historia comienza con nosotros</h1>
+                                    <p id="texto-info-s1">Encontrarás tu punto de partida
+                                        <br> Construirás tu camino
+                                        <br> Te orientaremos a través de éste
+                                        <br> Estaremos contigo en cada paso
+                                    </p>
+                                </div>
                             </div>
                         </div>
-                        <div class="row">
-                            <div class="col-md-8 ml-auto mr-auto">
-                                <h2 class="title">Más que una membresía, un cambio saludable</h2>
-                                <h5 class="description">Una membresía al convenientemente ubicado AquaGym, te da acceso
-                                    a todo lo que necesitas para transformar tu vida, equipo e instalaciones de
-                                    vanguardia, una variedad de clases personalizadas según tus necesidades y los
-                                    mejores entrenadores personales.
-                                    <br>
+                        <div class="carousel-item">
+                            <div id="info-membresia-bg">
+                                <div class="info-historia-content info-bg-filter">
+                                    <h3 id="encabezado-info-s2">Más que una membresía, un cambio saludable</h3>
+                                    <h5 class="description">Una membresía que te da acceso a todo lo que necesitas para
+                                        transformar tu vida, equipo e instalaciones de vanguardia,
+                                        una variedad de clases personalizadas según tus necesidades y los mejores
+                                        entrenadores personales.
+                                    </h5>
                                     <strong>Inscríbete hoy y experimenta el cambio con AquaGym.</strong>
-                                </h5>
+                                </div>
                             </div>
                         </div>
-                        <div class="features">
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="info">
-                                        <div class="icon icon-warning">
-                                            <i class="material-icons">flag</i>
+                        <div class="carousel-item">
+                            <div id="info-tour-bg">
+                                <div class="fondo_obscuro">
+                                    <div class="container ">
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <h3 id="tour_header">Toma un Tour</h3>
+                                            </div>
+                                            <div class="col-9 offset-1">
+                                                <iframe class="virtual-guide"
+                                                        src="https://www.360cities.net/embed_iframe/swimming-pool-waterpolo-eger"
+                                                        frameborder="0" bgcolor="#000000"
+                                                        target="_blank" allowfullscreen webkitallowfullscreen
+                                                        mozallowfullscreen></iframe>
+                                                <iframe class="virtual-guide"
+                                                        src="https://www.360cities.net/embed_iframe/gym-hotel-belroy-four-stars-close-to-the-beach-in-benidorm-alicante"
+                                                        frameborder="0" bgcolor="#000000" target="_blank"
+                                                        allowfullscreen webkitallowfullscreen
+                                                        mozallowfullscreen></iframe>
+                                            </div>
                                         </div>
-                                        <h4 class="info-title serv-desc">Misión</h4>
-                                        <p class="serv-text">Nuestra misión es brindar a nuestros miembros la mayor
-                                            comodidad al
-                                            ejercitarce.</p>
-                                    </div>
-                                </div>
-                                <div class="col-md-6">
-                                    <div class="info">
-                                        <div class="icon icon-green">
-                                            <i class="material-icons">explore</i>
-                                        </div>
-                                        <h4 class="info-title serv-desc">Visión</h4>
-                                        <p class="serv-text">Llevar nuestros servicios a toda la república Mexicana, y
-                                            al mundo.</p>
                                     </div>
                                 </div>
                             </div>
-                            <div class="row">
-                                <div class="col-md-6">
-                                    <div class="info">
-                                        <div class="icon icon-brightpink">
-                                            <i class="material-icons">location_on</i>
+                        </div>
+                        <div class="carousel-item">
+                            <div id="info-carateristicas-bg">
+                                <div class="fondo_obscuro">
+                                    <div class="container">
+                                        <div class="row">
+                                            <div class="col-10 offset-1 caract">
+                                                <div class="info">
+                                                    <div class="icon icon-warning">
+                                                        <i class="material-icons">flag</i>
+                                                    </div>
+                                                    <h4 class="info-title serv-desc">Misión</h4>
+                                                    <p class="serv-text">Nuestra misión es brindar a nuestros miembros
+                                                        la mayor comodidad al ejercitarce.
+                                                    </p>
+                                                </div>
+
+                                            </div>
+                                            <div class="col-10 offset-1 caract">
+                                                <div class="info">
+                                                    <div class="icon icon-green">
+                                                        <i class="material-icons">explore</i>
+                                                    </div>
+                                                    <h4 class="info-title serv-desc">Visión</h4>
+                                                    <p class="serv-text">Llevar nuestros servicios a toda la república
+                                                        Mexicana, y al mundo.</p>
+                                                </div>
+                                            </div>
+                                            <div class="col-10 offset-1 caract">
+                                                <div class="info">
+                                                    <div class="icon icon-brightpink">
+                                                        <i class="material-icons">location_on</i>
+                                                    </div>
+                                                    <h4 class="info-title serv-desc">Encuéntranos</h4>
+                                                    <p class="serv-text">Av. Heroe de Nacozari #2301</p>
+                                                    <p class="serv-text">(449) 912-49-40</p>
+                                                    <p class="serv-text">aquagymAPP@outlook.com</p>
+                                                </div>
+                                            </div>
+
                                         </div>
-                                        <h4 class="info-title serv-desc">Encuéntranos</h4>
-                                        <p class="serv-text">Av. Heroe de Nacozari #2301</p>
-                                        <p class="serv-text">(449) 912-49-40</p>
-                                        <p class="serv-text">aquagymAPP@outlook.com</p>
                                     </div>
                                 </div>
-                                <div class="col-md-6">
-                                    <div class="info">
-                                        <div id="map"></div>
+                            </div>
+                        </div>
+
+                        <div class="carousel-item">
+                            <div id="info-mapa-bg">
+                                <div class="container">
+                                    <div class="row">
+                                        <div class="col-12">
+                                            <div class="info">
+                                                <div id="map"></div>
+                                            </div>
+                                        </div>
                                     </div>
                                 </div>
+
                             </div>
                         </div>
                     </div>
+                    <a class="carousel-control-prev" href="#carouselInfo" role="button" data-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Previous</span>
+                    </a>
+                    <a class="carousel-control-next" href="#carouselInfo" role="button" data-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="sr-only">Next</span>
+                    </a>
                 </div>
             </div>
         </div>
-        <div class="tab-pane" id="promos">
-            <audio id="audioPromos" src="audio/promos/audioPromos.mp3"></audio>
-            <nav class="navbar navbar-expand-lg">
-                <div class="container">
-                    <div class="navbar-translate">
-                        <strong class="navbar-brand">Promociones
-                            <i class="fas fa-volume-up audiobutton"
-                               onclick="document.getElementById('audioPromos').play()"></i>
-                        </strong>
-                    </div>
-                </div>
-            </nav>
-            <div id="carouselIndicators" class="carousel slide" data-ride="carousel">
-                <div class="carousel-inner">
+
+        <div id="promociones" class="swichtab-panel" data-swichtab="target">
+            <div id="carouselIndicators" class="carousel slide mb-5" data-ride="carousel">
+                <div class="carousel-inner " data-toggle="modal" data-target="#myModal">
                     <div class="carousel-item active">
-                        <img class="d-block w-100" src="img/promos/P1.png" alt="Promo 1">
+                        <img class="d-block  w-100" src="assets/promos/P1.png" alt="Promo 1" id="promo1"
+                             onclick="getCode(id)" codigo="COMPANERO">
                     </div>
                     <div class="carousel-item">
-                        <img class="d-block w-100" src="img/promos/P2.png" alt="Promo 2">
+                        <img class="d-block  w-100" src="assets/promos/P2.png" alt="Promo 2" id="promo2"
+                             onclick="getCode(id)" codigo="DONT-STOP-BELIEVING">
                     </div>
                     <div class="carousel-item">
-                        <img class="d-block w-100" src="img/promos/P3.png" alt="Promo 3">
+                        <img class="d-block  w-100" src="assets/promos/P3.png" alt="Promo 3" id="promo3"
+                             onclick="getCode(id)" codigo="NATACIONFREE">
                     </div>
                     <div class="carousel-item">
-                        <img class="d-block w-100" src="img/promos/P4.png" alt="Promo 4">
+                        <img class="d-block  w-100" src="assets/promos/P4.png" alt="Promo 4" id="promo4">
                     </div>
                     <div class="carousel-item">
-                        <img class="d-block w-100" src="img/promos/P5.png" alt="Promo 5">
+                        <img class="d-block  w-100" src="assets/promos/P5.png" alt="Promo 5" id="promo5"
+                             onclick="getCode(id)" codigo="WATERPOLO50">
                     </div>
                     <div class="carousel-item">
-                        <img class="d-block w-100" src="img/promos/P6.png" alt="Promo 6">
+                        <img class="d-block  w-100" src="assets/promos/P6.png" alt="Promo 6" id="promo6"
+                             onclick="getCode(id)" codigo="MAYO50">
                     </div>
                 </div>
                 <a class="carousel-control-prev" href="#carouselIndicators" role="button" data-slide="prev">
@@ -294,40 +476,257 @@
                     <span class="sr-only">Next</span>
                 </a>
             </div>
+
         </div>
+        <div id="touchSlider">
+            <ul>
+                <li id="acercade_ts">
+                    <div class="container">
+                        <div class="row encabezado">
+                            <div class="col-2 btn-back">
+                                <i class="fas fa-chevron-left" style="margin-top:15px;"></i>
+                            </div>
+                            <div class="col-10 ">
+                                <h2 style="text-align:left;">
+                                    Acerca de
+                                </h2>
+                            </div>
+                        </div>
+                        <div class="row ">
+                            <div class="bg-informacion">
+                                <div class="col-md-8 offset-md-2  ">
+                                    <img src="" class="circle-img" id="img_disciplina_ts">
+                                </div>
+                                <div class="col-md-8 offset-md-2">
+                                    <div class="container" id="descripcion">
+                                        <h4 id="disciplina_ts">Natacion</h4>
+                                        <p id="content1_disciplina_ts">
+
+                                            <br>
+                                        </p>
+                                        <p id="content2_disciplina_ts">
+
+                                        </p>
+
+                                        <p id="content3_disciplina_ts">
+
+                                            <br>
+                                            <br>
+                                            <br>
+                                        </p>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                    </div>
+                    <div class="flotante">
+                        <audio id="audio"></audio>
+                        <a>
+                            <i class="fas fa-volume-up speak-icon"
+                               onclick="document.getElementById('audio').play()"></i>
+                        </a>
+                    </div>
+                </li>
+                <li id="horarios_ts">
+                    <div class="container">
+                        <div class="row encabezado">
+                            <div class="col-2 btn-back">
+                                <i class="fas fa-chevron-left" style="margin-top:15px;"></i>
+                            </div>
+                            <div class="col-10 ">
+                                <h2 style="text-align:left;">
+                                    Horarios
+                                </h2>
+                            </div>
+                        </div>
+
+                        <div class="row ">
+                            <div class="col-md-12 ">
+                                <div id="Horarios">
+                                    <ul id="tMatutino" class="list-group horarios">
+                                        <li id="GrupoA"
+                                            class="btn-outline-primary list-group-item d-flex justify-content-between align-items-center">
+                                            Grupo A
+                                            <span>6:00 - 7:00</span>
+                                        </li>
+                                        <li id="GrupoB"
+                                            class="btn-outline-primary list-group-item d-flex justify-content-between align-items-center">
+                                            Grupo B
+                                            <span>7:00 - 8:00</span>
+                                        </li>
+                                        <li id="GrupoC"
+                                            class=" btn-outline-primary list-group-item d-flex justify-content-between align-items-center">
+                                            Grupo C
+                                            <span>8:00 - 9:00</span>
+                                        </li>
+                                        <li id="GrupoD"
+                                            class=" btn-outline-primary list-group-item d-flex justify-content-between align-items-center">
+                                            Grupo D
+                                            <span>9:00 - 10:00</span>
+                                        </li>
+                                        <li id="GrupoE"
+                                            class="btn-outline-primary list-group-item d-flex justify-content-between align-items-center">
+                                            Grupo E
+                                            <span>10:00 - 11:00</span>
+                                        </li>
+                                        <li id="GrupoF"
+                                            class="btn-outline-primary list-group-item d-flex justify-content-between align-items-center">
+                                            Grupo F
+                                            <span>11:00 - 12:00</span>
+                                        </li>
+                                        <li id="GrupoG"
+                                            class="btn-outline-primary list-group-item d-flex justify-content-between align-items-center">
+                                            Grupo G
+                                            <span>12:00 - 13:00</span>
+                                        </li>
+                                    </ul>
+                                    <ul id="tVespertino" class="list-group">
+                                        <li id="GrupoH"
+                                            class="btn-outline-primary list-group-item d-flex justify-content-between align-items-center">
+                                            Grupo H
+                                            <span>13:00 - 14:00</span>
+                                        </li>
+                                        <li id="GrupoI"
+                                            class="btn-outline-primary list-group-item d-flex justify-content-between align-items-center">
+                                            Grupo I
+                                            <span>14:00 - 15:00</span>
+                                        </li>
+                                        <li id="GrupoJ"
+                                            class="btn-outline-primary list-group-item d-flex justify-content-between align-items-center">
+                                            Grupo J
+                                            <span>15:00 - 16:00</span>
+                                        </li>
+                                        <li id="GrupoK"
+                                            class="btn-outline-primary list-group-item d-flex justify-content-between align-items-center">
+                                            Grupo K
+                                            <span>16:00 - 17:00</span>
+                                        </li>
+                                        <li id="GrupoL"
+                                            class="btn-outline-primary list-group-item d-flex justify-content-between align-items-center">
+                                            Grupo L
+                                            <span>17:00 - 18:00</span>
+                                        </li>
+                                        <li id="GrupoM"
+                                            class="btn-outline-primary list-group-item d-flex justify-content-between align-items-center">
+                                            Grupo M
+                                            <span>18:00 - 19:00</span>
+                                        </li>
+                                        <li id="GrupoN"
+                                            class="btn-outline-primary list-group-item d-flex justify-content-between align-items-center">
+                                            Grupo N
+                                            <span>19:00 - 20:00</span>
+                                        </li>
+                                        <li id="GrupoO"
+                                            class="btn-outline-primary list-group-item d-flex justify-content-between align-items-center">
+                                            Grupo O
+                                            <span>20:00 - 21:00</span>
+                                        </li>
+                                        <li id="GrupoP"
+                                            class="btn-outline-primary list-group-item d-flex justify-content-between align-items-center">
+                                            Grupo P
+                                            <span>21:00 - 22:00</span>
+                                        </li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+                <li id="galeria_ts">
+                    <div class="container">
+                        <div class="row encabezado">
+                            <div class="col-2 btn-back">
+                                <i class="fas fa-chevron-left" style="margin-top:15px;"></i>
+                            </div>
+                            <div class="col-10 ">
+                                <h2 style="text-align:left;">
+                                    Galeria
+                                </h2>
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div id="carouselGaleria" class="carousel slide" data-interval="false">
+                                <ol class="carousel-indicators">
+                                    <li data-target="#carouselGaleria" data-slide-to="0" class="active"></li>
+                                    <li data-target="#carouselGaleria" data-slide-to="1"></li>
+                                    <li data-target="#carouselGaleria" data-slide-to="2"></li>
+                                    <li data-target="#carouselGaleria" data-slide-to="3"></li>
+                                </ol>
+                                <div class="carousel-inner" role="listbox">
+                                    <div class="carousel-item active">
+                                        <img id="galImg1" class="imgGalery">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img id="galImg2" class="imgGalery">
+
+                                    </div>
+                                    <div class="carousel-item">
+                                        <img id="galImg3" class="imgGalery">
+                                    </div>
+                                    <div class="carousel-item">
+                                        <iframe id="galVideo" frameborder="0" allow="autoplay; encrypted-media"
+                                                allowfullscreen></iframe>
+                                    </div>
+                                </div>
+                                <a class="carousel-control-prev" href="#carouselGaleria" role="button"
+                                   data-slide="prev">
+                                    <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                                    <span class="sr-only">Previous</span>
+                                </a>
+                                <a class="carousel-control-next" href="#carouselGaleria" role="button"
+                                   data-slide="next">
+                                    <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                                    <span class="sr-only">Next</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+
+    </div>
+    <div class="fixed-bottom">
+        <ul class="swichtab-controller">
+            <li data-swichtab="controller" id="Inicio">
+                <a href="#disciplinas" class="nav nav-pills">
+                    <span class="fas fa-home icono"></span>Inicio</a>
+            </li>
+            <li data-swichtab="controller" id="Unete">
+                <a href="#inscripcion">
+                    <i class="fas fa-users icono"></i>Unete</a>
+            </li>
+            <li data-swichtab="controller" id="Info">
+                <a href="#informacion">
+                    <i class="fas fa-info-circle icono"></i>Info</a>
+            </li>
+            <li data-swichtab="controller" id="Promos">
+                <a href="#promociones">
+                    <i class="fas fa-tag icono"></i>Promos</a>
+            </li>
+        </ul>
+        <!-- /.swichtab-contents -->
     </div>
 </div>
 
-<div id="bottombar" class="fixed-bottom">
-    <ul class="nav nav-pills nav-pills-icons justify-content-center" role="tablist">
-        <li class="nav-item">
-            <a class="nav-link active" href="#inicio" role="tab" data-toggle="tab">
-                <i class="material-icons">pool</i>
-                Inicio
-            </a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#inscripcion" role="tab" data-toggle="tab">
-                <!--<i class="material-icons">person_add</i>-->
-                <i class="fas fa-user-plus"></i>
-                Únete
-            </a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#conocenos" role="tab" data-toggle="tab">
-                <!--<i class="material-icons">people</i>-->
-                <i class="fas fa-address-card"></i>
-                Info
-            </a>
-        </li>
-        <li class="nav-item">
-            <a class="nav-link" href="#promos" role="tab" data-toggle="tab">
-                <!--<i class="material-icons">money_off</i>-->
-                <i class="fas fa-tag"></i>
-                Promos
-            </a>
-        </li>
-    </ul>
+<div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h4 class="modal-title">¡Atención valioso cliente!</h4>
+            </div>
+            <div class="modal-body">
+                <p>Cupón aplicado.</p>
+                <p id="cupon-modal"></p>
+                <p>Encuentre el cupón aplicado en la sección de inscripciones</p>
+            </div>
+            <div class="modal-footer">
+                <button type="button" class="btn btn-default" data-dismiss="modal">Cerrar</button>
+            </div>
+        </div>
+    </div>
 </div>
 
 <!-- Google Maps -->
@@ -353,23 +752,29 @@
 <script async defer
         src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCXiiK-xW2sLYdWkzFh0Wqw1G9E4Rp08kg&callback=initMap">
 </script>
-
-<!--   Core JS Files   -->
-<script src="js/core/jquery.min.js"></script>
-<script src="js/core/popper.min.js"></script>
-<script src="js/bootstrap-material-design.js"></script>
-
-<!-- Plugin for Date Time Picker and Full Calendar Plugin-->
-<script src="js/plugins/moment.min.js"></script>
-
-<!-- Plugin for the Datepicker, full documentation here: https://github.com/Eonasdan/bootstrap-datetimepicker -->
-<script src="js/plugins/bootstrap-datetimepicker.min.js"></script>
-
-<!-- Plugin for the Sliders, full documentation here: http://refreshless.com/nouislider/ -->
-<script src="js/plugins/nouislider.min.js"></script>
-
-<!-- Material Kit Core initialisations of plugins and Bootstrap Material Design Library -->
-<script src="js/material-kit.js?v=2.0.0"></script>
+<!-- AWS -->
+<script src="https://sdk.amazonaws.com/js/aws-sdk-2.224.1.min.js"></script>
+<!-- Bootstrap -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+<script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js"
+        integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+        integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+        crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+        integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+        crossorigin="anonymous"></script>
+<!-- JQuery Mobile -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-touch-events/1.0.5/jquery.mobile-events.js"></script>
+<!-- jsPDF -->
+<script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.0.272/jspdf.debug.js"></script>
+<!-- Scripts -->
+<script type="text/javascript" src="js/jquery.touchSlider.js"></script>
+<script type="text/javascript" src="js/scripts.js"></script>
+<script type="text/javascript" src="js/jquery.swichTab.js" charset="utf-8"></script>
+<script type="text/javascript" src="js/promos.js"></script>
+<script type="text/javascript" src="js/inscripcion.js"></script>
 </body>
 
 </html>

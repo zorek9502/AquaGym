@@ -1,0 +1,54 @@
+@charset "UTF-8";
+.swichtab-controller {
+  display: flex;
+  flex-flow: row wrap;
+  justify-content: space-between;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  background: rgb(6, 0, 85);
+}
+
+.swichtab-controller>li {
+  flex: 1 1 auto;
+
+  border-radius: 2px;
+  background: rgb(6, 0, 85);
+}
+
+.swichtab-controller>li:first-child {
+  border-width: 1px;
+}
+
+.swichtab-controller>li>a {
+  display: flex;
+  height: 60px;
+  align-items: center;
+  justify-content: center;
+  flex: 1 1 auto;
+  color: rgb(255, 255, 255);
+  text-decoration: none;
+}
+.icono {
+  margin-right: 5px;
+}
+
+.swichtab-controller>li.is-active>a {
+  background: rgba(0,183,234,1);
+  border-radius: 2px;
+  box-shadow: black;
+  color: #fff;
+}
+
+.swichtab-controller-natacion{
+  
+}
+
+.swichtab-contents {
+  margin-bottom: 60px;
+  overflow: hidden;
+}
+
+.swichtab-panel {
+  display: none;
+}

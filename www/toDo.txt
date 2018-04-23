@@ -1,0 +1,13 @@
+pdf
+guardar grupos
+-------------
+required
+validarPromo
+cargar values en verificacion
+cargar grupos
+--------
+audios
+boton audio de conocenos
+------
+ipad
+subir a aws
