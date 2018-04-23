@@ -112,7 +112,7 @@
                                     <option value="P">21:00 - 22:00</option>
                                 </select>
 
-                                <label for="select_meses" class="col-sm-4 col-form-label">¿Cuantos meses?</label>
+                                <label for="inputMeses" class="col-sm-4 col-form-label">¿Cuantos meses?</label>
                                 <select id="select_meses" class="custom-select">
                                     <option value="0" selected>Selecciona periodo</option>
                                     <option value="1">1 Mes</option>
@@ -264,19 +264,19 @@
                                     </div>
                                     <div class="d-flex justify-content-between align-items-center">
                                         Inscripcion:
-                                        <span id="C_inscripcion">1,000</span>
+                                        <span id="C_membresia"></span>
                                     </div>
                                     <div class="d-flex justify-content-between align-items-center">
                                         Mesualidad: $
-                                        <span id="C_mensualidad">400</span>
+                                        <span id="C_mensualidad"></span>
                                     </div>
                                     <div class="d-flex justify-content-between align-items-center">
                                         Cupon:
-                                        <span id="C_cupon">PROMO10</span>
+                                        <span id="C_cupon"></span>
                                     </div>
                                     <div class="d-flex justify-content-between align-items-center">
                                         Total a pagar: $
-                                        <span id="C_total">1,200</span>
+                                        <span id="C_total"></span>
                                     </div>
 
                                 </div>
@@ -698,7 +698,7 @@
             var marker = new google.maps.Marker({
                 position: { lat: 21.9044926, lng: -102.2910593 },
                 map: map,
-                icon: 'assets/dive.png',
+                icon: 'img/dive.png',
                 animation: google.maps.Animation.BOUNCE
             });
             var infowindow = new google.maps.InfoWindow({
