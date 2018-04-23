@@ -288,8 +288,6 @@ $(document).ready(function () {
         var colonia = document.getElementById("inputColonia").value;
         var no_casa = document.getElementById("inputNumcasa").value;
         var cp = document.getElementById("inputCP").value;
-        var texto = this.value;
-        console.log(texto);
         if (nombre != "" && apellido != "" && telefono != "" && f_nac != "") {
             $("#btnNextF1").prop('disabled', false);
         } else {
@@ -299,13 +297,11 @@ $(document).ready(function () {
             if (email == "" || !expr.test(email)) {
                 $("#btnNextF1").prop('disabled', true);
                 $("#inputEmail").removeClass("okInput");                
-                $("#inputEmail").addClass("errorInput");                
-                console.log("ingresa un correo valido pto");
+                $("#inputEmail").addClass("errorInput");          
             }else{                 
                 $("#btnNextF1").prop('disabled', false);           
                 $("#inputEmail").removeClass("errorInput");  
                 $("#inputEmail").addClass("okInput");
-                console.log("buen chico");   
             }
         }
         if (calle != "" && colonia != "" && no_casa != "" && cp != "") {
@@ -333,7 +329,7 @@ function datosPntConf() {
     var mindex = document.getElementById("select_meses").selectedIndex;
     var m_selected = document.getElementById("select_meses")[mindex].text;
     if (document.getElementById("inputCupon").value === "") {
-        $("#inputCupon").val(" ")
+        $("#inputCupon").text("");
     } else {
         $("#C_cupon").text($("#inputCupon").val());
     }
