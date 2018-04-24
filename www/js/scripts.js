@@ -187,6 +187,7 @@ $(document).ready(function () {
         $(".swichtab-contents").css("margin-bottom", "auto");
         $("#touchSlider").css("display", "none");
     });
+
     $("#btnNextF0").on('click', function () {
         $("#Form0").css("display", "none");
         $(".bgFormulario").css("background-image", "url('assets/bg_form4.jpg ')", );
@@ -259,24 +260,37 @@ $(document).ready(function () {
         $("#touchSlider").css("display", "none");
     });
 
-    $("select").on("focusout", function () {
+    $("select").on("change", function () {
+        console.log(this.id + "tiene el foco");
         var sindex = document.getElementById("select_disciplina").selectedIndex;
         var hindex = document.getElementById("select_horario").selectedIndex;
         var mindex = document.getElementById("select_meses").selectedIndex;
-        if (sindex != 0 && hindex != 0 && mindex!=0) {
+        if (sindex != 0 && hindex != 0 && mindex != 0) {
             $("#btnNextF0").prop('disabled', false);
         } else {
             $("#btnNextF0").prop('disabled', true);
         }
-        if (sindex != 0) { $("#select_disciplina").addClass("okSelection");$("#select_disciplina").removeClass("errorSelection");}
-        if (hindex != 0) { $("#select_horario").addClass("okSelection");$("#select_horario").removeClass("errorSelection"); }
-        if (mindex != 0) { $("#select_meses").addClass("okSelection");$("#select_meses").removeClass("errorSelection"); }
-        if (sindex == 0) { $("#select_disciplina").addClass("errorSelection");$("#select_disciplina").removeClass("okSelection"); }
-        if (hindex == 0) { $("#select_horario").addClass("errorSelection");$("#select_horario").removeClass("okSelection"); }
-        if (mindex == 0) { $("#select_meses").addClass("errorSelection");$("#select_meses").removeClass("okSelection"); }
+        if (sindex != 0) { $("#select_disciplina").addClass("okSelection"); $("#select_disciplina").removeClass("errorSelection"); }
+        if (hindex != 0) { $("#select_horario").addClass("okSelection"); $("#select_horario").removeClass("errorSelection"); }
+        if (mindex != 0) { $("#select_meses").addClass("okSelection"); $("#select_meses").removeClass("errorSelection"); }
+        if (sindex == 0) { $("#select_disciplina").addClass("errorSelection"); $("#select_disciplina").removeClass("okSelection"); }
+        if (hindex == 0) { $("#select_horario").addClass("errorSelection"); $("#select_horario").removeClass("okSelection"); }
+        if (mindex == 0) { $("#select_meses").addClass("errorSelection"); $("#select_meses").removeClass("okSelection"); }
     });
 
-    $("input").on("focusin focusout", function () {        
+    function verifica_inputCupon(cuponValido){
+        if(cuponValido){
+            $("#btnNextF1").prop('disabled', false);
+            $("#inputCupon").removeClass("errorInput");
+            $("#inputCupon").addClass("okInput");
+        }else{
+            $("#btnNextF1").prop('disabled', true);
+            $("#inputCupon").removeClass("okInput");
+            $("#inputCupon").addClass("errorInput");
+        }
+    }
+
+    $("input").on("focusin focusout focus change", function () {
         var expr = /^[a-zA-Z0-9_\.\-]+@[a-zA-Z0-9\-]+\.[a-zA-Z0-9\-\.]+$/;
         var nombre = document.getElementById("inputName").value;
         var apellido = document.getElementById("inputLastname").value;
@@ -287,6 +301,9 @@ $(document).ready(function () {
         var colonia = document.getElementById("inputColonia").value;
         var no_casa = document.getElementById("inputNumcasa").value;
         var cp = document.getElementById("inputCP").value;
+
+        
+
         if (nombre != "" && apellido != "" && telefono != "" && f_nac != "") {
             $("#btnNextF1").prop('disabled', false);
         } else {
@@ -295,11 +312,11 @@ $(document).ready(function () {
         if (this.id == "inputEmail") {
             if (email == "" || !expr.test(email)) {
                 $("#btnNextF1").prop('disabled', true);
-                $("#inputEmail").removeClass("okInput");                
-                $("#inputEmail").addClass("errorInput");          
-            }else{                 
-                $("#btnNextF1").prop('disabled', false);           
-                $("#inputEmail").removeClass("errorInput");  
+                $("#inputEmail").removeClass("okInput");
+                $("#inputEmail").addClass("errorInput");
+            } else {
+                $("#btnNextF1").prop('disabled', false);
+                $("#inputEmail").removeClass("errorInput");
                 $("#inputEmail").addClass("okInput");
             }
         }
@@ -312,10 +329,6 @@ $(document).ready(function () {
 });
 
 function datosPntConf() {
-    _obtenerValorDisciplina();
-    _obtenerValorCupon();
-    _obtenerValorTotalMeses();
-
     var nombre = document.getElementById("inputName").value;
     var apellido = document.getElementById("inputLastname").value;
     var email = document.getElementById("inputEmail").value;
@@ -332,6 +345,16 @@ function datosPntConf() {
     var mindex = document.getElementById("select_meses").selectedIndex;
     var m_selected = document.getElementById("select_meses")[mindex].text;
 
+    var m_costos = obtenerCostos();
+    var membresia = m_costos.get(membresia);
+    var mensualidad = m_costos.get(mensualidad);
+    var total = m_costos.get(total);
+
+    if (document.getElementById("inputCupon").value === "") {
+        $("#inputCupon").text("");
+    } else {
+        $("#C_cupon").text($("#inputCupon").val());
+    }
     $("#C_nombre").text(nombre);
     $("#C_apellidos").text(apellido);
     $("#C_telefono").text(telefono);
@@ -344,36 +367,8 @@ function datosPntConf() {
     $("#C_disciplina").text(d_selected);
     $("#C_horario").text(h_selected);
     $("#C_meses").text(m_selected);
+    $("#C_membresia").text(membresia);
+    $("#C_mensualidad").text(mensualidad);
+    $("#C_total").text(total);
 
-    let promiseMembresia = _obtenerMembresia();
-    let promiseDisciplina = _obtenerDisciplina();
-    let promisePromo = _buscarPromo();
-
-    Promise.all([promiseMembresia, promiseDisciplina, promisePromo]).then(function (values) {
-        console.log("Se obtuvo la membresia: " + "\n" + JSON.stringify(values[0], undefined, 2));
-        precioMembresia = values[0].Item.precio;
-
-        console.log("Se obtuvo la disciplina: " + "\n" + JSON.stringify(values[1], undefined, 2));
-        mensualidad = values[1].Item.mensualidad;
-
-        if (values[2] === SIN_CUPON) {
-            console.log("No se aplico cupon");
-            cantidadPago = precioMembresia + (mensualidad * totalMeses);
-        } else {
-            console.log("Se obtuvo la promocion: " + "\n" + JSON.stringify(values[2], undefined, 2));
-            descuento = values[2].Item.descuento;
-            instrucciones = values[2].Item.instrucciones;
-            cantidadPago = _aplicarPromo();
-        }
-
-        $("#C_membresia").text(precioMembresia);
-        $("#C_mensualidad").text(mensualidad);
-        $("#C_total").text(cantidadPago);
-    });
-        
-    if (document.getElementById("inputCupon").value === "") {
-        $("#inputCupon").text("");
-    } else {
-        $("#C_cupon").text($("#inputCupon").val());
-    }
 }
