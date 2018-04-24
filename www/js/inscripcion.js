@@ -43,20 +43,25 @@ let apellidoInstructor = "";
 let horario = "";
 
 function obtenerGruposHorarios() {
-    let map = {};
-    _buscarInstructoresPorDisciplina().then(function (data) {
-        if (data.Items === undefined) {
-            console.log("No se encontraron los instructores");
-        } else {
-            data.Items.forEach(function (instructor) {
-                map[instructor.grupo] = instructor.info.horario;
-            });
-            console.log(map);
-            return map;
-        }
-    }).catch(function (err) {
-        console.log(err);
-    });
+    _buscarInstructoresPorDisciplina()
+        .then(function (data) {
+            if (data.Items === undefined) {
+                return Promise.reject("No se encontraron los instructores");
+            } else {
+                let mapa = {};
+                data.Items.forEach(function (instructor) {
+                    mapa[instructor.grupo] = instructor.info.horario;
+                });
+                return Promise.resolve(mapa);
+            }
+        })
+        .then(function (mapa) {
+            console.log(mapa);
+            rellenaHorarios(mapa);
+        })
+        .catch(function (err) {
+            console.log(err);
+        });
 }
 
 function _buscarInstructoresPorDisciplina() {
@@ -105,6 +110,7 @@ function validarPromo() {
         })
         .then(function (cuponValido) {
             console.log(cuponValido);
+            verificaInputCupon(cuponValido);
         })
         .catch(function (err) {
             console.log("No se pudo obtener promocion: " + "\n" + JSON.stringify(err, undefined, 2));

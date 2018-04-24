@@ -21,13 +21,13 @@ $(document).ready(function () {
     });
     if (screen.height <= 1024) {
         $("#Horarios").on('swipeup', function (e) {
-            $("#tMatutino").animate({ height: 0 }, "fast");
+            $("#tMatutino").animate({height: 0}, "fast");
         });
         $("#Horarios").on('swipedown', function (e) {
             if (screen.width < 700) {
-                $("#tMatutino").animate({ height: "344px" }, "fast");
+                $("#tMatutino").animate({height: "344px"}, "fast");
             } else {
-                $("#tMatutino").animate({ height: "428px" }, "fast");
+                $("#tMatutino").animate({height: "428px"}, "fast");
             }
         });
     }
@@ -189,10 +189,10 @@ $(document).ready(function () {
     });
     $("#btnNextF0").on('click', function () {
         $("#Form0").css("display", "none");
-        $(".bgFormulario").css("background-image", "url('assets/bg_form4.jpg ')", );
+        $(".bgFormulario").css("background-image", "url('assets/bg_form4.jpg ')",);
         $("#Form1").css("display", "block");
         $("#barraProgreso").attr("style", "width:25%");
-        $("#Form1").animate({ opacity: '1' });
+        $("#Form1").animate({opacity: '1'});
     });
 
     $("#btnBackF1").on('click', function () {
@@ -200,7 +200,7 @@ $(document).ready(function () {
         $(".bgFormulario").css("background-image", "url('assets/bg_form0.jpg ')");
         $("#Form0").css("display", "block");
         $("#barraProgreso").attr("style", "width:0%");
-        $("#Form0").animate({ opacity: '1' });
+        $("#Form0").animate({opacity: '1'});
     });
 
     $("#btnNextF1").on('click', function () {
@@ -208,7 +208,7 @@ $(document).ready(function () {
         $("#Form1").css("display", "none");
         $("#Form2").css("display", "block");
         $("#barraProgreso").attr("style", "width:50%");
-        $("#Form2").animate({ opacity: '1' });
+        $("#Form2").animate({opacity: '1'});
     });
 
     $("#btnBackF2").on('click', function () {
@@ -216,7 +216,7 @@ $(document).ready(function () {
         $("#Form2").css("display", "none");
         $("#Form1").css("display", "block");
         $("#barraProgreso").attr("style", "width:25%");
-        $("#Form1").animate({ opacity: '1' });
+        $("#Form1").animate({opacity: '1'});
     });
 
     $("#btnNextF2").on('click', function () {
@@ -226,7 +226,7 @@ $(document).ready(function () {
         $("#Form3").css("display", "block");
         $("#head_inscripcion").text("Verifica tus datos");
         $("#barraProgreso").attr("style", "width:100%");
-        $("#Form3").animate({ opacity: '1' });
+        $("#Form3").animate({opacity: '1'});
 
     });
 
@@ -236,7 +236,7 @@ $(document).ready(function () {
         $("#head_inscripcion").text("¡¡¡INSCRIBETE!!!");
         $("#Form2").css("display", "block");
         $("#barraProgreso").attr("style", "width:50%");
-        $("#Form2").animate({ opacity: '1' });
+        $("#Form2").animate({opacity: '1'});
     });
 
 
@@ -259,24 +259,47 @@ $(document).ready(function () {
         $("#touchSlider").css("display", "none");
     });
 
-    $("select").on("focusout", function () {
+    $("select").on("change", function () {
         var sindex = document.getElementById("select_disciplina").selectedIndex;
         var hindex = document.getElementById("select_horario").selectedIndex;
         var mindex = document.getElementById("select_meses").selectedIndex;
-        if (sindex != 0 && hindex != 0 && mindex!=0) {
+
+        if (this.id === "select_disciplina") {
+            obtenerGruposHorarios();
+        }
+
+        if (sindex != 0 && hindex != 0 && mindex != 0) {
             $("#btnNextF0").prop('disabled', false);
         } else {
             $("#btnNextF0").prop('disabled', true);
         }
-        if (sindex != 0) { $("#select_disciplina").addClass("okSelection");$("#select_disciplina").removeClass("errorSelection");}
-        if (hindex != 0) { $("#select_horario").addClass("okSelection");$("#select_horario").removeClass("errorSelection"); }
-        if (mindex != 0) { $("#select_meses").addClass("okSelection");$("#select_meses").removeClass("errorSelection"); }
-        if (sindex == 0) { $("#select_disciplina").addClass("errorSelection");$("#select_disciplina").removeClass("okSelection"); }
-        if (hindex == 0) { $("#select_horario").addClass("errorSelection");$("#select_horario").removeClass("okSelection"); }
-        if (mindex == 0) { $("#select_meses").addClass("errorSelection");$("#select_meses").removeClass("okSelection"); }
+        if (sindex != 0) {
+            $("#select_disciplina").addClass("okSelection");
+            $("#select_disciplina").removeClass("errorSelection");
+        }
+        if (hindex != 0) {
+            $("#select_horario").addClass("okSelection");
+            $("#select_horario").removeClass("errorSelection");
+        }
+        if (mindex != 0) {
+            $("#select_meses").addClass("okSelection");
+            $("#select_meses").removeClass("errorSelection");
+        }
+        if (sindex == 0) {
+            $("#select_disciplina").addClass("errorSelection");
+            $("#select_disciplina").removeClass("okSelection");
+        }
+        if (hindex == 0) {
+            $("#select_horario").addClass("errorSelection");
+            $("#select_horario").removeClass("okSelection");
+        }
+        if (mindex == 0) {
+            $("#select_meses").addClass("errorSelection");
+            $("#select_meses").removeClass("okSelection");
+        }
     });
 
-    $("input").on("focusin focusout", function () {        
+    $("input").on("focusin focusout change focus", function () {
         var expr = /^[a-zA-Z0-9_\.\-]+@[a-zA-Z0-9\-]+\.[a-zA-Z0-9\-\.]+$/;
         var nombre = document.getElementById("inputName").value;
         var apellido = document.getElementById("inputLastname").value;
@@ -287,6 +310,9 @@ $(document).ready(function () {
         var colonia = document.getElementById("inputColonia").value;
         var no_casa = document.getElementById("inputNumcasa").value;
         var cp = document.getElementById("inputCP").value;
+
+        validarPromo();
+
         if (nombre != "" && apellido != "" && telefono != "" && f_nac != "") {
             $("#btnNextF1").prop('disabled', false);
         } else {
@@ -295,11 +321,11 @@ $(document).ready(function () {
         if (this.id == "inputEmail") {
             if (email == "" || !expr.test(email)) {
                 $("#btnNextF1").prop('disabled', true);
-                $("#inputEmail").removeClass("okInput");                
-                $("#inputEmail").addClass("errorInput");          
-            }else{                 
-                $("#btnNextF1").prop('disabled', false);           
-                $("#inputEmail").removeClass("errorInput");  
+                $("#inputEmail").removeClass("okInput");
+                $("#inputEmail").addClass("errorInput");
+            } else {
+                $("#btnNextF1").prop('disabled', false);
+                $("#inputEmail").removeClass("errorInput");
                 $("#inputEmail").addClass("okInput");
             }
         }
@@ -370,10 +396,36 @@ function datosPntConf() {
         $("#C_mensualidad").text(mensualidad);
         $("#C_total").text(cantidadPago);
     });
-        
+
     if (document.getElementById("inputCupon").value === "") {
         $("#inputCupon").text("");
     } else {
         $("#C_cupon").text($("#inputCupon").val());
+    }
+}
+
+function verificaInputCupon(cuponValido) {
+    if (cuponValido) {
+        $("#btnNextF0").prop('disabled', false);
+        $("#inputCupon").removeClass("errorInput");
+        $("#inputCupon").addClass("okInput");
+    } else {
+        $("#btnNextF0").prop('disabled', true);
+        $("#inputCupon").removeClass("okInput");
+        $("#inputCupon").addClass("errorInput");
+    }
+
+}
+
+function rellenaHorarios(mapa) {
+    let select, option, i;
+    select = document.getElementById("select_horario");
+    $("#select_horario").empty();
+
+    for (let llave in mapa) {
+        option = document.createElement("option");
+        option.value = llave;
+        option.text = mapa[llave];
+        select.add(option);
     }
 }

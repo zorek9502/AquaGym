@@ -1,5 +1,6 @@
-validarPromo
-cargar grupos
+validarPromo 60%
+    detectar cambios no cuando quite foco
+cargar grupos en inicio
 --------
 audios
 boton audio de conocenos
