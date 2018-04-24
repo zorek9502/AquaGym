@@ -299,7 +299,7 @@ $(document).ready(function () {
         }
     });
 
-    $("input").on("focusin focusout change focus", function () {
+    $("input").on("keypress", function () {
         var expr = /^[a-zA-Z0-9_\.\-]+@[a-zA-Z0-9\-]+\.[a-zA-Z0-9\-\.]+$/;
         var nombre = document.getElementById("inputName").value;
         var apellido = document.getElementById("inputLastname").value;
