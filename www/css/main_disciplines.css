@@ -14,10 +14,12 @@ img[class ~= "card-img"] {
     height: 100%;
     position: absolute;
 }
-.flotante{
-    top: 15%;
+.flotante {
+    top: 5%;
     position: absolute;
-    left: 80%;
+    left: 85%;
+    z-index: 1;
+    color: #def9ff;
 }
 .speak-icon{
     font-size: 1.5rem;
