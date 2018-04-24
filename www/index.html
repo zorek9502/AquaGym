@@ -112,7 +112,7 @@
                                     <option value="P">21:00 - 22:00</option>
                                 </select>
 
-                                <label for="inputMeses" class="col-sm-4 col-form-label">¿Cuantos meses?</label>
+                                <label for="select_meses" class="col-sm-4 col-form-label">¿Cuantos meses?</label>
                                 <select id="select_meses" class="custom-select">
                                     <option value="0" selected>Selecciona periodo</option>
                                     <option value="1">1 Mes</option>
@@ -132,6 +132,9 @@
                                 <label for="inputCupon" class="col-sm-4 col-form-label">¿Tienes un cupón?</label>
                                 <div class="col-sm-12">
                                     <input class="form-control" type="text" id="inputCupon" placeholder="Ingresa aqui tu cupon Ej. AQUAGYM">
+                                </div>
+                                <div id="modal_cupon">
+                                    soy un modal de cupones prro
                                 </div>
 
                             </div>
@@ -263,7 +266,7 @@
                                         <span id="C_meses"></span>
                                     </div>
                                     <div class="d-flex justify-content-between align-items-center">
-                                        Inscripcion:
+                                        Membresia:
                                         <span id="C_membresia"></span>
                                     </div>
                                     <div class="d-flex justify-content-between align-items-center">
@@ -698,7 +701,7 @@
             var marker = new google.maps.Marker({
                 position: { lat: 21.9044926, lng: -102.2910593 },
                 map: map,
-                icon: 'img/dive.png',
+                icon: 'assets/dive.png',
                 animation: google.maps.Animation.BOUNCE
             });
             var infowindow = new google.maps.InfoWindow({

@@ -1,9 +1,4 @@
-pdf
-  cupon condicional
--------------
-required
 validarPromo
-cargar values en verificacion
 cargar grupos
 --------
 audios

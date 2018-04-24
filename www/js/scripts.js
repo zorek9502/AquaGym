@@ -187,7 +187,6 @@ $(document).ready(function () {
         $(".swichtab-contents").css("margin-bottom", "auto");
         $("#touchSlider").css("display", "none");
     });
-
     $("#btnNextF0").on('click', function () {
         $("#Form0").css("display", "none");
         $(".bgFormulario").css("background-image", "url('assets/bg_form4.jpg ')", );
@@ -313,6 +312,10 @@ $(document).ready(function () {
 });
 
 function datosPntConf() {
+    _obtenerValorDisciplina();
+    _obtenerValorCupon();
+    _obtenerValorTotalMeses();
+
     var nombre = document.getElementById("inputName").value;
     var apellido = document.getElementById("inputLastname").value;
     var email = document.getElementById("inputEmail").value;
@@ -328,16 +331,7 @@ function datosPntConf() {
     var h_selected = document.getElementById("select_horario")[hindex].text;
     var mindex = document.getElementById("select_meses").selectedIndex;
     var m_selected = document.getElementById("select_meses")[mindex].text;
-    var m_costos = obtenerCostos();
-    var membresia = m_costos.get(membresia);
-    var mensualidad = m_costos.get(mensualidad);
-    var total = m_costos.get(total);
-        
-    if (document.getElementById("inputCupon").value === "") {
-        $("#inputCupon").text("");
-    } else {
-        $("#C_cupon").text($("#inputCupon").val());
-    }
+
     $("#C_nombre").text(nombre);
     $("#C_apellidos").text(apellido);
     $("#C_telefono").text(telefono);
@@ -350,7 +344,36 @@ function datosPntConf() {
     $("#C_disciplina").text(d_selected);
     $("#C_horario").text(h_selected);
     $("#C_meses").text(m_selected);
-    $("#C_membresia").text(membresia);
-    $("#C_mensualidad").text(mensualidad);
-    $("#C_total").text(total);
+
+    let promiseMembresia = _obtenerMembresia();
+    let promiseDisciplina = _obtenerDisciplina();
+    let promisePromo = _buscarPromo();
+
+    Promise.all([promiseMembresia, promiseDisciplina, promisePromo]).then(function (values) {
+        console.log("Se obtuvo la membresia: " + "\n" + JSON.stringify(values[0], undefined, 2));
+        precioMembresia = values[0].Item.precio;
+
+        console.log("Se obtuvo la disciplina: " + "\n" + JSON.stringify(values[1], undefined, 2));
+        mensualidad = values[1].Item.mensualidad;
+
+        if (values[2] === SIN_CUPON) {
+            console.log("No se aplico cupon");
+            cantidadPago = precioMembresia + (mensualidad * totalMeses);
+        } else {
+            console.log("Se obtuvo la promocion: " + "\n" + JSON.stringify(values[2], undefined, 2));
+            descuento = values[2].Item.descuento;
+            instrucciones = values[2].Item.instrucciones;
+            cantidadPago = _aplicarPromo();
+        }
+
+        $("#C_membresia").text(precioMembresia);
+        $("#C_mensualidad").text(mensualidad);
+        $("#C_total").text(cantidadPago);
+    });
+        
+    if (document.getElementById("inputCupon").value === "") {
+        $("#inputCupon").text("");
+    } else {
+        $("#C_cupon").text($("#inputCupon").val());
+    }
 }

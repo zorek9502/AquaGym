@@ -59,74 +59,56 @@ function obtenerGruposHorarios() {
     });
 }
 
-function obtenerCostos() {
-    let map = {};
+function _buscarInstructoresPorDisciplina() {
     _obtenerValorDisciplina();
-    _obtenerValorCupon();
-    _obtenerValorTotalMeses();
+    let params = {
+        TableName: "Instructor",
+        KeyConditionExpression: "disciplina = :disc",
+        ExpressionAttributeValues: {
+            ":disc": disciplina
+        }
+    };
 
-    _obtenerMembresia()
-        .then(function (data) {
-            console.log("Se obtuvo la membresia: " + "\n" + JSON.stringify(data, undefined, 2));
-            precioMembresia = data.Item.precio;
-        })
-        .then(_obtenerDisciplina)
-        .then(function (data) {
-            console.log("Se obtuvo la disciplina: " + "\n" + JSON.stringify(data, undefined, 2));
-            mensualidad = data.Item.mensualidad;
-        })
-        .then(_buscarPromo)
-        .then(function (data) {
-            if (data === SIN_CUPON) {
-                console.log("No se aplico cupon");
-                cantidadPago = precioMembresia + (mensualidad * totalMeses);
-            } else {
-                console.log("Se obtuvo la promocion: " + "\n" + JSON.stringify(data, undefined, 2));
-                descuento = data.Item.descuento;
-                instrucciones = data.Item.instrucciones;
-                cantidadPago = _aplicarPromo();
-            }
-
-            map.set("membresia", precioMembresia);
-            map.set("mensualidad", mensualidad);
-            map.set("total", cantidadPago);
-            console.log(map);
-            return map;
-        })
-        .catch(function (err) {
-            console.log(err);
-        });
+    return docClient.query(params).promise();
 }
 
 function validarPromo() {
     _obtenerValorCupon();
-    _buscarPromo().then(function (data) {
-        if (data === SIN_CUPON) {
-            console.log("No se aplico cupon");
-            return true;
-        } else if (data.Item === undefined) {
-            console.log("La promocion no se encontro");
-            return false;
-        } else {
-            console.log("Se obtuvo la promocion: " + "\n" + JSON.stringify(data, undefined, 2));
-            if (new Date() >= new Date(data.Item.caducidad)) {
-                return false;
+    _obtenerValorTotalMeses();
+    _obtenerValorDisciplina();
+
+    _buscarPromo()
+        .then(function (data) {
+            if (data === SIN_CUPON) {
+                console.log("No se aplico cupon");
+                return Promise.resolve(true);
+            } else if (data.Item === undefined) {
+                console.log("La promocion no se encontro");
+                return Promise.resolve(false);
+            } else {
+                console.log("Se obtuvo la promocion: " + "\n" + JSON.stringify(data, undefined, 2));
+                if (new Date() >= new Date(data.Item.caducidad)) {
+                    console.log("Promocion caduco");
+                    return Promise.resolve(false);
+                }
+                switch (data.Item.codigo) {
+                    case CUPON_ANIO:
+                        return Promise.resolve(totalMeses === MESES_ANIO);
+                    case CUPON_NATACION:
+                        return Promise.resolve(disciplina === DISCIPLINA_NATACION);
+                    case CUPON_WATERPOLO:
+                        return Promise.resolve(disciplina === DISCIPLINA_WATERPOLO);
+                    default:
+                        return Promise.resolve(true);
+                }
             }
-            switch (data.Item.codigo) {
-                case CUPON_ANIO:
-                    return totalMeses === MESES_ANIO;
-                case CUPON_NATACION:
-                    return disciplina === DISCIPLINA_NATACION;
-                case CUPON_WATERPOLO:
-                    return disciplina === DISCIPLINA_WATERPOLO;
-                default:
-                    return true;
-            }
-        }
-    }).catch(function (err) {
-        console.log("No se pudo obtener promocion: " + "\n" + JSON.stringify(err, undefined, 2));
-        return false;
-    });
+        })
+        .then(function (cuponValido) {
+            console.log(cuponValido);
+        })
+        .catch(function (err) {
+            console.log("No se pudo obtener promocion: " + "\n" + JSON.stringify(err, undefined, 2));
+        });
 }
 
 function registrar() {
@@ -168,19 +150,6 @@ function registrar() {
         .catch(function (err) {
             console.log(err);
         });
-}
-
-function _buscarInstructoresPorDisciplina() {
-    _obtenerValorDisciplina();
-    let params = {
-        TableName: "Instructor",
-        KeyConditionExpression: "disciplina = :disc",
-        ExpressionAttributeValues: {
-            ":disc": disciplina
-        }
-    };
-
-    return docClient.query(params).promise();
 }
 
 function _obtenerValorCupon() {
@@ -350,12 +319,12 @@ function _generarPDF(now) {
     pdf.text(151, 209, "Mensualidad");
     pdf.line(18, 212, 192, 212);
     pdf.text(20, 217, `Inscrito a: ${disciplina} por ${totalMeses} mes(es)`);
-    pdf.text(156, 217, `${mensualidad}`);
+    pdf.text(156, 217, `$${mensualidad}`);
     pdf.text(20, 224, "Costo de la membresía");
-    pdf.text(156, 224, `${precioMembresia}`);
+    pdf.text(156, 224, `$${precioMembresia}`);
     pdf.line(18, 226, 192, 226);
     pdf.text(65, 231, "Total a pagar");
-    pdf.text(156, 231, `${cantidadPago}`);
+    pdf.text(156, 231, `$${cantidadPago}`);
     pdf.line(18, 233, 192, 233);
     pdf.addImage(barcode, "JPEG", 66, 240, 80, 25);
 
@@ -395,7 +364,7 @@ function _generarPDF(now) {
         pdf.line(185, 275, 190, 275);
         pdf.line(195, 275, 200, 275);
         pdf.line(205, 275, 210, 275);
-        
+
         pdf.setFontSize(11);
         pdf.text(75, 281, `Código de promoción: ${cupon}`);
         pdf.text(20, 287, `${instrucciones}`);
