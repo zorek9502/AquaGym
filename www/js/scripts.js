@@ -268,7 +268,7 @@ $(document).ready(function () {
             obtenerGruposHorarios();
         }
 
-        if (sindex != 0 && hindex != 0 && mindex != 0) {
+        if (sindex != 0  && mindex != 0) {
             $("#btnNextF0").prop('disabled', false);
         } else {
             $("#btnNextF0").prop('disabled', true);
@@ -277,7 +277,9 @@ $(document).ready(function () {
             $("#select_disciplina").addClass("okSelection");
             $("#select_disciplina").removeClass("errorSelection");
         }
-        if (hindex != 0) {
+
+        //Aqui hay que añadir que cambie de color rojo si cupo esta lleno
+        if (hindex) {
             $("#select_horario").addClass("okSelection");
             $("#select_horario").removeClass("errorSelection");
         }
@@ -290,8 +292,8 @@ $(document).ready(function () {
             $("#select_disciplina").removeClass("okSelection");
         }
         if (hindex == 0) {
-            $("#select_horario").addClass("errorSelection");
-            $("#select_horario").removeClass("okSelection");
+            //$("#select_horario").addClass("errorSelection");
+            //$("#select_horario").removeClass("okSelection");
         }
         if (mindex == 0) {
             $("#select_meses").addClass("errorSelection");

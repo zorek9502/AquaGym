@@ -1,7 +1,7 @@
 function getCode(id) {
     var code = new String(document.getElementById(id).getAttribute("codigo").toString());
     document.getElementById("cupon-modal").innerHTML = code;
-    document.getElementById("inputCupon").setAttribute("value", code);
+    document.getElementById("inputCupon").value = code;
     console.log();
     switch (id.toString()) {
         case "promo1": //GYM

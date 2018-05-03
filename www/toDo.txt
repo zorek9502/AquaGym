@@ -1,9 +1,9 @@
-validarPromo 60%
-    detectar cambios no cuando quite foco
-cargar grupos en inicio
---------
+validarPromo
+	evento de validacion
+cupo
+hardcodear grupos en inicio
+
 audios
-boton audio de conocenos
-------
+
 ipad
 subir a aws
