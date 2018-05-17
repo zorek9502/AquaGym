@@ -282,9 +282,9 @@
             </div>
             <div id="informacion" class="swichtab-panel" data-swichtab="target">
                 <div class="flotante">
-                    <audio id="audio"></audio>
-                    <a>
-                        <i class="fas fa-volume-up speak-icon" onclick="document.getElementById('audio').play()"></i>
+                    <audio id="audio-carousel"></audio>
+                    <a id="audio-carouselo">
+                        <i class="fas fa-volume-up speak-icon"></i>
                     </a>
                 </div>
 
@@ -298,31 +298,29 @@
                             <li data-target="#carouselInfo" data-slide-to="4"></li>
                         </ol>
                         <div class="carousel-inner" role="listbox">
-                            <div class="carousel-item active">
-                                <div id="info-historia-bg">
-                                    <div class="info-historia-content info-bg-filter">
+                            <div class="carousel-item active" id="info-historia-bg">
+                                <div id="info-historia-bg" >
+                                    <div class="info-historia-content info-bg-filter" id="info01">
                                         <h1 id="encabezado-info-s1">Tu historia comienza con nosotros</h1>
                                         <p id="texto-info-s1">Encontrarás tu punto de partida
                                             <br> Construirás tu camino
-                                            <br> Te orientaremos a través de éste
+                                            <br> Te orientaremos a través de él 
                                             <br> Estaremos contigo en cada paso
                                         </p>
                                     </div>
                                 </div>
                             </div>
-                            <div class="carousel-item">
+                            <div class="carousel-item" id="info-membresia-bg">
                                 <div id="info-membresia-bg">
                                     <div class="info-historia-content info-bg-filter">
                                         <h3 id="encabezado-info-s2">Más que una membresía, un cambio saludable</h3>
-                                        <h5 class="description">Una membresía que te da acceso a todo lo que necesitas para transformar tu vida,
-                                            equipo e instalaciones de vanguardia, una variedad de clases personalizadas según
-                                            tus necesidades y los mejores entrenadores personales.
+                                        <h5 class="description">Una membresía que te da acceso a todo lo que necesitas para transformar tu vida, equipo e instalaciones de vanguardia, una variedad de clases personalizadas según tus necesidades y los mejores entrenadores personales. 
                                         </h5>
                                         <strong>Inscríbete hoy y experimenta el cambio con AquaGym.</strong>
                                     </div>
                                 </div>
                             </div>
-                            <div class="carousel-item">
+                            <div class="carousel-item" id="info-tour-bg">
                                 <div id="info-tour-bg">
                                     <div class="fondo_obscuro">
                                         <div class="container ">
@@ -342,7 +340,7 @@
                                     </div>
                                 </div>
                             </div>
-                            <div class="carousel-item">
+                            <div class="carousel-item" id="info-carateristicas-bg">
                                 <div id="info-carateristicas-bg">
                                     <div class="fondo_obscuro">
                                         <div class="container">
@@ -386,7 +384,7 @@
                                 </div>
                             </div>
 
-                            <div class="carousel-item">
+                            <div class="carousel-item" id="info-mapa-bg">
                                 <div id="info-mapa-bg">
                                     <div class="container">
                                         <div class="row">
@@ -401,11 +399,11 @@
                                 </div>
                             </div>
                         </div>
-                        <a class="carousel-control-prev" href="#carouselInfo" role="button" data-slide="prev">
+                        <a class="carousel-control-prev" href="#carouselInfo" role="button" data-slide="prev" id="carousel-prev">
                             <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                             <span class="sr-only">Previous</span>
                         </a>
-                        <a class="carousel-control-next" href="#carouselInfo" role="button" data-slide="next">
+                        <a class="carousel-control-next" href="#carouselInfo" role="button" data-slide="next" id="carousel-next">
                             <span class="carousel-control-next-icon" aria-hidden="true"></span>
                             <span class="sr-only">Next</span>
                         </a>
@@ -619,11 +617,11 @@
                                             <iframe id="galVideo" frameborder="0" allow="autoplay; encrypted-media" allowfullscreen></iframe>
                                         </div>
                                     </div>
-                                    <a class="carousel-control-prev" href="#carouselGaleria" role="button" data-slide="prev">
+                                    <a class="carousel-control-prev" href="#carouselGaleria" role="button" data-slide="prev" id="carousel-prev-gal">
                                         <span class="carousel-control-prev-icon" aria-hidden="true"></span>
                                         <span class="sr-only">Previous</span>
                                     </a>
-                                    <a class="carousel-control-next" href="#carouselGaleria" role="button" data-slide="next">
+                                    <a class="carousel-control-next" href="#carouselGaleria" role="button" data-slide="next" id="carousel-next-gal">
                                         <span class="carousel-control-next-icon" aria-hidden="true"></span>
                                         <span class="sr-only">Next</span>
                                     </a>
