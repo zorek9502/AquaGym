@@ -54,11 +54,11 @@ $(document).ready(function () {
     $("#Natacion").on('tap', function () {
         $("#disciplinas").toggle(200);
         document.getElementById('audio').pause();
-        $("#audio").attr("src", "assets/audio/audio-natacion.mp3");
+        $("#audio").attr("src", "assets/audio/natacion.mp3");
         $(".swichtab-contents").css("margin-bottom", "0px");
-        $("#content1_disciplina_ts").text("¿Sabias que?");
+        $("#content1_disciplina_ts").text("¿Sabías que?");
         $("#content2_disciplina_ts").text("La natación es consistentemente una de las principales actividades recreativas públicas, y en algunos países, las lecciones de natación son una parte obligatoria del currículo educativo.")
-        $("#content3_disciplina_ts").text("En nuestras instalaciones contamos con alberca olimpica, ven y aprende con nuestros mejores instructores los 4 estilos basicos de natacion: Crawl, Dorso, Pecho y Mariposa.");
+        $("#content3_disciplina_ts").text("En nuestras instalaciones contamos con alberca olímpica, ven y aprende con nuestros mejores instructores los 4 estilos básicos de natación: Crawl, Dorso, Pecho y Mariposa.");
         $("#disciplina_ts").text("Natacion");
         $("#img_disciplina_ts").attr("src", "assets/natacion.jpg");
         $("#galImg1").css("background-image", "url('assets/TouchSlider_imgs/natacion/gallery_img1.jpg')");
@@ -75,11 +75,11 @@ $(document).ready(function () {
     $("#Waterpolo").on('tap', function () {
         $("#disciplinas").toggle(200);
         document.getElementById('audio').pause();
-        $("#audio").attr("src", "assets/audio/audio-waterpolo.mp3");
+        $("#audio").attr("src", "assets/audio/waterpolo.mp3");
         $(".swichtab-contents").css("margin-bottom", "0px");
         $("#content1_disciplina_ts").text("El waterpolo o polo acuático es un deporte que se practica en una piscina, en el cual se enfrentan dos equipos. ");
         $("#content2_disciplina_ts").text("El objetivo del juego es marcar el mayor número de goles en la portería del equipo contrario durante el tiempo que dura el partido.")
-        $("#content3_disciplina_ts").text("Ven con nosotros y adentrate en un nuevo deporte, contamos con las adecuadas instalaciones y equipo se asistencia medica.");
+        $("#content3_disciplina_ts").text("Ven con nosotros y adéntrate en un nuevo deporte, contamos con las adecuadas instalaciones y equipo de asistencia médica.");
         $("#disciplina_ts").text("Waterpolo");
         $("#img_disciplina_ts").attr("src", "assets/waterpolo_ts.jpg");
         //Cambio de contenido de galeria
@@ -97,11 +97,11 @@ $(document).ready(function () {
     $("#Bodybuilding").on('tap', function () {
         $("#disciplinas").toggle(200);
         document.getElementById('audio').pause();
-        $("#audio").attr("src", "assets/audio/audio-body.mp3");
+        $("#audio").attr("src", "assets/audio/bodybuilding.mp3");
         $(".swichtab-contents").css("margin-bottom", "0px");
-        $("#content1_disciplina_ts").text("¿Sabias que?");
+        $("#content1_disciplina_ts").text("¿Sabías que?");
         $("#content2_disciplina_ts").text("Aunque en sus inicios fue un deporte exclusivamente para varones, en la década de 1980 comenzaron a surgir competiciones femeninas.")
-        $("#content3_disciplina_ts").text("En nuestras instalaciones puedes encontrar todo el equipo necesario y entrenadores especialiados en bodybuilding.");
+        $("#content3_disciplina_ts").text("Bodybuilding tiene como objetivo la obtención de una musculatura fuerte y definida.En nuestras instalaciones puedes encontrar todo el equipo necesario y entrenadores especializados en bodybuilding.");
         $("#disciplina_ts").text("Bodybuilding");
         $("#img_disciplina_ts").attr("src", "assets/bodybuilding_ts.jpg");
         //Cambio de contenido de galeria
@@ -115,15 +115,14 @@ $(document).ready(function () {
         $("#touchSlider").css("background", "-webkit-linear-gradient(top, rgb(0, 0, 0) 0%,rgba(45, 0, 0, 0.84) 9%,rgba(113, 0, 0, 0.92) 100%)");
         $("#touchSlider").css("display", "flex");
     });
-
     $("#Crossfit").on('tap', function () {
         $("#disciplinas").toggle(200);
         document.getElementById('audio').pause();
-        $("#audio").attr("src", "assets/audio/audio-cross.mp3");
+        $("#audio").attr("src", "assets/audio/crossfit.mp3");
         $(".swichtab-contents").css("margin-bottom", "0px");
-        $("#content1_disciplina_ts").text("Es una técnica de entrenamiento bastante reciente, nació en el 2001 de la mano de Greg Glasman, que usaba este entrenamiento para preparar a policías y gracias a los buenos resultados que se obtuvieron, se extendió a más áreas y sirvió para preparar bomberos y militares. ");
-        $("#content2_disciplina_ts").text("CrossFit es un programa de acondicionamiento diseñado para ayudar a las personas a mejorar su condición física en su sentido más amplio")
-        $("#content3_disciplina_ts").text("Te cansas rapido en las noches?, ¡venga! ven y empieza a hacer crossfit y adquiere la conficion fisica que te hace falta.");
+        $("#content1_disciplina_ts").text("Es una técnica de entrenamiento bastante reciente, nacida en el 2001 de la mano de Greg Glasman, dicha técnica fue usada para entrenar policías y gracias a sus buenos resultados, sirvió también para entrenar bomberos y militares.");
+        $("#content2_disciplina_ts").text("Crossfit es un programa de acondicionamiento diseñado para ayudar a las personas a mejorar su condición física.")
+        $("#content3_disciplina_ts").text("¿Te cansas rápido por las noches? ¡Venga! ven y empieza a hacer crossfit y adquiere la condición física que te hace falta.");
         $("#disciplina_ts").text("Crossfit");
         $("#img_disciplina_ts").attr("src", "assets/crossfit_ts.jpg");
         //Cambio de contenido de galeria
@@ -141,11 +140,11 @@ $(document).ready(function () {
     $("#Gym").on('tap', function () {
         $("#disciplinas").toggle(200);
         document.getElementById('audio').pause();
-        $("#audio").attr("src", "assets/audio/audio-gym.mp3");
+        $("#audio").attr("src", "assets/audio/gimnasio.mp3");
         $(".swichtab-contents").css("margin-bottom", "0px");
-        $("#content1_disciplina_ts").text("¿Sabias que? ");
+        $("#content1_disciplina_ts").text("¿Sabías que?");
         $("#content2_disciplina_ts").text("Para los griegos, la educación física era tan importante como el aprendizaje cognitivo. Muchos de estos gimnasios griegos tenían bibliotecas que se podían utilizar después de un baño relajante.")
-        $("#content3_disciplina_ts").text("¡Venga levanta e inscribete a a nuestro GYM! Contamos con una amplia variedad de maquinas e instructores calificados.");
+        $("#content3_disciplina_ts").text("¡Venga levanta e inscríbete a nuestro gimnasio! Contamos con una amplia variedad de máquinas e instructores calificados.");
         $("#disciplina_ts").text("GYM");
         $("#img_disciplina_ts").attr("src", "assets/gym2_ts.jpg");
         //Cambio de contenido de galeria
@@ -170,6 +169,8 @@ $(document).ready(function () {
         $("#touchSlider").css("display", "none");
     });
     $("#Inicio").on('tap', function () {
+        document.getElementById("galVideo").src = "";
+        document.getElementById("galVideo").src = path;
         document.getElementById('audio').currentTime = 0;
         document.getElementById('audio').pause();
         $("#Unete>a").removeAttr("style");
@@ -180,6 +181,7 @@ $(document).ready(function () {
 
     /*Scripts relacionados con tab de Unete*/
     $("#Unete").on('tap', function () {
+        document.getElementById("galVideo").src = "";
         document.getElementById('audio').currentTime = 0;
         document.getElementById('audio').pause();
         $("li>a").removeAttr("style");
@@ -242,6 +244,7 @@ $(document).ready(function () {
 
     /*Scripts relacionados con tab de Info*/
     $("#Info").on('tap', function () {
+        document.getElementById("galVideo").src = "";
         document.getElementById('audio').currentTime = 0;
         document.getElementById('audio').pause();
         $("li>a").removeAttr("style");
@@ -249,8 +252,63 @@ $(document).ready(function () {
         $(".swichtab-contents").css("margin-bottom", "auto");
         $("#touchSlider").css("display", "none");
     });
-
+    /*
+    //Audio para Slide Info01
+    $("#info-historia-bg").ready(function (){
+        document.getElementById('audio-carousel').currentTime = 0;
+        document.getElementById('audio-carousel').pause();
+        $("#audio-carousel").attr("src", "assets/audio/Info01.mp3");
+    });
+    //Audio para Slide Info02
+    $("#info-membresia-bg").ready(function (){
+        document.getElementById('audio-carousel').currentTime = 0;
+        document.getElementById('audio-carousel').pause();
+        $("#audio-carousel").attr("src", "assets/audio/Info02.mp3");
+    });
+    */
+    
+    
+    $('#audio-carouselo').on('click', function () {
+        if ($("#info-historia-bg").hasClass("active")){
+            $("#audio-carousel").attr("src", "assets/audio/Info01.mp3");
+        }else if ($("#info-membresia-bg").hasClass("active")){
+            $("#audio-carousel").attr("src", "assets/audio/Info02.mp3");
+        }else if ($("#info-tour-bg").hasClass("active")){
+            $("#audio-carousel").attr("src", "assets/audio/Info03.mp3");
+        }else if ($("#info-carateristicas-bg").hasClass("active")){
+            $("#audio-carousel").attr("src", "assets/audio/Info04.mp3");
+        }else if ($("#info-mapa-bg").hasClass("active")){
+            $("#audio-carousel").attr("src", "assets/audio/Info05.mp3");
+        }
+        document.getElementById('audio-carousel').play();
+    });
+    
+    
+    
+    $("#carousel-next").on("tap", function(){
+        document.getElementById('audio-carousel').currentTime = 0;
+        document.getElementById('audio-carousel').pause();
+    });
+    $("#carousel-prev").on("tap", function(){
+        document.getElementById('audio-carousel').currentTime = 0;
+        document.getElementById('audio-carousel').pause();
+    });
+    
+    
+    $("#carousel-next-gal").on("tap", function(){
+        var path = new String(document.getElementById("galVideo").getAttribute("src").toString());
+        document.getElementById("galVideo").src = "";
+        document.getElementById("galVideo").src = path;
+    });
+    $("#carousel-prev-gal").on("tap", function(){
+        var path = new String(document.getElementById("galVideo").getAttribute("src").toString());
+        document.getElementById("galVideo").src = "";
+        document.getElementById("galVideo").src = path;
+    });
+    
+    
     $("#Promos").on('tap', function () {
+        document.getElementById("galVideo").src = "";
         document.getElementById('audio').currentTime = 0;
         document.getElementById('audio').pause();
         $("li>a").removeAttr("style");
@@ -301,11 +359,7 @@ $(document).ready(function () {
         }
     });
 
-    let i=0;
-    $("#inputCupon").on("keypress", function(){
-       validarPromo();
-    });
-    $("div#Form1>div.form-group>div.col-sm-12>input ,div#Form2>div.form-group>div.col-sm-12>input" ).on("keyup", function () {
+    $("input").on("keypress", function () {
         var expr = /^[a-zA-Z0-9_\.\-]+@[a-zA-Z0-9\-]+\.[a-zA-Z0-9\-\.]+$/;
         var nombre = document.getElementById("inputName").value;
         var apellido = document.getElementById("inputLastname").value;
@@ -316,6 +370,9 @@ $(document).ready(function () {
         var colonia = document.getElementById("inputColonia").value;
         var no_casa = document.getElementById("inputNumcasa").value;
         var cp = document.getElementById("inputCP").value;
+
+        validarPromo();
+
         if (nombre != "" && apellido != "" && telefono != "" && f_nac != "") {
             $("#btnNextF1").prop('disabled', false);
         } else {
@@ -419,7 +476,9 @@ function verificaInputCupon(cuponValido) {
     }
 
 }
-
+function getId(id){
+    alert(id);
+}
 function rellenaHorarios(mapa) {
     let select, option, i;
     select = document.getElementById("select_horario");
