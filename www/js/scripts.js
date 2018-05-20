@@ -107,7 +107,7 @@ $(document).ready(function () {
         $("#galImg1").css("background-image", "url('assets/TouchSlider_imgs/waterpolo/gallery_img1.jpg')");
         $("#galImg2").css("background-image", "url('assets/TouchSlider_imgs/waterpolo/gallery_img2.jpg')");
         $("#galImg3").css("background-image", "url('assets/TouchSlider_imgs/waterpolo/gallery_img3.jpg')");
-        $("#galVideo").attr("src", "https://www.youtube.com/embed/FpL5TwiMGP4?rel=0&amp;showinfo=0");
+        $("#galVideo").attr("src", "https://www.youtube.com/embed/T2pm4WW9rxk?rel=0&amp;showinfo=0");
         //Cambio de horarios
         $("#tMatutino").empty();
         $("#tVespertino").empty();

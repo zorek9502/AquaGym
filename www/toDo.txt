@@ -1,4 +1,4 @@
-subir a vimeo
+subir a youtube
 subir a aws
 speech
 cordova jspdf
@@ -33,6 +33,6 @@ ipad
 	ancho completo en las disciplinas (Acerca de, Horarios, Galeria)
 
 añadir en Info video de comercial
-
+	https://youtu.be/4vKacfGVjTw
 ---------------------------
 *cupo
