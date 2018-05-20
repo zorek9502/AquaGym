@@ -1,9 +1,38 @@
-validarPromo
-	evento de validacion
-cupo
-hardcodear grupos en inicio
+subir a vimeo
+subir a aws
+speech
+cordova jspdf
 
-audios
+---------------------------
+detener video cuando se presiona ATRAS
+cuando se presionan las promos NO DEBE CAMBIAR el valor de select disciplina
+cuando se presiona en anuncio de boxeo se aplica NATACIONFREE
+
+---------------------------
+SEGUNDO y TERCER boton siguiente están activados por defecto
+Basta con llenar inputCupon para que PRIMER boton siguiente te deje pasar
+Basta con llenar inputEmail para que SEGUNDO boton siguiente te deje pasar
+
+Validar cupon TAMBIEN cuando se presione una imagen de Promos
+Validar cupon TAMBIEN cuando se cambien los valores de select_disciplina, select_horario, select_meses
+validar cupon TAMBIEN cuando se le quita el foco a inputCupon
+
+permitir SOLAMENTE numeros en inputPhone
+inputCP permite numeros Y LA LETRA e
+
+---------------------------------------------
+acomodar espaciado de grupos waterpolo
+
+color del icono del audio en Info->mapa
 
 ipad
-subir a aws
+	botones mas grandes en Unete
+	textos mas grandes en Inicio -> cada disciplina
+	textos mas grandes en Info
+	formularios un poco más espaciados
+	ancho completo en las disciplinas (Acerca de, Horarios, Galeria)
+
+añadir en Info video de comercial
+
+---------------------------
+*cupo

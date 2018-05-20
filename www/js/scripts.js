@@ -447,7 +447,7 @@ $(document).ready(function () {
         }
     });
 
-    $("input").on("keypress", function () {
+    $("input").on("keyup", function () {
         var expr = /^[a-zA-Z0-9_\.\-]+@[a-zA-Z0-9\-]+\.[a-zA-Z0-9\-\.]+$/;
         var nombre = document.getElementById("inputName").value;
         var apellido = document.getElementById("inputLastname").value;
@@ -459,7 +459,9 @@ $(document).ready(function () {
         var no_casa = document.getElementById("inputNumcasa").value;
         var cp = document.getElementById("inputCP").value;
 
-        validarPromo();
+        if (this.id === "inputCupon") {
+            validarPromo();
+        }
 
         if (nombre != "" && apellido != "" && telefono != "" && f_nac != "") {
             $("#btnNextF1").prop('disabled', false);
