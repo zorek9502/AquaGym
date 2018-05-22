@@ -25,12 +25,20 @@
         font-size: 1.5rem!important;
         height: 70%;
     }
+    .caract{
+        margin-top: 0.7rem!important;
+        height: 27%; 
+    }
 }
 
 @media (max-height: 823px){
     .confirmacion{
         font-size: 1rem!important;
         height: 70%;
+    }
+    .caract{
+        margin-top: 0.7rem!important;
+        height: 27%; 
     }
 }
 
@@ -40,10 +48,20 @@
         height: 60%;
     }
 }
-@media (max-height: 731px){
+@media (max-height: 736px){
     .confirmacion{
         font-size: .9rem!important;
         height: 70%;
+    }
+    .caract{
+        margin-top: 0.7rem!important;
+        height: 25%; 
+    }
+    h4{
+        font-size: 1rem!important;
+    }
+    p{
+        font-size: 0.9rem!important;
     }
 }
 
@@ -51,6 +69,12 @@
     .confirmacion{
         font-size: .9rem!important;
         height: 70%;
+    }
+    .caract{
+        margin-top: 2.7rem; 
+    }
+    h4{
+        font-size: 1rem;
     }
 }
 
