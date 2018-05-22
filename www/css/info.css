@@ -3,6 +3,8 @@
     left: 0px;
     top: 0px;
     bottom: 0px;
+    width: 100%;
+    height: calc(100% - 60px);
 }
 
 #info-historia-bg {
