@@ -4,21 +4,21 @@ speech
 cordova jspdf
 
 ---------------------------
-detener video cuando se presiona ATRAS
+detener video cuando se presiona ATRAS	****COMPLETADO*****
 cuando se presionan las promos NO DEBE CAMBIAR el valor de select disciplina
 cuando se presiona en anuncio de boxeo se aplica NATACIONFREE
 
 ---------------------------
-SEGUNDO y TERCER boton siguiente están activados por defecto
-Basta con llenar inputCupon para que PRIMER boton siguiente te deje pasar
-Basta con llenar inputEmail para que SEGUNDO boton siguiente te deje pasar
+SEGUNDO y TERCER boton siguiente están activados por defecto  ****COMPLETADO*****
+Basta con llenar inputCupon para que PRIMER boton siguiente te deje pasar  ****HAY QUE PROBAR*****
+Basta con llenar inputEmail para que SEGUNDO boton siguiente te deje pasar  ****COMPLETADO*****
 
 Validar cupon TAMBIEN cuando se presione una imagen de Promos
 Validar cupon TAMBIEN cuando se cambien los valores de select_disciplina, select_horario, select_meses
 validar cupon TAMBIEN cuando se le quita el foco a inputCupon
 
-permitir SOLAMENTE numeros en inputPhone
-inputCP permite numeros Y LA LETRA e
+permitir SOLAMENTE numeros en inputPhone  ****COMPLETADO*****
+inputCP permite numeros Y LA LETRA e      ****COMPLETADO*****
 
 ---------------------------------------------
 acomodar espaciado de grupos waterpolo
@@ -26,11 +26,11 @@ acomodar espaciado de grupos waterpolo
 color del icono del audio en Info->mapa
 
 ipad
-	botones mas grandes en Unete
-	textos mas grandes en Inicio -> cada disciplina
-	textos mas grandes en Info
+	botones mas grandes en Unete  ****COMPLETADO*****
+	textos mas grandes en Inicio -> cada disciplina ****COMPLETADO*****
+	textos mas grandes en Info ****COMPLETADO*****
 	formularios un poco más espaciados
-	ancho completo en las disciplinas (Acerca de, Horarios, Galeria)
+	ancho completo en las disciplinas (Acerca de, Horarios, Galeria) ****COMPLETADO*****
 
 añadir en Info video de comercial
 	https://youtu.be/4vKacfGVjTw
