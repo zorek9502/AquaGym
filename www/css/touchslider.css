@@ -36,7 +36,7 @@ h2 {
 }
 
 .list-group-item{
-    background-color: #00000085 !important;
+    background-color: rgba(0, 0, 0, 0.712)!important;
 }
 
 .showborders {
@@ -72,8 +72,8 @@ h2 {
 
 .btn-back:not(:disabled):not(.disabled).active, .btn-back:not(:disabled):not(.disabled):active, .show>.btn-back.dropdown-toggle {
     color: #fff;
-    background-color: #181f33;
-    border-color: #0a0a0a;
+    background-color: rgb(24, 31, 51);
+    border-color: rgb(10, 10, 10);
 }
 
 .btn-back:hover {
@@ -83,6 +83,6 @@ h2 {
 }
 .btn-back {
     color: #fff;
-    background-color: #04040400;
-    border-color: #2a2c2c;
+    background-color: rgba(4, 4, 4, 0.35);
+    border-color: rgb(42, 44, 44);
 }
