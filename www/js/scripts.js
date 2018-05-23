@@ -20,6 +20,7 @@ $(document).ready(function () {
         document.getElementById('audio').currentTime = 0;
         document.getElementById('audio').pause();
     });
+    alert("Ancho pantalla: "+ screen.width+" Alto pantalla: "+screen.height);
     if (screen.height <= 1024) {
         $("#Horarios").on('swipeup', function (e) {
             $("#tMatutino").animate({height: 0}, "fast");
@@ -63,19 +64,19 @@ $(document).ready(function () {
     /*Scripts relacionados con tab Inicio c/u disciplinas*/
     console.log(screen.height - 100);
     $("#carouselGaleria").css({
-        "width": screen.width,
-        "height": screen.height - 100,
+        //"width": screen.width,
+        //"height": screen.height - 100,
     });
     $("#carouselInfo").css({
-        "width": screen.width,
-        "height": screen.height - 60
+        //"width": screen.width,
+        //"height": screen.height - 60
     });
     $("#galVideo").css({
-        "height": a
+        //"height": a
     })
 
     $("div img.w-100").css({
-        "height": screen.height - 60
+        //"height": screen.height - 60
     })
 
     $("#Natacion").on('tap', function () {
@@ -111,7 +112,7 @@ $(document).ready(function () {
         $("#tVespertino").append('<li id="GrupoM" class="btn-outline-primary list-group-item d-flex justify-content-between align-items-center">Grupo M<span>18:00 - 19:00</span></li>');
         $("#tVespertino").append('<li id="GrupoN" class="btn-outline-primary list-group-item d-flex justify-content-between align-items-center">Grupo N<span>19:00 - 20:00</span></li>');
         $("#tVespertino").append('<li id="GrupoO" class="btn-outline-primary list-group-item d-flex justify-content-between align-items-center">Grupo O<span>20:00 - 21:00</span></li>');
-        $("#tVespertino").append('<li id="GrupoP" class="btn-outline-primary list-group-item d-flex justify-content-between align-items-center">Grupo O<span>21:00 - 22:00</span></li>');
+        $("#tVespertino").append('<li id="GrupoP" class="btn-outline-primary list-group-item d-flex justify-content-between align-items-center">Grupo P<span>21:00 - 22:00</span></li>');
 
         $(".swichtab-controller>li").css("background", "rgb(15, 37, 88)");
         $("li.is-active>a").css("background", "rgb(12, 109, 181)");
@@ -183,7 +184,7 @@ $(document).ready(function () {
         $("#tVespertino").append('<li id="GrupoM" class="btn-outline-primary list-group-item d-flex justify-content-between align-items-center">Grupo M<span>18:00 - 19:00</span></li>');
         $("#tVespertino").append('<li id="GrupoN" class="btn-outline-primary list-group-item d-flex justify-content-between align-items-center">Grupo N<span>19:00 - 20:00</span></li>');
         $("#tVespertino").append('<li id="GrupoO" class="btn-outline-primary list-group-item d-flex justify-content-between align-items-center">Grupo O<span>20:00 - 21:00</span></li>');
-        $("#tVespertino").append('<li id="GrupoP" class="btn-outline-primary list-group-item d-flex justify-content-between align-items-center">Grupo O<span>21:00 - 22:00</span></li>');
+        $("#tVespertino").append('<li id="GrupoP" class="btn-outline-primary list-group-item d-flex justify-content-between align-items-center">Grupo P<span>21:00 - 22:00</span></li>');
 
         $(".swichtab-controller>li").css("background", "black");
         $("li.is-active>a").css("background", "rgb(130, 122, 31)");
@@ -224,7 +225,7 @@ $(document).ready(function () {
         $("#tVespertino").append('<li id="GrupoM" class="btn-outline-primary list-group-item d-flex justify-content-between align-items-center">Grupo M<span>18:00 - 19:00</span></li>');
         $("#tVespertino").append('<li id="GrupoN" class="btn-outline-primary list-group-item d-flex justify-content-between align-items-center">Grupo N<span>19:00 - 20:00</span></li>');
         $("#tVespertino").append('<li id="GrupoO" class="btn-outline-primary list-group-item d-flex justify-content-between align-items-center">Grupo O<span>20:00 - 21:00</span></li>');
-        $("#tVespertino").append('<li id="GrupoP" class="btn-outline-primary list-group-item d-flex justify-content-between align-items-center">Grupo O<span>21:00 - 22:00</span></li>');
+        $("#tVespertino").append('<li id="GrupoP" class="btn-outline-primary list-group-item d-flex justify-content-between align-items-center">Grupo P<span>21:00 - 22:00</span></li>');
 
         $(".swichtab-controller>li").css("background", "rgb(45, 44, 44)");
         $("li.is-active>a").css("background", "-webkit-linear-gradient(top, rgb(93, 4, 4) 1%, rgb(68, 5, 3) 100%)");
@@ -266,7 +267,7 @@ $(document).ready(function () {
         $("#tVespertino").append('<li id="GrupoM" class="btn-outline-primary list-group-item d-flex justify-content-between align-items-center">Grupo M<span>18:00 - 19:00</span></li>');
         $("#tVespertino").append('<li id="GrupoN" class="btn-outline-primary list-group-item d-flex justify-content-between align-items-center">Grupo N<span>19:00 - 20:00</span></li>');
         $("#tVespertino").append('<li id="GrupoO" class="btn-outline-primary list-group-item d-flex justify-content-between align-items-center">Grupo O<span>20:00 - 21:00</span></li>');
-        $("#tVespertino").append('<li id="GrupoP" class="btn-outline-primary list-group-item d-flex justify-content-between align-items-center">Grupo O<span>21:00 - 22:00</span></li>');
+        $("#tVespertino").append('<li id="GrupoP" class="btn-outline-primary list-group-item d-flex justify-content-between align-items-center">Grupo P<span>21:00 - 22:00</span></li>');
 
         $(".swichtab-controller>li").css("background", "#221d1e");
         $("li.is-active>a").css("background", "#b51118");
@@ -372,7 +373,7 @@ $(document).ready(function () {
     });
     /*
     //Audio para Slide Info01
-    $("#info-historia-bg").ready(function (){
+    $("#carouselInfo").ready(function (){
         document.getElementById('audio-carousel').currentTime = 0;
         document.getElementById('audio-carousel').pause();
         $("#audio-carousel").attr("src", "assets/audio/Info01.mp3");
