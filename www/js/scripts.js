@@ -20,7 +20,7 @@ $(document).ready(function () {
         document.getElementById('audio').currentTime = 0;
         document.getElementById('audio').pause();
     });
-    alert("Ancho pantalla: "+ screen.width+" Alto pantalla: "+screen.height);
+    //alert("Ancho pantalla: "+ screen.width+" Alto pantalla: "+screen.height);
     if (screen.height <= 1024) {
         $("#Horarios").on('swipeup', function (e) {
             $("#tMatutino").animate({height: 0}, "fast");
