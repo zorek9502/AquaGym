@@ -48,12 +48,12 @@
     text-align: left;
     padding: 30% 10% 0% 13%;
     height: 100%;
-    background: #0000008c;
+    background: rgba(0, 0, 0, 0.527);
     color: white;
 }
 
 .fondo_obscuro{
-    background: #0000008c;
+    background: rgba(0, 0, 0, 0.527);
     height: 100%;
 }
 
@@ -149,5 +149,5 @@ iframe.virtual-guide {
 }
 
 #info-mapa-bg{
-    background: #003a34;
+    background: rgb(0, 58, 52);
 }
