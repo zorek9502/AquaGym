@@ -118,9 +118,9 @@
                                     <input class="form-control" type="text" id="inputCupon" placeholder="Ingresa aqui tu cupon Ej. AQUAGYM">
                                 </div>
                             </div>
-                            <div class="form-group row fixed-bottom" id="botones_inferiores">
+                            <div class="form-group row" id="botones_inferiores">
                                 <div class="col-8 offset-2">
-                                    <button id="btnNextF0" class="btn btn-block btn-primary" disabled>Siguente</button>
+                                    <button id="btnNextF0" class="btn btn-block btn-primary">Siguiente</button>
                                 </div>
                             </div>
                         </div>
@@ -148,12 +148,13 @@
                                     <input type="date" class="form-control" id="inputf_nac" required="true" placeholder="Selecciona tu fecha de nacimiento">
                                 </div>
                             </div>
-                            <div class="form-group row fixed-bottom" id="botones_inferiores">
-                                <div class="col-3 offset-2">
-                                    <button id="btnBackF1" class="btn btn-primary">Regresar</button>
+                            <div class="form-group row " id="botones_inferiores">
+                                <div class="col-4 offset-1 d-inline">
+                                    <button id="btnBackF1" class="btn btn-block btn-primary">Regresar</button>
                                 </div>
-                                <div id="botonSiguente" class="col-3 offset-2">
-                                    <button id="btnNextF1" class="btn btn-primary" disabled>Siguente</button>
+                                <br>
+                                <div id="botonSiguente" class="col-4 offset-2 d-inline">
+                                    <button id="btnNextF1" class="btn btn-block btn-primary">Siguente</button>
                                 </div>
                             </div>
                         </div>
@@ -177,15 +178,18 @@
                                 <div class="col-sm-12">
                                     <input type="number" maxlength="5" class="form-control" id="inputCP" required="true" placeholder="Codigo postal">
                                 </div>
+
                             </div>
-                            <div class="form-group row fixed-bottom" id="botones_inferiores">
-                                <div class="col-3 offset-2">
-                                    <button id="btnBackF2" class="btn	 btn-primary">Regresar</button>
+
+                            <div class="form-group row " id="botones_inferiores">
+                                <div class="col-4 offset-1 d-inline">
+                                    <button id="btnBackF2" class="btn btn-block btn-primary">Regresar</button>
                                 </div>
-                                <div id="botonSiguente2"  class="col-3 offset-2">
-                                    <button id="btnNextF2" class="btn	 btn-primary" disabled>Siguente</button>
+                                <div id="botonSiguente2" class="col-4 offset-2 d-inline">
+                                    <button id="btnNextF2" class="btn btn-block btn-primary">Siguente</button>
                                 </div>
                             </div>
+
                         </div>
                         <div id="Form3">
                             <div class="row" style="margin-bottom: 10px;margin-top: 10px;">
@@ -264,13 +268,13 @@
 
                                 </div>
                             </div>
-                            <div class="form-group row fixed-bottom" id="botones_inferiores">
-                                <div class="col-3 offset-1 col-md-4 offset-md-2">
-                                    <a id="btnBackF3" class="btn btn-primary">Regresar</a>
+                            <div class="form-group row " id="botones_inferiores">
+                                <div class="col-4 offset-1 d-inline">
+                                    <a id="btnBackF3" class="btn btn-block btn-primary">Regresar</a>
                                 </div>
-                                <div class="col-3 offset-2 col-md-4 offset-md-2">
-                                    <button id="btnConfirmacion" class="btn	 btn-danger" onclick="registrar()">
-                                        ¡INSCRIBIRME!
+                                <div class="col-4 offset-2 d-inline">
+                                    <button id="btnConfirmacion" class="btn btn-danger" onclick="registrar()">
+                                        ¡INSCRIBEME!
                                     </button>
                                 </div>
                             </div>
@@ -299,12 +303,12 @@
                         </ol>
                         <div class="carousel-inner" role="listbox">
                             <div class="carousel-item active" id="info-historia-bg">
-                                <div id="info-historia-bg" >
+                                <div id="info-historia-bg">
                                     <div class="info-historia-content info-bg-filter" id="info01">
                                         <h1 id="encabezado-info-s1">Tu historia comienza con nosotros</h1>
                                         <p id="texto-info-s1">Encontrarás tu punto de partida
                                             <br> Construirás tu camino
-                                            <br> Te orientaremos a través de él 
+                                            <br> Te orientaremos a través de él
                                             <br> Estaremos contigo en cada paso
                                         </p>
                                     </div>
@@ -314,9 +318,11 @@
                                 <div id="info-membresia-bg">
                                     <div class="info-historia-content info-bg-filter">
                                         <h3 id="encabezado-info-s2">Más que una membresía, un cambio saludable</h3>
-                                        <h5 class="description">Una membresía que te da acceso a todo lo que necesitas para transformar tu vida, equipo e instalaciones de vanguardia, una variedad de clases personalizadas según tus necesidades y los mejores entrenadores personales. 
-                                        </h5>
-                                        <strong>Inscríbete hoy y experimenta el cambio con AquaGym.</strong>
+                                        <p class="description">Una membresía que te da acceso a todo lo que necesitas para transformar tu vida,
+                                            equipo e instalaciones de vanguardia, una variedad de clases personalizadas según
+                                            tus necesidades y los mejores entrenadores personales.
+                                        </p>
+                                        <p>Inscríbete hoy y experimenta el cambio con AquaGym.</p>
                                     </div>
                                 </div>
                             </div>
@@ -424,7 +430,7 @@
                             <img class="d-block  w-100" src="assets/promos/P3.png" alt="Promo 3" id="promo3" onclick="getCode(id)" codigo="NATACIONFREE">
                         </div>
                         <div class="carousel-item">
-                            <img class="d-block  w-100" src="assets/promos/P4.png" alt="Promo 4" id="promo4"  onclick="getCode(id)" codigo="">
+                            <img class="d-block  w-100" src="assets/promos/P4.png" alt="Promo 4" id="promo4" onclick="getCode(id)" codigo="">
                         </div>
                         <div class="carousel-item">
                             <img class="d-block  w-100" src="assets/promos/P5.png" alt="Promo 5" id="promo5" onclick="getCode(id)" codigo="WATERPOLO50">
@@ -447,17 +453,18 @@
             <div id="touchSlider">
                 <ul>
                     <li id="acercade_ts">
-                        <div>
-                            <div class="row encabezado">
-                                <div class="col-2 pull-sm-left btn-back">
-                                    <i class="fas fa-chevron-left" style="margin-top:15px;"></i>
-                                </div>
-                                <div id="encabezado_texto" class="col-10 ">
-                                    <h2 style="text-align:left;">
-                                        Acerca de
-                                    </h2>
-                                </div>
+
+                        <div class="row encabezado">
+                            <div class="col-2 pull-sm-left btn-back">
+                                <i class="fas fa-chevron-left" style="margin-top:15px;"></i>
                             </div>
+                            <div id="encabezado_texto" class="col-10 ">
+                                <h2 style="text-align:left;">
+                                    Acerca de
+                                </h2>
+                            </div>
+                        </div>
+                        <div class="container-fluid">
                             <div class="row ">
                                 <div class="bg-informacion">
                                     <div class="col-md-8 offset-md-2  ">
@@ -494,18 +501,18 @@
                         </div>
                     </li>
                     <li id="horarios_ts">
-                        <div class="container">
-                            <div class="row encabezado">
-                                <div class="col-2 btn-back">
-                                    <i class="fas fa-chevron-left" style="margin-top:15px;"></i>
-                                </div>
-                                <div class="col-10 ">
-                                    <h2 style="text-align:left;">
-                                        Horarios
-                                    </h2>
-                                </div>
-                            </div>
 
+                        <div class="row encabezado">
+                            <div class="col-2 btn-back">
+                                <i class="fas fa-chevron-left" style="margin-top:15px;"></i>
+                            </div>
+                            <div class="col-10 ">
+                                <h2 style="text-align:left;">
+                                    Horarios
+                                </h2>
+                            </div>
+                        </div>
+                        <div class="container-fluid">
                             <div class="row ">
                                 <div class="col-md-12 ">
                                     <div id="Horarios">
@@ -586,17 +593,18 @@
                         </div>
                     </li>
                     <li id="galeria_ts">
-                        <div class="container">
-                            <div class="row encabezado">
-                                <div class="col-2 btn-back">
-                                    <i class="fas fa-chevron-left" style="margin-top:15px;"></i>
-                                </div>
-                                <div class="col-10 ">
-                                    <h2 style="text-align:left;">
-                                        Galeria
-                                    </h2>
-                                </div>
+
+                        <div class="row encabezado">
+                            <div class="col-2 btn-back">
+                                <i class="fas fa-chevron-left" style="margin-top:15px;"></i>
                             </div>
+                            <div class="col-10 ">
+                                <h2 style="text-align:left;">
+                                    Galeria
+                                </h2>
+                            </div>
+                        </div>
+                        <div class="container-fluid">
                             <div class="row">
                                 <div id="carouselGaleria" class="carousel slide" data-interval="false">
                                     <ol class="carousel-indicators">
@@ -703,18 +711,27 @@
     <!-- AWS -->
     <script src="https://sdk.amazonaws.com/js/aws-sdk-2.224.1.min.js"></script>
     <!-- Bootstrap -->
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl"
-        crossorigin="anonymous"></script>
+    <!--<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>-->
+    <script src="js/jquery.min.js"></script>
+
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
         crossorigin="anonymous"></script>
-    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+    
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"crossorigin="anonymous"></script>
+    <!--<script src="js/bootstrap.min.js"></script>-->
+    
+    <!--FontAwesome-->
+    <script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl"
         crossorigin="anonymous"></script>
-    <!-- JQuery Mobile -->
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-touch-events/1.0.5/jquery.mobile-events.js"></script>
+
+    <!-- JQuery Mobile-->
+    <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-touch-events/1.0.5/jquery.mobile-events.js"></script>-->
+    <script type="text/javascript" src="js/jquery.mobile-events.min.js"></script>
+    
     <!-- jsPDF -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.0.272/jspdf.debug.js"></script>
     <!-- Scripts -->
+    
     <script type="text/javascript" src="js/jquery.touchSlider.js"></script>
     <script type="text/javascript" src="js/scripts.js"></script>
     <script type="text/javascript" src="js/jquery.swichTab.js" charset="utf-8"></script>
