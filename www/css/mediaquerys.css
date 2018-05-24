@@ -7,6 +7,7 @@
     }
     #descripcion {
         font-size: 15pt;
+        color: rgb(255, 0, 0);
     }
     .card-title {
         font-size: 4.5rem;
@@ -18,68 +19,71 @@
     .confirmacion {
         font-size: 1.2rem!important;
     }
+
+    
 }
 
-@media (max-height: 1366px){
-    .confirmacion{
+@media (max-height: 1366px) {
+    .confirmacion {
         font-size: 1.5rem!important;
         height: 70%;
     }
-    .caract{
+    .caract {
         margin-top: 0.7rem!important;
-        height: 27%; 
+        height: 27%;
     }
 }
 
-@media (max-height: 823px){
-    .confirmacion{
+@media (max-height: 823px) {
+    .confirmacion {
         font-size: 1rem!important;
         height: 70%;
     }
-    .caract{
+    .caract {
         margin-top: 0.7rem!important;
-        height: 27%; 
+        height: 27%;
     }
 }
 
-@media (max-height: 736px){
-    .confirmacion{
+@media (max-height: 736px) {
+    .confirmacion {
         font-size: 1rem!important;
         height: 60%;
     }
 }
-@media (max-height: 736px){
-    .confirmacion{
+
+@media (max-height: 736px) {
+    .confirmacion {
         font-size: .9rem!important;
         height: 70%;
     }
-    .caract{
+    .caract {
         margin-top: 0.7rem!important;
-        height: 25%; 
+        height: 25%;
     }
-    h4{
+    h4 {
         font-size: 1rem!important;
     }
-    p{
+    p {
         font-size: 0.9rem!important;
     }
 }
 
-@media (max-height: 667px){
-    .confirmacion{
+@media (max-height: 667px) {
+    .confirmacion {
         font-size: .9rem!important;
         height: 70%;
     }
-    .caract{
-        margin-top: 2.7rem; 
+    .caract {
+        margin-top: 2.7rem;
     }
-    h4{
+    h4 {
         font-size: 1rem;
     }
 }
 
-@media (max-height: 568px){
-    .confirmacion{
+@media (max-height: 568px) {
+    .confirmacion {
         font-size: .7rem!important;
         height: 55%;
     }
@@ -94,6 +98,7 @@
     }
     #descripcion {
         font-size: 14pt;
+        color: rgb(0, 255, 0);
     }
     .card-title {
         font-size: 2.5rem;
@@ -105,7 +110,6 @@
     .confirmacion {
         font-size: .8rem;
     }
-    
 }
 
 @media (max-width: 640px) {
@@ -117,6 +121,7 @@
     }
     #descripcion {
         font-size: 11.5pt;
+        color: rgb(0, 0, 255);
     }
 }
 
@@ -129,10 +134,17 @@
     }
     #descripcion {
         font-size: 10pt;
+        color: rgb(238, 255, 0);
     }
     #head_inscripcion {
         text-align: center;
         font-size: 1.8rem;
         margin-bottom: 1.5rem;
+    }
+    #btnBackF1 ,#btnNextF1, #btnBackF2 ,#btnNextF2, #btnBackF3 ,#btnConfirmacion{
+        padding: .25rem .5rem;
+        font-size: .875rem;
+        line-height: 1.5;
+        border-radius: .2rem;
     }
 }
