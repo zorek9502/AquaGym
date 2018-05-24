@@ -63,10 +63,13 @@ THE SOFTWARE.
                 }
             });
 
-            // swiper
+           // swiper
+            /*
+            Descomentar si queremos el slide entre tabs
             if (opts.swiper === true) {
+                
                 self.swiper(elm);
-            }
+            }*/
         };
 
         this.swiper = function(elm) {
