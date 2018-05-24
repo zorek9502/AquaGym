@@ -35,11 +35,14 @@
     color: #ffffff;
     text-shadow: 5px 0px 6px rgb(0, 0, 0);
     /*background: #ffffffa6;*/
-    margin-bottom: 2rem;
+    /*margin-bottom: 2rem;*/
     /*font-family: Eras ITC;*/
 }
 
 #botones_inferiores{
+    position: relative;
+    top: auto;
+    left: auto;
     bottom: 10%;
 }
 
