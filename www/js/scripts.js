@@ -1,4 +1,4 @@
-let cuponvalido=false;
+let cuponvalido = false;
 $(document).ready(function () {
     /*Scripts relacionados con tab de Inicio y disciplinas*/
     var tMatutino_height = $("tMatutino").height();
@@ -20,21 +20,24 @@ $(document).ready(function () {
         document.getElementById('audio').currentTime = 0;
         document.getElementById('audio').pause();
     });
-    //alert("Ancho pantalla: "+ screen.width+" Alto pantalla: "+screen.height);
-    if (screen.height <= 1024) {
-        $("#Horarios").on('swipeup', function (e) {
-            $("#tMatutino").animate({height: 0}, "fast");
-        });
-        $("#Horarios").on('swipedown', function (e) {
-            if (screen.width < 700) {
-                $("#tMatutino").animate({height: "344px"}, "fast");
-            } else {
-                $("#tMatutino").animate({height: "428px"}, "fast");
-            }
-        });
-    }
+    $("#carouselInfo").on('swipeleft', function (e) {
+        
+        document.getElementById('audio-carousel').currentTime = 0;
+        document.getElementById('audio-carousel').pause();
+    });
+    $("#carouselInfo").on('swiperight', function (e) {        
+        document.getElementById('audio-carousel').currentTime = 0;
+        document.getElementById('audio-carousel').pause();
+    });
+    
+    $("#Horarios").on('swipeup', function (e) {
+        $("#tMatutino").slideToggle("fast");
+    });
+    $("#Horarios").on('swipedown', function (e) {
+        $("#tMatutino").slideToggle("fast");
+    });
 
-    if (screen.height>=1024 && screen.width>=768){
+    if (screen.height >= 1024 && screen.width >= 768) {
         $("button").addClass("btn-lg");
         $("#botonSiguente").removeClass("col-3 offset-2");
         $("#botonSiguente").addClass("col-2 offset-3");
@@ -43,47 +46,28 @@ $(document).ready(function () {
         $("#encabezado_texto").removeClass("col-10");
         $("#encabezado_texto").addClass("col-7 offset-2  ");
         $("h4").css({
-            "font-size":"2.5rem"
+            "font-size": "2.5rem"
         });
         $("h5").css({
-            "font-size":"1.8rem"
+            "font-size": "1.8rem"
         });
         $("p").css({
-            "font-size":"1.5rem"
+            "font-size": "1.5rem"
         });
         $("strong").css({
-            "font-size":"1.5rem"
+            "font-size": "1.5rem"
         });
         $("ul>li>a").css({
-            "font-size":"1.5rem"
+            "font-size": "1.5rem"
         });
-
-    }
-    var a = screen.height - (screen.height * 0.10);
-    $("#c_disciplina").attr("style", "height:" + a.toString());
+    }   
     /*Scripts relacionados con tab Inicio c/u disciplinas*/
-    console.log(screen.height - 100);
-    $("#carouselGaleria").css({
-        //"width": screen.width,
-        //"height": screen.height - 100,
-    });
-    $("#carouselInfo").css({
-        //"width": screen.width,
-        //"height": screen.height - 60
-    });
-    $("#galVideo").css({
-        //"height": a
-    })
-
-    $("div img.w-100").css({
-        //"height": screen.height - 60
-    })
 
     $("#Natacion").on('tap', function () {
-        $("#disciplinas").toggle(200);
+        $("#disciplinas").slideToggle("fast");
         document.getElementById('audio').pause();
         $("#audio").attr("src", "assets/audio/natacion.mp3");
-        $(".swichtab-contents").css("margin-bottom", "0px");
+        $(".swichtab-contents").css({ "margin-bottom": "0px" });
         $("#content1_disciplina_ts").text("¿Sabías que?");
         $("#content2_disciplina_ts").text("La natación es consistentemente una de las principales actividades recreativas públicas, y en algunos países, las lecciones de natación son una parte obligatoria del currículo educativo.")
         $("#content3_disciplina_ts").text("En nuestras instalaciones contamos con alberca olímpica, ven y aprende con nuestros mejores instructores los 4 estilos básicos de natación: Crawl, Dorso, Pecho y Mariposa.");
@@ -120,9 +104,8 @@ $(document).ready(function () {
         $("#touchSlider").css("display", "flex");
     });
 
-
     $("#Waterpolo").on('tap', function () {
-        $("#disciplinas").toggle(200);
+        $("#disciplinas").slideToggle("fast");
         document.getElementById('audio').pause();
         $("#audio").attr("src", "assets/audio/waterpolo.mp3");
         $(".swichtab-contents").css("margin-bottom", "0px");
@@ -139,8 +122,8 @@ $(document).ready(function () {
         //Cambio de horarios
         $("#tMatutino").empty();
         $("#tVespertino").empty();
-        $("#tMatutino").append('<li id="GrupoA" class="btn-outline-primary list-group-item d-flex justify-content-between align-items-center">Grupo A<span>6:00 - 8:00</span></li>')
-        $("#tMatutino").append('<li id="GrupoA" class="btn-outline-primary list-group-item d-flex justify-content-between align-items-center">Grupo B<span>9:00 - 11:00</span></li>')
+        $("#tVespertino").append('<li id="GrupoA" class="btn-outline-primary list-group-item d-flex justify-content-between align-items-center">Grupo A<span>6:00 - 8:00</span></li>')
+        $("#tVespertino").append('<li id="GrupoA" class="btn-outline-primary list-group-item d-flex justify-content-between align-items-center">Grupo B<span>9:00 - 11:00</span></li>')
         $("#tVespertino").append('<li id="GrupoA" class="btn-outline-primary list-group-item d-flex justify-content-between align-items-center">Grupo C<span>12:00 - 14:00</span></li>')
         $("#tVespertino").append('<li id="GrupoA" class="btn-outline-primary list-group-item d-flex justify-content-between align-items-center">Grupo D<span>15:00 - 17:00</span></li>')
         $("#tVespertino").append('<li id="GrupoA" class="btn-outline-primary list-group-item d-flex justify-content-between align-items-center">Grupo E<span>18:00 - 20:00</span></li>')
@@ -152,7 +135,7 @@ $(document).ready(function () {
     });
 
     $("#Bodybuilding").on('tap', function () {
-        $("#disciplinas").toggle(200);
+        $("#disciplinas").slideToggle("fast");
         document.getElementById('audio').pause();
         $("#audio").attr("src", "assets/audio/bodybuilding.mp3");
         $(".swichtab-contents").css("margin-bottom", "0px");
@@ -192,7 +175,7 @@ $(document).ready(function () {
         $("#touchSlider").css("display", "flex");
     });
     $("#Crossfit").on('tap', function () {
-        $("#disciplinas").toggle(200);
+        $("#disciplinas").slideToggle("fast");
         document.getElementById('audio').pause();
         $("#audio").attr("src", "assets/audio/crossfit.mp3");
         $(".swichtab-contents").css("margin-bottom", "0px");
@@ -234,7 +217,7 @@ $(document).ready(function () {
     });
 
     $("#Gym").on('tap', function () {
-        $("#disciplinas").toggle(200);
+        $("#disciplinas").slideToggle("fast");
         document.getElementById('audio').pause();
         $("#audio").attr("src", "assets/audio/gimnasio.mp3");
         $(".swichtab-contents").css("margin-bottom", "0px");
@@ -276,26 +259,30 @@ $(document).ready(function () {
     });
 
     $(".btn-back").on('tap', function () {
-        $("#disciplinas").toggle(200);
+        $("#disciplinas").slideToggle("fast");
         document.getElementById('audio').currentTime = 0;
         document.getElementById('audio').pause();
-        var path = new String(document.getElementById("galVideo").getAttribute("src").toString());
         document.getElementById("galVideo").src = "";
-        document.getElementById("galVideo").src = path;
+        $(".swichtab-contents").removeAttr("style");
         $(".swichtab-contents").css("margin-bottom", "60px");
         $("li.is-active>a").css("background", "rgba(0,183,234,1)");
         $(".swichtab-controller>li").css("background", " rgb(6, 0, 85)");
-        $("#touchSlider").css("display", "none");
+        
+        $("#touchSlider").slideToggle("fast");
     });
     $("#Inicio").on('tap', function () {
         document.getElementById("galVideo").src = "";
-        document.getElementById("galVideo").src = path;
         document.getElementById('audio').currentTime = 0;
         document.getElementById('audio').pause();
+        document.getElementById('audio-carousel').currentTime = 0;
+        document.getElementById('audio-carousel').pause();
         $("#Unete>a").removeAttr("style");
-        $(".swichtab-contents").css("margin-bottom", "60px");
-        $(".swichtab-contents").css("display", "flex");
-        $("#touchSlider").css("display", "none");
+        $(".swichtab-contents").removeAttr("style");
+        $(".swichtab-contents").removeAttr("style");
+        $(".swichtab-contents").css("margin-bottom", "60px");        
+        $("#touchSlider").removeAttr("style");
+        $("#touchSlider").css({ "display": "none" });
+
     });
 
     /*Scripts relacionados con tab de Unete*/
@@ -303,17 +290,20 @@ $(document).ready(function () {
         document.getElementById("galVideo").src = "";
         document.getElementById('audio').currentTime = 0;
         document.getElementById('audio').pause();
+        document.getElementById('audio-carousel').currentTime = 0;
+        document.getElementById('audio-carousel').pause();
         $("li>a").removeAttr("style");
         $(".swichtab-controller>li").css("background", " rgb(6, 0, 85)");
         $(".swichtab-contents").css("margin-bottom", "auto");
-        $("#touchSlider").css("display", "none");
+        $("#touchSlider").removeAttr("style");
+        $("#touchSlider").css({ "display": "none!important" });
     });
     $("#btnNextF0").on('click', function () {
         $("#Form0").css("display", "none");
-        $(".bgFormulario").css("background-image", "url('assets/bg_form4.jpg ')",);
+        $(".bgFormulario").css("background-image", "url('assets/bg_form4.jpg ')", );
         $("#Form1").css("display", "block");
         $("#barraProgreso").attr("style", "width:25%");
-        $("#Form1").animate({opacity: '1'});
+        $("#Form1").animate({ opacity: '1' });
     });
 
     $("#btnBackF1").on('click', function () {
@@ -321,7 +311,7 @@ $(document).ready(function () {
         $(".bgFormulario").css("background-image", "url('assets/bg_form0.jpg ')");
         $("#Form0").css("display", "block");
         $("#barraProgreso").attr("style", "width:0%");
-        $("#Form0").animate({opacity: '1'});
+        $("#Form0").animate({ opacity: '1' });
     });
 
     $("#btnNextF1").on('click', function () {
@@ -329,7 +319,7 @@ $(document).ready(function () {
         $("#Form1").css("display", "none");
         $("#Form2").css("display", "block");
         $("#barraProgreso").attr("style", "width:50%");
-        $("#Form2").animate({opacity: '1'});
+        $("#Form2").animate({ opacity: '1' });
     });
 
     $("#btnBackF2").on('click', function () {
@@ -337,7 +327,7 @@ $(document).ready(function () {
         $("#Form2").css("display", "none");
         $("#Form1").css("display", "block");
         $("#barraProgreso").attr("style", "width:25%");
-        $("#Form1").animate({opacity: '1'});
+        $("#Form1").animate({ opacity: '1' });
     });
 
     $("#btnNextF2").on('click', function () {
@@ -347,7 +337,7 @@ $(document).ready(function () {
         $("#Form3").css("display", "block");
         $("#head_inscripcion").text("Verifica tus datos");
         $("#barraProgreso").attr("style", "width:100%");
-        $("#Form3").animate({opacity: '1'});
+        $("#Form3").animate({ opacity: '1' });
 
     });
 
@@ -357,7 +347,7 @@ $(document).ready(function () {
         $("#head_inscripcion").text("¡¡¡INSCRIBETE!!!");
         $("#Form2").css("display", "block");
         $("#barraProgreso").attr("style", "width:50%");
-        $("#Form2").animate({opacity: '1'});
+        $("#Form2").animate({ opacity: '1' });
     });
 
 
@@ -366,94 +356,87 @@ $(document).ready(function () {
         document.getElementById("galVideo").src = "";
         document.getElementById('audio').currentTime = 0;
         document.getElementById('audio').pause();
+        document.getElementById('audio-carousel').currentTime = 0;
+        document.getElementById('audio-carousel').pause();
         $("li>a").removeAttr("style");
         $(".swichtab-controller>li").css("background", " rgb(6, 0, 85)");
         $(".swichtab-contents").css("margin-bottom", "auto");
-        $("#touchSlider").css("display", "none");
+        $("#touchSlider").removeAttr("style");
+        $("#touchSlider").css({ "display": "none!important" });
     });
-    /*
-    //Audio para Slide Info01
-    $("#carouselInfo").ready(function (){
-        document.getElementById('audio-carousel').currentTime = 0;
-        document.getElementById('audio-carousel').pause();
-        $("#audio-carousel").attr("src", "assets/audio/Info01.mp3");
-    });
-    //Audio para Slide Info02
-    $("#info-membresia-bg").ready(function (){
-        document.getElementById('audio-carousel').currentTime = 0;
-        document.getElementById('audio-carousel').pause();
-        $("#audio-carousel").attr("src", "assets/audio/Info02.mp3");
-    });
-    */
     
-    
+
+
     $('#audio-carouselo').on('click', function () {
-        if ($("#info-historia-bg").hasClass("active")){
+        if ($("#info-historia-bg").hasClass("active")) {
             $("#audio-carousel").attr("src", "assets/audio/Info01.mp3");
-        }else if ($("#info-membresia-bg").hasClass("active")){
+        } else if ($("#info-membresia-bg").hasClass("active")) {
             $("#audio-carousel").attr("src", "assets/audio/Info02.mp3");
-        }else if ($("#info-tour-bg").hasClass("active")){
+        } else if ($("#info-tour-bg").hasClass("active")) {
             $("#audio-carousel").attr("src", "assets/audio/Info03.mp3");
-        }else if ($("#info-carateristicas-bg").hasClass("active")){
+        } else if ($("#info-carateristicas-bg").hasClass("active")) {
             $("#audio-carousel").attr("src", "assets/audio/Info04.mp3");
-        }else if ($("#info-mapa-bg").hasClass("active")){
+        } else if ($("#info-mapa-bg").hasClass("active")) {
             $("#audio-carousel").attr("src", "assets/audio/Info05.mp3");
         }
         document.getElementById('audio-carousel').play();
     });
-    
-    
-    
-    $("#carousel-next").on("tap", function(){
+
+
+
+    $("#carousel-next").on("tap", function () {
         document.getElementById('audio-carousel').currentTime = 0;
         document.getElementById('audio-carousel').pause();
     });
-    $("#carousel-prev").on("tap", function(){
+    $("#carousel-prev").on("tap", function () {
         document.getElementById('audio-carousel').currentTime = 0;
         document.getElementById('audio-carousel').pause();
     });
-    
-    
-    $("#carousel-next-gal").on("tap", function(){
+
+
+    $("#carousel-next-gal").on("tap", function () {
         var path = new String(document.getElementById("galVideo").getAttribute("src").toString());
         document.getElementById("galVideo").src = "";
         document.getElementById("galVideo").src = path;
     });
-    $("#carousel-prev-gal").on("tap", function(){
+    $("#carousel-prev-gal").on("tap", function () {
         var path = new String(document.getElementById("galVideo").getAttribute("src").toString());
         document.getElementById("galVideo").src = "";
         document.getElementById("galVideo").src = path;
     });
-    
-    
+
+
     $("#Promos").on('tap', function () {
         document.getElementById("galVideo").src = "";
         document.getElementById('audio').currentTime = 0;
         document.getElementById('audio').pause();
+        document.getElementById('audio-carousel').currentTime = 0;
+        document.getElementById('audio-carousel').pause();
         $("li>a").removeAttr("style");
         $(".swichtab-controller>li").css("background", " rgb(6, 0, 85)");
         $(".swichtab-contents").css("margin-bottom", "auto");
-        $("#touchSlider").css("display", "none");
+        $("#touchSlider").removeAttr("style");
+        $("#touchSlider").css({ "display": "none!important" });
     });
 
     $("select").on("change", function () {
         let s_disciplina = document.getElementById("select_disciplina");
         let s_meses = document.getElementById("select_meses");
         let s_horario = document.getElementById("select_horario");
-        //selectedIndex
+        
         console.log("llamando a colores")
         colores(this);
-        if (s_disciplina.value=="Selecciona una disciplina" && s_horario.value=="Selecciona tu horario" && s_horario.selectedIndex==0 && cuponvalido==false){
+        if (s_disciplina.value == "Selecciona una disciplina" && s_horario.value == "Selecciona tu horario" && s_horario.selectedIndex == 0 && cuponvalido == false) {
             $("#btnNextF0").prop('disabled', false);
         } else {
             $("#btnNextF0").prop('disabled', true);
         }
         if (this.id === "select_disciplina") {
-           obtenerGruposHorarios();
+            obtenerGruposHorarios();
         }
-        
+
     });
-    
+
 
     $("input").on("keyup change", function () {
         var expr = /^[a-zA-Z0-9_\.\-]+@[a-zA-Z0-9\-]+\.[a-zA-Z0-9\-\.]+$/;
@@ -466,21 +449,21 @@ $(document).ready(function () {
         var colonia = document.getElementById("inputColonia").value;
         var no_casa = document.getElementById("inputNumcasa").value;
         var cp = document.getElementById("inputCP").value;
-    
-        if (this.id === "inputCupon") {           
+
+        if (this.id === "inputCupon") {
             validarPromo();
         }
 
-        if (nombre != "" && apellido != "" && telefono != "" && f_nac != "" && email!="") {
+        if (nombre != "" && apellido != "" && telefono != "" && f_nac != "" && email != "") {
             $("#btnNextF1").prop('disabled', false);
         } else {
             $("#btnNextF1").prop('disabled', true);
         }
         if (this.id == "inputEmail") {
-            if (email == "" || !expr.test(email)) {                
+            if (email == "" || !expr.test(email)) {
                 $("#inputEmail").removeClass("okInput");
                 $("#inputEmail").addClass("errorInput");
-            } else {                
+            } else {
                 $("#inputEmail").removeClass("errorInput");
                 $("#inputEmail").addClass("okInput");
             }
@@ -562,21 +545,19 @@ function datosPntConf() {
 
 function verificaInputCupon(cuponValido) {
     if (cuponValido) {
-        cuponvalido=true;
-        
+        cuponvalido = true;
+
         $("#inputCupon").removeClass("errorInput");
         $("#inputCupon").addClass("okInput");
     } else {
-        cuponvalido=false;
-        
+        cuponvalido = false;
+
         $("#inputCupon").removeClass("okInput");
         $("#inputCupon").addClass("errorInput");
     }
 
 }
-function getId(id){
-    alert(id);
-}
+
 function rellenaHorarios(mapa) {
     let select, option, i;
     select = document.getElementById("select_horario");
@@ -590,26 +571,26 @@ function rellenaHorarios(mapa) {
     }
 }
 
-function colores(){
+function colores() {
     let s_disciplina = document.getElementById("select_disciplina");
     let s_meses = document.getElementById("select_meses");
     let s_horario = document.getElementById("select_horario");
-    
-    if (s_disciplina.selectedIndex!="0") {
+
+    if (s_disciplina.selectedIndex != "0") {
         $("#select_disciplina").removeClass("errorSelection");
-        $("#select_disciplina").addClass("okSelection");        
-        
-    }else{
+        $("#select_disciplina").addClass("okSelection");
+
+    } else {
         console.log(" Disciplina no Valida");
         $("#select_disciplina").addClass("errorSelection");
         $("#select_disciplina").removeClass("okSelection");
     }
 
-    if (s_horario.value!="Selecciona tu horario") {
+    if (s_horario.value != "Selecciona tu horario") {
         console.log("Horario Valido");
         $("#select_horario").addClass("okSelection");
         $("#select_horario").removeClass("errorSelection");
-    }else{
+    } else {
         console.log("Horario  no Valido");
         $("#select_horario").addClass("errorSelection");
         $("#select_horario").removeClass("okSelection");
@@ -618,7 +599,7 @@ function colores(){
     if (s_meses.selectedIndex != 0) {
         $("#select_meses").addClass("okSelection");
         $("#select_meses").removeClass("errorSelection");
-    }else{
+    } else {
         $("#select_meses").addClass("errorSelection");
         $("#select_meses").removeClass("okSelection");
     }
