@@ -15,10 +15,12 @@ function getCode(id) {
     }
     switch (id.toString()) {
         case "promo3": //NATACION
+            document.getElementById("sel-waterpolo").removeAttribute("selected");
             document.getElementById("sel-natacion").setAttribute("selected", true);
             break;
         case "promo5": //WATERPOLO
-            document.getElementById("sel-waterpolo").setAttribute("selected", true);
+            document.getElementById("sel-natacion").removeAttribute("selected");
+            document.getElementById("sel-waterpolo").setAttribute("selected", true);            
             break;
         default:
             document.getElementById("sel-default").selected = true;
