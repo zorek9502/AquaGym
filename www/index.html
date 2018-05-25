@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="css/formularios.css">
     <link rel="stylesheet" href="css/galery.css">
     <link rel="stylesheet" href="css/info.css">
+    <link rel="stylesheet" href="css/animations.css">
     <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Roboto:300,400,500,700|Roboto+Slab:400,700|Material+Icons"
     />
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
@@ -83,7 +84,7 @@
                         <!--Formulario donde se elije la disciplina-->
                         <div id="Form0">
                             <div class="form-group row datosFormulario">
-                                <select id="select_disciplina" class="custom-select">
+                                <select id="select_disciplina" class="custom-select form-control ">
                                     <option selected id="sel-default">Selecciona una disciplina</option>
                                     <option id="sel-natacion" value="natacion">Natacion</option>
                                     <option id="sel-waterpolo" value="waterpolo">Waterpolo</option>
@@ -92,12 +93,12 @@
                                     <option id="sel-gym" value="gym">Gym</option>
                                 </select>
 
-                                <select id="select_horario" class="custom-select">
+                                <select id="select_horario" class="custom-select form-control">
                                     <option selected>Selecciona tu horario</option>
                                 </select>
 
                                 <label for="select_meses" class="col-sm-4 col-form-label">¿Cuantos meses?</label>
-                                <select id="select_meses" class="custom-select">
+                                <select id="select_meses" class="custom-select form-control">
                                     <option value="0" selected>Selecciona periodo</option>
                                     <option value="1">1 Mes</option>
                                     <option value="2">2 Meses</option>
@@ -273,7 +274,7 @@
                                     <a id="btnBackF3" class="btn btn-block btn-primary">Regresar</a>
                                 </div>
                                 <div class="col-4 offset-2 d-inline">
-                                    <button id="btnConfirmacion" class="btn btn-danger" onclick="registrar()">
+                                    <button type="button" id="btnConfirmacion" class="btn btn-block btn-danger" onclick="registrar()">
                                         ¡INSCRIBEME!
                                     </button>
                                 </div>
@@ -291,6 +292,8 @@
                         <i class="fas fa-volume-up speak-icon"></i>
                     </a>
                 </div>
+
+
 
                 <div class="row">
                     <div id="carouselInfo" class="carousel slide" data-interval="false">
@@ -322,7 +325,7 @@
                                             equipo e instalaciones de vanguardia, una variedad de clases personalizadas según
                                             tus necesidades y los mejores entrenadores personales.
                                         </p>
-                                        <p>Inscríbete hoy y experimenta el cambio con AquaGym.</p>
+                                        <strong>Inscríbete hoy y experimenta el cambio con AquaGym.</strong>
                                     </div>
                                 </div>
                             </div>
@@ -498,6 +501,9 @@
                             <a>
                                 <i class="fas fa-volume-up speak-icon" onclick="document.getElementById('audio').play()"></i>
                             </a>
+                        </div>
+                        <div class="flotante_slideIndicator">
+                            <img id="slideIndicator" src="assets/TouchSlider_imgs/Slide_Left-Right.png" alt="">
                         </div>
                     </li>
                     <li id="horarios_ts">
@@ -731,7 +737,10 @@
     <!-- jsPDF -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.0.272/jspdf.debug.js"></script>
     <!-- Scripts -->
-    
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/annyang/2.6.1/annyang.min.js"></script>
+    <script type="text/javascript" src="js/speech.js"></script>
+
     <script type="text/javascript" src="js/jquery.touchSlider.js"></script>
     <script type="text/javascript" src="js/scripts.js"></script>
     <script type="text/javascript" src="js/jquery.swichTab.js" charset="utf-8"></script>
