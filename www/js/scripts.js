@@ -1,5 +1,6 @@
 let cuponvalido = false;
 $(document).ready(function () {
+    
     /*Scripts relacionados con tab de Inicio y disciplinas*/
     var tMatutino_height = $("tMatutino").height();
     $("#touchSlider").touchSlider({
@@ -21,30 +22,34 @@ $(document).ready(function () {
         document.getElementById('audio').pause();
     });
     $("#carouselInfo").on('swipeleft', function (e) {
-        
-        document.getElementById('audio-carousel').currentTime = 0;
-        document.getElementById('audio-carousel').pause();
-    });
-    $("#carouselInfo").on('swiperight', function (e) {        
-        document.getElementById('audio-carousel').currentTime = 0;
-        document.getElementById('audio-carousel').pause();
-    });
     
+        document.getElementById('audio-carousel').currentTime = 0;
+        document.getElementById('audio-carousel').pause();
+    });
+    $("#carouselInfo").on('swiperight', function (e) {
+        document.getElementById('audio-carousel').currentTime = 0;
+        document.getElementById('audio-carousel').pause();
+    });
+
     $("#Horarios").on('swipeup', function (e) {
         $("#tMatutino").slideToggle("fast");
     });
     $("#Horarios").on('swipedown', function (e) {
         $("#tMatutino").slideToggle("fast");
     });
-
-    if (screen.height >= 1024 && screen.width >= 768) {
+    let screen_height = tamVentana()[1];
+    let screen_width = tamVentana()[1];
+    if (screen_height >= 1024 && screen_width >= 768) {
+        console.log("Ipha");
         $("button").addClass("btn-lg");
+        $("a#btnBackF3").addClass("btn-lg");
         $("#botonSiguente").removeClass("col-3 offset-2");
-        $("#botonSiguente").addClass("col-2 offset-3");
+        $("#botonSiguente").addClass("col-2 offset-2");
         $("#botonSiguente2").removeClass("col-3 offset-2");
-        $("#botonSiguente2").addClass("col-2 offset-3");
+        $("#botonSiguente2").addClass("col-2 offset-2");
         $("#encabezado_texto").removeClass("col-10");
         $("#encabezado_texto").addClass("col-7 offset-2  ");
+        $("input.form-control").addClass("form-control-lg");
         $("h4").css({
             "font-size": "2.5rem"
         });
@@ -57,14 +62,12 @@ $(document).ready(function () {
         $("strong").css({
             "font-size": "1.5rem"
         });
-        $("ul>li>a").css({
-            "font-size": "1.5rem"
-        });
-    }   
+        $("select.form-control").addClass("form-control-lg");
+    }
     /*Scripts relacionados con tab Inicio c/u disciplinas*/
 
     $("#Natacion").on('tap', function () {
-        $("#disciplinas").slideToggle("fast");
+        $("#disciplinas").slideToggle();
         document.getElementById('audio').pause();
         $("#audio").attr("src", "assets/audio/natacion.mp3");
         $(".swichtab-contents").css({ "margin-bottom": "0px" });
@@ -102,6 +105,11 @@ $(document).ready(function () {
         $("li.is-active>a").css("background", "rgb(12, 109, 181)");
         $("#touchSlider").css("background", "-webkit-linear-gradient(top, rgb(50, 63, 104) 0%,rgba(42, 77, 204, 0.84) 9%,rgba(0, 166, 234, 0.92) 100%)");
         $("#touchSlider").css("display", "flex");
+        $(".flotante_slideIndicator").css({
+            "animation": "touchIndicator",
+            "animation-duration": "5s",
+            "animation-iteration-count": "3"
+        });
     });
 
     $("#Waterpolo").on('tap', function () {
@@ -132,6 +140,11 @@ $(document).ready(function () {
         $("li.is-active>a").css("background", "rgb(83, 185, 217)");
         $("#touchSlider").css("background", "-webkit-linear-gradient(top, rgba(6,123,219,1) 0%,rgba(5,171,224,1) 0%,rgba(5,171,224,1) 34%,rgba(83,203,241,1) 72%,rgba(135,224,253,1) 97%,rgba(151,228,252,1) 100%)");
         $("#touchSlider").css("display", "flex");
+        $(".flotante_slideIndicator").css({
+            "animation": "touchIndicator",
+            "animation-duration": "5s",
+            "animation-iteration-count": "3"
+        });
     });
 
     $("#Bodybuilding").on('tap', function () {
@@ -173,6 +186,11 @@ $(document).ready(function () {
         $("li.is-active>a").css("background", "rgb(130, 122, 31)");
         $("#touchSlider").css("background", "-webkit-linear-gradient(top, rgb(0, 0, 0) 0%,rgba(45, 0, 0, 0.84) 9%,rgba(113, 0, 0, 0.92) 100%)");
         $("#touchSlider").css("display", "flex");
+        $(".flotante_slideIndicator").css({
+            "animation": "touchIndicator",
+            "animation-duration": "5s",
+            "animation-iteration-count": "3"
+        });
     });
     $("#Crossfit").on('tap', function () {
         $("#disciplinas").slideToggle("fast");
@@ -214,6 +232,11 @@ $(document).ready(function () {
         $("li.is-active>a").css("background", "-webkit-linear-gradient(top, rgb(93, 4, 4) 1%, rgb(68, 5, 3) 100%)");
         $("#touchSlider").css("background", "-webkit-linear-gradient(top, rgb(0, 0, 0) 0%, rgba(60, 59, 59, 0.84) 9%, rgba(193, 191, 189, 0.92) 100%)");
         $("#touchSlider").css("display", "flex");
+        $(".flotante_slideIndicator").css({
+            "animation": "touchIndicator",
+            "animation-duration": "5s",
+            "animation-iteration-count": "3"
+        });
     });
 
     $("#Gym").on('tap', function () {
@@ -256,6 +279,11 @@ $(document).ready(function () {
         $("li.is-active>a").css("background", "#b51118");
         $("#touchSlider").css("background", " -webkit-linear-gradient(top, rgb(140, 21, 21) 0%, rgb(58, 41, 41) 100%)");
         $("#touchSlider").css("display", "flex");
+        $(".flotante_slideIndicator").css({
+            "animation": "touchIndicator",
+            "animation-duration": "5s",
+            "animation-iteration-count": "3"
+        });
     });
 
     $(".btn-back").on('tap', function () {
@@ -267,7 +295,7 @@ $(document).ready(function () {
         $(".swichtab-contents").css("margin-bottom", "60px");
         $("li.is-active>a").css("background", "rgba(0,183,234,1)");
         $(".swichtab-controller>li").css("background", " rgb(6, 0, 85)");
-        
+
         $("#touchSlider").slideToggle("fast");
     });
     $("#Inicio").on('tap', function () {
@@ -279,7 +307,7 @@ $(document).ready(function () {
         $("#Unete>a").removeAttr("style");
         $(".swichtab-contents").removeAttr("style");
         $(".swichtab-contents").removeAttr("style");
-        $(".swichtab-contents").css("margin-bottom", "60px");        
+        $(".swichtab-contents").css("margin-bottom", "60px");
         $("#touchSlider").removeAttr("style");
         $("#touchSlider").css({ "display": "none" });
 
@@ -364,7 +392,7 @@ $(document).ready(function () {
         $("#touchSlider").removeAttr("style");
         $("#touchSlider").css({ "display": "none!important" });
     });
-    
+
 
 
     $('#audio-carouselo').on('click', function () {
@@ -423,7 +451,7 @@ $(document).ready(function () {
         let s_disciplina = document.getElementById("select_disciplina");
         let s_meses = document.getElementById("select_meses");
         let s_horario = document.getElementById("select_horario");
-        
+
         console.log("llamando a colores")
         colores(this);
         if (s_disciplina.value == "Selecciona una disciplina" && s_horario.value == "Selecciona tu horario" && s_horario.selectedIndex == 0 && cuponvalido == false) {
@@ -603,4 +631,27 @@ function colores() {
         $("#select_meses").addClass("errorSelection");
         $("#select_meses").removeClass("okSelection");
     }
+}
+
+
+function tamVentana() {
+    var tam = [0, 0];
+    if (typeof window.innerWidth != 'undefined') {
+        tam = [window.innerWidth, window.innerHeight];
+    }
+    else if (typeof document.documentElement != 'undefined'
+        && typeof document.documentElement.clientWidth !=
+        'undefined' && document.documentElement.clientWidth != 0) {
+        tam = [
+            document.documentElement.clientWidth,
+            document.documentElement.clientHeight
+        ];
+    }
+    else {
+        tam = [
+            document.getElementsByTagName('body')[0].clientWidth,
+            document.getElementsByTagName('body')[0].clientHeight
+        ];
+    }
+    return tam;
 }
