@@ -24,3 +24,17 @@ img[class ~= "card-img"] {
 .speak-icon{
     font-size: 1.5rem;
 }
+
+.flotante_slideIndicator{
+    top: 5%;
+    position: absolute;
+    left: 15%;
+    z-index: 1;
+    color: #def9ff;
+    opacity: 0; 
+}
+
+#slideIndicator{
+    height: 50px;
+    width: 50px;
+}
