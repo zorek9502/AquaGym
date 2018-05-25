@@ -5,8 +5,8 @@ cordova jspdf
 
 ---------------------------
 detener video cuando se presiona ATRAS	****COMPLETADO*****
-cuando se presionan las promos NO DEBE CAMBIAR el valor de select disciplina
-cuando se presiona en anuncio de boxeo se aplica NATACIONFREE
+cuando se presionan las promos NO DEBE CAMBIAR el valor de select disciplina ****COMPLETADO*****
+cuando se presiona en anuncio de boxeo se aplica NATACIONFREE ****COMPLETADO*****
 
 ---------------------------
 SEGUNDO y TERCER boton siguiente están activados por defecto  ****COMPLETADO*****
