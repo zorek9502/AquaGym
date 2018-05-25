@@ -9,7 +9,7 @@ $(document).ready(function () {
     $('.tabGroup1').swichTab();
     $('.tabGroup2').swichTab({
         cahngePanel: 'fade',
-        swiper: true,
+        swiper: false,
         index: 0,
     });
     $("#touchSlider").on('swipeleft', function (e) {
