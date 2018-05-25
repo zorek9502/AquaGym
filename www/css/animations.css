@@ -1,0 +1,28 @@
+@keyframes touchIndicator{
+    0%{
+        opacity: 0;
+    }
+    25%{
+        opacity: 1;
+    }
+    45%{
+        opacity: 1;
+        left: 15%;
+    }
+    55%{
+        opacity: 1;
+        left: 5%;
+    }
+    75%{
+        opacity: 1;
+        left: 25%;
+    }
+    95%{
+        opacity: 1;
+        left: 15%;
+    }
+    100%{
+        left: 15%;
+        opacity: 0;
+    }
+}
