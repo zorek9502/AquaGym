@@ -1,3 +1,5 @@
+/*Ipad*/
+
 @media (max-width: 1025px) {
     .circle-img {
         width: 60%
@@ -7,7 +9,7 @@
     }
     #descripcion {
         font-size: 15pt;
-        /*color: rgb(255, 0, 0);*/
+        color: rgb(255, 0, 0);
     }
     .card-title {
         font-size: 4.5rem;
@@ -19,6 +21,19 @@
     .confirmacion {
         font-size: 1.2rem!important;
     }
+    .swichtab-controller>li>a {
+        font-size: 1.5rem;
+    }
+    select.form-control {
+        margin-bottom: 5%;
+    }
+    div.form-group>label{
+        font-size: 1.5rem;
+    }
+    input.form-control{
+        margin-bottom: 5%;
+    }
+   
 }
 
 @media (max-height: 1366px) {
@@ -53,7 +68,7 @@
 @media (max-height: 736px) {
     .confirmacion {
         font-size: .9rem!important;
-        height: 70%;
+        height: 65%;
     }
     .caract {
         margin-top: 0.7rem!important;
@@ -83,23 +98,30 @@
         font-size: .875rem;
         line-height: 1.5;
         border-radius: .2rem;
-        margin-top: 0px;
+        margin-top: 2%;
         margin-bottom: 2%;
+    }
+    div.confirmacion {
+        font-size: 0.8rem;
+        height: 63%;
     }
 }
 
-@media (max-height: 568px) {
+@media (max-height: 600px) {
     .confirmacion {
         font-size: .7rem!important;
         height: 55%;
     }
     div.form-group {
         padding: .25rem .5rem;
-        font-size: .875rem;
+        font-size: .875rem!important;
         line-height: 1.5;
         border-radius: .2rem;
         margin-top: 0px;
         margin-bottom: 2%;
+    }
+    div.confirmacion {
+        height: 60%;
     }
 }
 
@@ -112,7 +134,7 @@
     }
     #descripcion {
         font-size: 14pt;
-        /*color: rgb(0, 255, 0);*/
+        color: rgb(0, 255, 0);
     }
     .card-title {
         font-size: 2.5rem;
@@ -135,7 +157,25 @@
     }
     #descripcion {
         font-size: 11.5pt;
-        /*color: rgb(0, 0, 255);*/
+        color: rgb(0, 0, 255);
+    }
+    .swichtab-controller>li>a {
+        font-size: 1rem;
+    }
+    select.form-control {
+        margin-bottom: 5%;
+    }
+    div.form-group>label{
+        font-size: .8rem;
+    }
+    input.form-control{
+        margin-bottom: 0%;
+    }
+}
+
+@media(max-width: 470px) {
+    #btnConfirmacion {
+        width: 100px;
     }
 }
 
@@ -148,7 +188,7 @@
     }
     #descripcion {
         font-size: 10pt;
-        /*color: rgb(238, 255, 0);*/
+        color: rgb(238, 255, 0);
     }
     #head_inscripcion {
         text-align: center;
@@ -160,5 +200,17 @@
         font-size: .875rem;
         line-height: 1.5;
         border-radius: .2rem;
+    }
+    .swichtab-controller>li>a {
+        font-size: 1rem;
+    }
+    select.form-control {
+        margin-bottom: 5%;
+    }
+    div.form-group>label{
+        font-size: .8rem;
+    }
+    input.form-control{
+        margin-bottom: 0%;
     }
 }
