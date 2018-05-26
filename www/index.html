@@ -20,9 +20,11 @@
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
         crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css?family=Roboto+Slab" rel="stylesheet">
+    <!-- Cordova -->
+    <script type="text/javascript" charset="utf-8" src="cordova.js"></script>
 </head>
 
-<body>
+<body onload="onLoad()">
     <div class="tabGroup tabGroup2">
         <div class="swichtab-contents ">
             <div id="disciplinas" class="swichtab-panel" data-swichtab="target">
@@ -274,7 +276,7 @@
                                     <a id="btnBackF3" class="btn btn-block btn-primary">Regresar</a>
                                 </div>
                                 <div class="col-4 offset-2 d-inline">
-                                    <button type="button" id="btnConfirmacion" class="btn btn-block btn-danger" onclick="registrar()">
+                                    <button type="button" id="btnConfirmacion" class="btn btn-block btn-danger">
                                         ¡INSCRIBEME!
                                     </button>
                                 </div>
@@ -303,6 +305,8 @@
                             <li data-target="#carouselInfo" data-slide-to="2"></li>
                             <li data-target="#carouselInfo" data-slide-to="3"></li>
                             <li data-target="#carouselInfo" data-slide-to="4"></li>
+                            <li data-target="#carouselInfo" data-slide-to="5"></li>
+                            <li data-target="#carouselInfo" data-slide-to="6"></li>
                         </ol>
                         <div class="carousel-inner" role="listbox">
                             <div class="carousel-item active" id="info-historia-bg">
@@ -335,14 +339,42 @@
                                         <div class="container ">
                                             <div class="row">
                                                 <div class="col-12">
-                                                    <h3 id="tour_header">Toma un Tour</h3>
+                                                    <h3 id="tour_header">Tour Alberca</h3>
                                                 </div>
                                                 <div class="col-9 offset-1">
-                                                    <iframe class="virtual-guide" src="https://www.360cities.net/embed_iframe/swimming-pool-waterpolo-eger" frameborder="0" bgcolor="#000000"
-                                                        target="_blank" allowfullscreen webkitallowfullscreen mozallowfullscreen></iframe>
-                                                    <iframe class="virtual-guide" src="https://www.360cities.net/embed_iframe/gym-hotel-belroy-four-stars-close-to-the-beach-in-benidorm-alicante"
-                                                        frameborder="0" bgcolor="#000000" target="_blank" allowfullscreen webkitallowfullscreen
-                                                        mozallowfullscreen></iframe>
+                                                    <iframe class="virtual-guide" src="https://www.google.com/maps/embed?pb=!4v1527356963572!6m8!1m7!1sCAoSLEFGMVFpcFA3Uy1mYzVtdE5ERkJuRl9KR2c5cmp4NHlXeGhnR28yRDNvaGR3!2m2!1d30.29440252083064!2d-89.71992841997866!3f140.02!4f-9.319999999999993!5f0.4000000000000002" frameborder="0" style="border:0"></iframe>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item" id="info-tour-bg">
+                                <div id="info-tour-bg">
+                                    <div class="fondo_obscuro">
+                                        <div class="container ">
+                                            <div class="row">
+                                                <div class="col-12">
+                                                    <h3 id="tour_header">Tour Gimnasio</h3>
+                                                </div>
+                                                <div class="col-9 offset-1">
+                                                    <iframe class="virtual-guide" src="https://www.google.com/maps/embed?pb=!4v1527358773706!6m8!1m7!1sCAoSLEFGMVFpcFA5enpiNERZVVdCMFNON0laRGVYQjNWNmd1cEF3RXYtOHA0eHFD!2m2!1d30.29458965404133!2d-89.7199975529926!3f200.01!4f-7.950000000000003!5f0.4000000000000002" frameborder="0" style="border:0"></iframe>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="carousel-item" id="info-tour-bg">
+                                <div id="info-tour-bg">
+                                    <div class="fondo_obscuro">
+                                        <div class="container ">
+                                            <div class="row">
+                                                <div class="col-12">
+                                                    <h3 id="tour_header">Tour Estudio</h3>
+                                                </div>
+                                                <div class="col-9 offset-1">
+                                                    <iframe class="virtual-guide" src="https://www.google.com/maps/embed?pb=!4v1527358997867!6m8!1m7!1sCAoSLEFGMVFpcE4xaHJJRE1NcFVRQmhWbl9FakMtNmlpSXA5OHljMmk3Uy1DOEJq!2m2!1d30.2947640670791!2d-89.72003869676655!3f255.88283309163126!4f-9.175074770667678!5f0.7820865974627469" frameborder="0" style="border:0"></iframe>
                                                 </div>
                                             </div>
                                         </div>
@@ -620,17 +652,17 @@
                                         <li data-target="#carouselGaleria" data-slide-to="3"></li>
                                     </ol>
                                     <div class="carousel-inner" role="listbox">
-                                        <div class="carousel-item gal-item active">
+                                        <div class="carousel-item active">
                                             <img id="galImg1" class="imgGalery">
                                         </div>
-                                        <div class="carousel-item gal-item">
+                                        <div class="carousel-item ">
                                             <img id="galImg2" class="imgGalery">
 
                                         </div>
-                                        <div class="carousel-item gal-item">
+                                        <div class="carousel-item">
                                             <img id="galImg3" class="imgGalery">
                                         </div>
-                                        <div class="carousel-item gal-item-video">
+                                        <div class="carousel-item">
                                             <iframe id="galVideo" frameborder="0" allow="autoplay; encrypted-media"></iframe>
                                         </div>
                                     </div>
@@ -722,10 +754,10 @@
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
         crossorigin="anonymous"></script>
-    
+
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"crossorigin="anonymous"></script>
     <!--<script src="js/bootstrap.min.js"></script>-->
-    
+
     <!--FontAwesome-->
     <script defer src="https://use.fontawesome.com/releases/v5.0.9/js/all.js" integrity="sha384-8iPTk2s/jMVj81dnzb/iFR2sdA7u06vHJyyLlAd4snFpCl/SnyUjRrbdJsw1pGIl"
         crossorigin="anonymous"></script>
@@ -733,12 +765,12 @@
     <!-- JQuery Mobile-->
     <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-touch-events/1.0.5/jquery.mobile-events.js"></script>-->
     <script type="text/javascript" src="js/jquery.mobile-events.min.js"></script>
-    
+
     <!-- jsPDF -->
     <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.0.272/jspdf.debug.js"></script>
-    <!-- Scripts -->
-
+    <!-- annyang -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/annyang/2.6.1/annyang.min.js"></script>
+    <!-- Scripts -->
     <script type="text/javascript" src="js/speech.js"></script>
 
     <script type="text/javascript" src="js/jquery.touchSlider.js"></script>

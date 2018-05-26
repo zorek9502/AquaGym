@@ -17,6 +17,9 @@ const DISCIPLINA_NATACION = "natacion";
 const DISCIPLINA_WATERPOLO = "waterpolo";
 const HASH_KEY_MEMBRESIA = "membresia";
 const SIN_CUPON = "no le gustan los descuentos eh?";
+const MENSAJE_CONFIRMACION = "¡Estás a punto de inscribirte al mejor gimnasio! ¿Tus datos son correctos?";
+const NOMBRE_ARCHIVO = "aqua-gym.pdf";
+const GENERATE_FROM_CORDOVA = false;
 
 let cupon = "";
 let disciplina = "";
@@ -118,44 +121,51 @@ function validarPromo() {
 }
 
 function registrar() {
-    let now = new Date();
-    _obtenerValores(now);
-    _crearInscripcion()
-        .then(_obtenerMembresia)
-        .then(function (data) {
-            console.log("Se obtuvo la membresia: " + "\n" + JSON.stringify(data, undefined, 2));
-            precioMembresia = data.Item.precio;
-        })
-        .then(_obtenerDisciplina)
-        .then(function (data) {
-            console.log("Se obtuvo la disciplina: " + "\n" + JSON.stringify(data, undefined, 2));
-            mensualidad = data.Item.mensualidad;
-        })
-        .then(_buscarPromo)
-        .then(function (data) {
-            if (data === SIN_CUPON) {
-                console.log("No se aplico cupon");
-                cantidadPago = precioMembresia + (mensualidad * totalMeses);
-            } else {
-                console.log("Se obtuvo la promocion: " + "\n" + JSON.stringify(data, undefined, 2));
-                descuento = data.Item.descuento;
-                instrucciones = data.Item.instrucciones;
-                cantidadPago = _aplicarPromo();
-            }
-        })
-        .then(_crearPago)
-        .then(_obtenerInstructor)
-        .then(function (data) {
-            console.log("Se obtuvo el instructor: " + "\n" + JSON.stringify(data, undefined, 2));
-            nombreInstructor = data.Item.info.nombre;
-            apellidoInstructor = data.Item.info.apellido;
-            horario = data.Item.info.horario;
+    if (confirm(MENSAJE_CONFIRMACION)) {
+        let now = new Date();
+        _obtenerValores(now);
+        _crearInscripcion()
+            .then(_obtenerMembresia)
+            .then(function (data) {
+                console.log("Se obtuvo la membresia: " + "\n" + JSON.stringify(data, undefined, 2));
+                precioMembresia = data.Item.precio;
+            })
+            .then(_obtenerDisciplina)
+            .then(function (data) {
+                console.log("Se obtuvo la disciplina: " + "\n" + JSON.stringify(data, undefined, 2));
+                mensualidad = data.Item.mensualidad;
+            })
+            .then(_buscarPromo)
+            .then(function (data) {
+                if (data === SIN_CUPON) {
+                    console.log("No se aplico cupon");
+                    cantidadPago = precioMembresia + (mensualidad * totalMeses);
+                } else {
+                    console.log("Se obtuvo la promocion: " + "\n" + JSON.stringify(data, undefined, 2));
+                    descuento = data.Item.descuento;
+                    instrucciones = data.Item.instrucciones;
+                    cantidadPago = _aplicarPromo();
+                }
+            })
+            .then(_crearPago)
+            .then(_obtenerInstructor)
+            .then(function (data) {
+                console.log("Se obtuvo el instructor: " + "\n" + JSON.stringify(data, undefined, 2));
+                nombreInstructor = data.Item.info.nombre;
+                apellidoInstructor = data.Item.info.apellido;
+                horario = data.Item.info.horario;
 
-            _generarPDF(now);
-        })
-        .catch(function (err) {
-            console.log(err);
-        });
+                if(GENERATE_FROM_CORDOVA) {
+                    _guardarPDFCordova(now);
+                } else {
+                    let pdf = _generarPDF(now);
+                    pdf.save(NOMBRE_ARCHIVO);
+                }
+            })
+            .catch(function (err) {
+                console.log(err);
+            });
+    }
 }
 
 function _obtenerValorCupon() {
@@ -377,5 +387,74 @@ function _generarPDF(now) {
         pdf.text(20, 292, `* Presentar en recepción para hacerlo válido *`);
     }
 
-    pdf.save("aqua-gym.pdf");
+    return pdf;
+}
+
+
+function onLoad() {
+    document.addEventListener("deviceready", onDeviceReady, false);
+}
+
+function onDeviceReady() {
+    $('#btnConfirmacion').on('click', function () {
+       registrar();
+    });
+}
+
+
+function _guardarPDFCordova(now) {
+    solicitarFS(now);
+}
+
+function solicitarFS(now) {
+    window.resolveLocalFileSystemURL(cordova.file.externalDataDirectory, function (fs) {
+        crearArchivo(fs, NOMBRE_ARCHIVO, false, now);
+    }, onErrorLoadFs);
+
+    function onErrorLoadFs() {
+        alert("Error FS");
+    }
+}
+
+function crearArchivo(dirEntry, fileName, isAppend, now) {
+    dirEntry.getFile(fileName, {create: true, exclusive: false}, function(fileEntry) {
+        escribirArchivo(fileEntry, now);
+    }, onErrorCreateFile);
+
+    function onErrorCreateFile() {
+        alert("Error create");
+    }
+}
+
+function escribirArchivo(fileEntry, now) {
+    let pdf = _generarPDF(now);
+
+    let pdfOutput = pdf.output('blob');
+
+    fileEntry.createWriter(function (fileWriter) {
+        fileWriter.onwriteend = function() {
+            abrirPDF();
+        };
+
+        fileWriter.onerror = function (e) {
+            alert("Failed file write: " + e.toString());
+        };
+
+        fileWriter.write(pdfOutput);
+    });
+}
+
+function abrirPDF() {
+    cordova.plugins.fileOpener2.showOpenWithDialog(
+        cordova.file.externalDataDirectory + NOMBRE_ARCHIVO,
+        'application/pdf',
+        {
+            error : function(e) {
+                alert('Error status: ' + e.status + ' - Error message: ' + e.message);
+            },
+            success : function () {
+                alert('file opened successfully');
+            }
+        }
+    )
 }

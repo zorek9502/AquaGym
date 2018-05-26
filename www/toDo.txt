@@ -1,22 +1,38 @@
 subir a aws
-confirm para inscribeme
-pdf
 speech
-	alert mic
 
+ajustar botón del audio
+	posible: agregar animación cuando reproduzca
 
-
+reemplazar tours
+	corregir audios de tour 2 y 3
+	checar y cambiar id's duplicados en carousel-item
+*confirm para inscribeme
 iframe transform rotate
-separar tours
 gifs
+musica en 2do info
+
+grabar nuevos audios para 3 tours
+
 añadir en Info video de comercial
 	https://youtu.be/4vKacfGVjTw
-musica en 2do info
 ---------------------------------------------
-color del icono del audio en Info->mapa
-
 ipad
 	textos mas grandes en Inicio -> cada disciplina
 	textos mas grandes en Info
 ---------------------------
 *cupo
+
+
+
+------------------------------------------------------------------------------
+CAMBIAR GENERATE_FROM_CORDOVA a true para pruebas en móvil
+
+
+https://stackoverflow.com/questions/37206408/opening-a-pdf-in-cordova-javascript#37208103
+https://www.tutorialspoint.com/cordova/cordova_file_system.htm
+https://github.com/pwlin/cordova-plugin-file-opener2
+https://stackoverflow.com/questions/38115834/how-to-create-and-save-pdf-file-using-cordova-on-mobile-device#38120804
+https://cordova.apache.org/docs/en/latest/reference/cordova-plugin-file/#where-to-store-files
+https://stackoverflow.com/questions/22564617/jspdf-with-cordova-adding-images#22610594
+
