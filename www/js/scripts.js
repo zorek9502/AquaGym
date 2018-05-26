@@ -25,7 +25,7 @@ $(document).ready(function () {
         document.getElementById('audio').pause();
     });
     $("#carouselInfo").on('swipeleft', function (e) {
-
+        
         document.getElementById('audio-carousel').currentTime = 0;
         document.getElementById('audio-carousel').pause();
     });
@@ -34,6 +34,7 @@ $(document).ready(function () {
         document.getElementById('audio-carousel').pause();
     });
 
+    
     $("#Horarios").on('swipeup', function (e) {
         $("#tMatutino").slideToggle("fast");
     });
@@ -301,6 +302,8 @@ $(document).ready(function () {
 
         $("#touchSlider").slideToggle("fast");
     });
+
+
     $("#Inicio").on('tap', function () {
         document.getElementById("galVideo").src = "";
         document.getElementById('audio').currentTime = 0;
@@ -434,6 +437,36 @@ $(document).ready(function () {
         document.getElementById("galVideo").src = path;
     });
 
+    $("#carousel-prev").on("tap", function(){
+        document.getElementById('audio-carousel').currentTime = 0;
+        document.getElementById('audio-carousel').pause();
+        if ($("#info-historia-bg").hasClass("active")){
+            $("#audio-carouselo").attr("style", "color: black");
+        }else if ($("#info-membresia-bg").hasClass("active")){
+            $("#audio-carouselo").attr("style", "color: white");
+        }else if ($("#info-tour-bg").hasClass("active")){
+            $("#audio-carouselo").attr("style", "color: white");
+        }else if ($("#info-carateristicas-bg").hasClass("active")){
+            $("#audio-carouselo").attr("style", "color: white");
+        }else if ($("#info-mapa-bg").hasClass("active")){
+            $("#audio-carouselo").attr("style", "color: white");
+        }
+    });
+    $("#carousel-next").on("tap", function(){
+        document.getElementById('audio-carousel').currentTime = 0;
+        document.getElementById('audio-carousel').pause();
+        if ($("#info-historia-bg").hasClass("active")){
+            $("#audio-carouselo").attr("style", "color: white");
+        }else if ($("#info-membresia-bg").hasClass("active")){
+            $("#audio-carouselo").attr("style", "color: white");
+        }else if ($("#info-tour-bg").hasClass("active")){
+            $("#audio-carouselo").attr("style", "color: white");
+        }else if ($("#info-carateristicas-bg").hasClass("active")){
+            $("#audio-carouselo").attr("style", "color: black");
+        }else if ($("#info-mapa-bg").hasClass("active")){
+            $("#audio-carouselo").attr("style", "color: white");
+        }
+    });
 
     $("#Promos").on('tap', function () {
         document.getElementById("galVideo").src = "";
@@ -686,3 +719,4 @@ function activarBotonF0() {
         $("#btnNextF0").prop('disabled', false);
     }
 }
+
