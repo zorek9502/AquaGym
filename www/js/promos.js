@@ -14,16 +14,34 @@ function getCode(id) {
         document.getElementById("cupon-instructions").innerHTML = "Encuentre el cupón aplicado en la sección de inscripciones";
     }
     switch (id.toString()) {
+        case "promo2":
+            $("#select_meses option").removeAttr('selected').filter('[value=12]').attr('selected', true).trigger('change');
+
+            document.getElementById("sel-natacion").removeAttribute("selected");
+            document.getElementById("sel-waterpolo").removeAttribute("selected");
+            document.getElementById("sel-body").removeAttribute("selected");
+            document.getElementById("sel-cross").removeAttribute("selected");
+            document.getElementById("sel-gym").setAttribute("selected", true);
+            break;
         case "promo3": //NATACION
             document.getElementById("sel-waterpolo").removeAttribute("selected");
+            document.getElementById("sel-body").removeAttribute("selected");
+            document.getElementById("sel-cross").removeAttribute("selected");
+            document.getElementById("sel-gym").removeAttribute("selected");
             document.getElementById("sel-natacion").setAttribute("selected", true);
             break;
         case "promo5": //WATERPOLO
             document.getElementById("sel-natacion").removeAttribute("selected");
+            document.getElementById("sel-body").removeAttribute("selected");
+            document.getElementById("sel-cross").removeAttribute("selected");
+            document.getElementById("sel-gym").removeAttribute("selected");
             document.getElementById("sel-waterpolo").setAttribute("selected", true);            
             break;
         default:
-            document.getElementById("sel-default").selected = true;
+            document.getElementById("sel-gym").selected = true;
             break;
     }
+    $("#select_disciplina").trigger('change');
+    $("#select_meses").trigger('change');
+    $("#inputCupon").trigger('keyup');
 }

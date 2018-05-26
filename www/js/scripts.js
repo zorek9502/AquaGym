@@ -1,6 +1,9 @@
-let cuponvalido = false;
+let discValida = false;
+let horarioValido = false;
+let periodoValido = false;
+let cuponValido = true;
 $(document).ready(function () {
-    
+
     /*Scripts relacionados con tab de Inicio y disciplinas*/
     var tMatutino_height = $("tMatutino").height();
     $("#touchSlider").touchSlider({
@@ -22,7 +25,7 @@ $(document).ready(function () {
         document.getElementById('audio').pause();
     });
     $("#carouselInfo").on('swipeleft', function (e) {
-    
+
         document.getElementById('audio-carousel').currentTime = 0;
         document.getElementById('audio-carousel').pause();
     });
@@ -70,7 +73,7 @@ $(document).ready(function () {
         $("#disciplinas").slideToggle();
         document.getElementById('audio').pause();
         $("#audio").attr("src", "assets/audio/natacion.mp3");
-        $(".swichtab-contents").css({ "margin-bottom": "0px" });
+        $(".swichtab-contents").css({"margin-bottom": "0px"});
         $("#content1_disciplina_ts").text("¿Sabías que?");
         $("#content2_disciplina_ts").text("La natación es consistentemente una de las principales actividades recreativas públicas, y en algunos países, las lecciones de natación son una parte obligatoria del currículo educativo.")
         $("#content3_disciplina_ts").text("En nuestras instalaciones contamos con alberca olímpica, ven y aprende con nuestros mejores instructores los 4 estilos básicos de natación: Crawl, Dorso, Pecho y Mariposa.");
@@ -309,7 +312,7 @@ $(document).ready(function () {
         $(".swichtab-contents").removeAttr("style");
         $(".swichtab-contents").css("margin-bottom", "60px");
         $("#touchSlider").removeAttr("style");
-        $("#touchSlider").css({ "display": "none" });
+        $("#touchSlider").css({"display": "none"});
 
     });
 
@@ -324,14 +327,14 @@ $(document).ready(function () {
         $(".swichtab-controller>li").css("background", " rgb(6, 0, 85)");
         $(".swichtab-contents").css("margin-bottom", "auto");
         $("#touchSlider").removeAttr("style");
-        $("#touchSlider").css({ "display": "none!important" });
+        $("#touchSlider").css({"display": "none!important"});
     });
     $("#btnNextF0").on('click', function () {
         $("#Form0").css("display", "none");
-        $(".bgFormulario").css("background-image", "url('assets/bg_form4.jpg ')", );
+        $(".bgFormulario").css("background-image", "url('assets/bg_form4.jpg ')",);
         $("#Form1").css("display", "block");
         $("#barraProgreso").attr("style", "width:25%");
-        $("#Form1").animate({ opacity: '1' });
+        $("#Form1").animate({opacity: '1'});
     });
 
     $("#btnBackF1").on('click', function () {
@@ -339,7 +342,7 @@ $(document).ready(function () {
         $(".bgFormulario").css("background-image", "url('assets/bg_form0.jpg ')");
         $("#Form0").css("display", "block");
         $("#barraProgreso").attr("style", "width:0%");
-        $("#Form0").animate({ opacity: '1' });
+        $("#Form0").animate({opacity: '1'});
     });
 
     $("#btnNextF1").on('click', function () {
@@ -347,7 +350,7 @@ $(document).ready(function () {
         $("#Form1").css("display", "none");
         $("#Form2").css("display", "block");
         $("#barraProgreso").attr("style", "width:50%");
-        $("#Form2").animate({ opacity: '1' });
+        $("#Form2").animate({opacity: '1'});
     });
 
     $("#btnBackF2").on('click', function () {
@@ -355,7 +358,7 @@ $(document).ready(function () {
         $("#Form2").css("display", "none");
         $("#Form1").css("display", "block");
         $("#barraProgreso").attr("style", "width:25%");
-        $("#Form1").animate({ opacity: '1' });
+        $("#Form1").animate({opacity: '1'});
     });
 
     $("#btnNextF2").on('click', function () {
@@ -365,7 +368,7 @@ $(document).ready(function () {
         $("#Form3").css("display", "block");
         $("#head_inscripcion").text("Verifica tus datos");
         $("#barraProgreso").attr("style", "width:100%");
-        $("#Form3").animate({ opacity: '1' });
+        $("#Form3").animate({opacity: '1'});
 
     });
 
@@ -375,7 +378,7 @@ $(document).ready(function () {
         $("#head_inscripcion").text("¡¡¡INSCRIBETE!!!");
         $("#Form2").css("display", "block");
         $("#barraProgreso").attr("style", "width:50%");
-        $("#Form2").animate({ opacity: '1' });
+        $("#Form2").animate({opacity: '1'});
     });
 
 
@@ -390,9 +393,8 @@ $(document).ready(function () {
         $(".swichtab-controller>li").css("background", " rgb(6, 0, 85)");
         $(".swichtab-contents").css("margin-bottom", "auto");
         $("#touchSlider").removeAttr("style");
-        $("#touchSlider").css({ "display": "none!important" });
+        $("#touchSlider").css({"display": "none!important"});
     });
-
 
 
     $('#audio-carouselo').on('click', function () {
@@ -409,7 +411,6 @@ $(document).ready(function () {
         }
         document.getElementById('audio-carousel').play();
     });
-
 
 
     $("#carousel-next").on("tap", function () {
@@ -444,30 +445,49 @@ $(document).ready(function () {
         $(".swichtab-controller>li").css("background", " rgb(6, 0, 85)");
         $(".swichtab-contents").css("margin-bottom", "auto");
         $("#touchSlider").removeAttr("style");
-        $("#touchSlider").css({ "display": "none!important" });
+        $("#touchSlider").css({"display": "none!important"});
     });
 
-    $("select").on("change", function () {
-        let s_disciplina = document.getElementById("select_disciplina");
-        let s_meses = document.getElementById("select_meses");
-        let s_horario = document.getElementById("select_horario");
-
-        console.log("llamando a colores")
+    $("select").on('change', function () {
+        switch (this.id) {
+            case "select_disciplina":
+                obtenerGruposHorarios();
+                if (this.selectedIndex === 0) {
+                    discValida = false;
+                    $("#btnNextF0").prop('disabled', true);
+                } else {
+                    discValida = true;
+                    horarioValido = true;
+                }
+                break;
+            case "select_horario":
+                if (this.value === "Selecciona tu horario") {
+                    horarioValido = false;
+                    $("#btnNextF0").prop('disabled', true);
+                } else {
+                    horarioValido = true;
+                }
+                break;
+            case "select_meses":
+                if (this.selectedIndex === 0) {
+                    periodoValido = false;
+                    $("#btnNextF0").prop('disabled', true);
+                } else {
+                    periodoValido = true;
+                    let textoCupon = document.getElementById("inputCupon").value;
+                    if(textoCupon === "DONT-STOP-BELIEVING" && this.value == "12") {
+                        verificaInputCupon(true);
+                    }
+                }
+                break;
+        }
         colores(this);
-        if (s_disciplina.value == "Selecciona una disciplina" && s_horario.value == "Selecciona tu horario" && s_horario.selectedIndex == 0 && cuponvalido == false) {
-            $("#btnNextF0").prop('disabled', false);
-        } else {
-            $("#btnNextF0").prop('disabled', true);
-        }
-        if (this.id === "select_disciplina") {
-            obtenerGruposHorarios();
-        }
 
+        activarBotonF0();
     });
-
 
     $("input").on("keyup change", function () {
-        var expr = /^[a-zA-Z0-9_\.\-]+@[a-zA-Z0-9\-]+\.[a-zA-Z0-9\-\.]+$/;
+        var expr = /^[a-zA-Z0-9_\.\-\+]+@[a-zA-Z0-9]+\.[a-zA-Z0-9]+$/;
         var nombre = document.getElementById("inputName").value;
         var apellido = document.getElementById("inputLastname").value;
         var email = document.getElementById("inputEmail").value;
@@ -482,7 +502,8 @@ $(document).ready(function () {
             validarPromo();
         }
 
-        if (nombre != "" && apellido != "" && telefono != "" && f_nac != "" && email != "") {
+        if (nombre != "" && apellido != "" && telefono != "" && f_nac != ""
+            && email != "" && expr.test(email)) {
             $("#btnNextF1").prop('disabled', false);
         } else {
             $("#btnNextF1").prop('disabled', true);
@@ -571,17 +592,17 @@ function datosPntConf() {
     }
 }
 
-function verificaInputCupon(cuponValido) {
-    if (cuponValido) {
-        cuponvalido = true;
-
+function verificaInputCupon(valido) {
+    if (valido) {
+        cuponValido = true;
         $("#inputCupon").removeClass("errorInput");
         $("#inputCupon").addClass("okInput");
+        activarBotonF0();
     } else {
-        cuponvalido = false;
-
+        cuponValido = false;
         $("#inputCupon").removeClass("okInput");
         $("#inputCupon").addClass("errorInput");
+        $("#btnNextF0").prop('disabled', true);
     }
 
 }
@@ -597,40 +618,44 @@ function rellenaHorarios(mapa) {
         option.text = mapa[llave];
         select.add(option);
     }
+    console.log("llamando a colores");
+    colores(select);
 }
 
-function colores() {
-    let s_disciplina = document.getElementById("select_disciplina");
-    let s_meses = document.getElementById("select_meses");
-    let s_horario = document.getElementById("select_horario");
-
-    if (s_disciplina.selectedIndex != "0") {
-        $("#select_disciplina").removeClass("errorSelection");
-        $("#select_disciplina").addClass("okSelection");
-
-    } else {
-        console.log(" Disciplina no Valida");
-        $("#select_disciplina").addClass("errorSelection");
-        $("#select_disciplina").removeClass("okSelection");
+function colores(select) {
+    switch (select.id) {
+        case "select_disciplina":
+            if (select.selectedIndex !== 0) {
+                $("#select_disciplina").removeClass("errorSelection");
+                $("#select_disciplina").addClass("okSelection");
+            } else {
+                console.log(" Disciplina no Valida");
+                $("#select_disciplina").addClass("errorSelection");
+                $("#select_disciplina").removeClass("okSelection");
+            }
+            break;
+        case "select_horario":
+            if (select.value !== "Selecciona tu horario") {
+                console.log("Horario Valido");
+                $("#select_horario").addClass("okSelection");
+                $("#select_horario").removeClass("errorSelection");
+            } else {
+                console.log("Horario  no Valido");
+                $("#select_horario").addClass("errorSelection");
+                $("#select_horario").removeClass("okSelection");
+            }
+            break;
+        case "select_meses":
+            if (select.selectedIndex !== 0) {
+                $("#select_meses").addClass("okSelection");
+                $("#select_meses").removeClass("errorSelection");
+            } else {
+                $("#select_meses").addClass("errorSelection");
+                $("#select_meses").removeClass("okSelection");
+            }
+            break;
     }
-
-    if (s_horario.value != "Selecciona tu horario") {
-        console.log("Horario Valido");
-        $("#select_horario").addClass("okSelection");
-        $("#select_horario").removeClass("errorSelection");
-    } else {
-        console.log("Horario  no Valido");
-        $("#select_horario").addClass("errorSelection");
-        $("#select_horario").removeClass("okSelection");
-    }
-
-    if (s_meses.selectedIndex != 0) {
-        $("#select_meses").addClass("okSelection");
-        $("#select_meses").removeClass("errorSelection");
-    } else {
-        $("#select_meses").addClass("errorSelection");
-        $("#select_meses").removeClass("okSelection");
-    }
+    $(select).blur();
 }
 
 
@@ -654,4 +679,10 @@ function tamVentana() {
         ];
     }
     return tam;
+}
+
+function activarBotonF0() {
+    if(discValida && horarioValido && periodoValido && cuponValido) {
+        $("#btnNextF0").prop('disabled', false);
+    }
 }
