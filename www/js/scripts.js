@@ -76,7 +76,7 @@ $(document).ready(function () {
         $("#audio").attr("src", "assets/audio/natacion.mp3");
         $(".swichtab-contents").css({"margin-bottom": "0px"});
         $("#content1_disciplina_ts").text("¿Sabías que?");
-        $("#content2_disciplina_ts").text("La natación es consistentemente una de las principales actividades recreativas públicas, y en algunos países, las lecciones de natación son una parte obligatoria del currículo educativo.")
+        $("#content2_disciplina_ts").text("La natación es consistentemente una de las principales actividades recreativas públicas, y en algunos países, las lecciones de natación son una parte obligatoria del currículo educativo.");
         $("#content3_disciplina_ts").text("En nuestras instalaciones contamos con alberca olímpica, ven y aprende con nuestros mejores instructores los 4 estilos básicos de natación: Crawl, Dorso, Pecho y Mariposa.");
         $("#disciplina_ts").text("Natacion");
         $("#img_disciplina_ts").attr("src", "assets/natacion.jpg");
@@ -122,7 +122,7 @@ $(document).ready(function () {
         $("#audio").attr("src", "assets/audio/waterpolo.mp3");
         $(".swichtab-contents").css("margin-bottom", "0px");
         $("#content1_disciplina_ts").text("El waterpolo o polo acuático es un deporte que se practica en una piscina, en el cual se enfrentan dos equipos. ");
-        $("#content2_disciplina_ts").text("El objetivo del juego es marcar el mayor número de goles en la portería del equipo contrario durante el tiempo que dura el partido.")
+        $("#content2_disciplina_ts").text("El objetivo del juego es marcar el mayor número de goles en la portería del equipo contrario durante el tiempo que dura el partido.");
         $("#content3_disciplina_ts").text("Ven con nosotros y adéntrate en un nuevo deporte, contamos con las adecuadas instalaciones y equipo de asistencia médica.");
         $("#disciplina_ts").text("Waterpolo");
         $("#img_disciplina_ts").attr("src", "assets/waterpolo_ts.jpg");
@@ -134,11 +134,11 @@ $(document).ready(function () {
         //Cambio de horarios
         $("#tMatutino").empty();
         $("#tVespertino").empty();
-        $("#tVespertino").append('<li id="GrupoA" class="btn-outline-primary list-group-item d-flex justify-content-between align-items-center">Grupo A<span>6:00 - 8:00</span></li>')
-        $("#tVespertino").append('<li id="GrupoA" class="btn-outline-primary list-group-item d-flex justify-content-between align-items-center">Grupo B<span>9:00 - 11:00</span></li>')
-        $("#tVespertino").append('<li id="GrupoA" class="btn-outline-primary list-group-item d-flex justify-content-between align-items-center">Grupo C<span>12:00 - 14:00</span></li>')
-        $("#tVespertino").append('<li id="GrupoA" class="btn-outline-primary list-group-item d-flex justify-content-between align-items-center">Grupo D<span>15:00 - 17:00</span></li>')
-        $("#tVespertino").append('<li id="GrupoA" class="btn-outline-primary list-group-item d-flex justify-content-between align-items-center">Grupo E<span>18:00 - 20:00</span></li>')
+        $("#tVespertino").append('<li id="GrupoA" class="btn-outline-primary list-group-item d-flex justify-content-between align-items-center">Grupo A<span>6:00 - 8:00</span></li>');
+        $("#tVespertino").append('<li id="GrupoA" class="btn-outline-primary list-group-item d-flex justify-content-between align-items-center">Grupo B<span>9:00 - 11:00</span></li>');
+        $("#tVespertino").append('<li id="GrupoA" class="btn-outline-primary list-group-item d-flex justify-content-between align-items-center">Grupo C<span>12:00 - 14:00</span></li>');
+        $("#tVespertino").append('<li id="GrupoA" class="btn-outline-primary list-group-item d-flex justify-content-between align-items-center">Grupo D<span>15:00 - 17:00</span></li>');
+        $("#tVespertino").append('<li id="GrupoA" class="btn-outline-primary list-group-item d-flex justify-content-between align-items-center">Grupo E<span>18:00 - 20:00</span></li>');
         //Cambio de estilos
         $(".swichtab-controller>li").css("background", "rgb(0, 61, 85)");
         $("li.is-active>a").css("background", "rgb(83, 185, 217)");
@@ -157,8 +157,8 @@ $(document).ready(function () {
         $("#audio").attr("src", "assets/audio/bodybuilding.mp3");
         $(".swichtab-contents").css("margin-bottom", "0px");
         $("#content1_disciplina_ts").text("¿Sabías que?");
-        $("#content2_disciplina_ts").text("Aunque en sus inicios fue un deporte exclusivamente para varones, en la década de 1980 comenzaron a surgir competiciones femeninas.")
-        $("#content3_disciplina_ts").text("Bodybuilding tiene como objetivo la obtención de una musculatura fuerte y definida.En nuestras instalaciones puedes encontrar todo el equipo necesario y entrenadores especializados en bodybuilding.");
+        $("#content2_disciplina_ts").text("Aunque en sus inicios fue un deporte exclusivamente para varones, en la década de 1980 comenzaron a surgir competiciones femeninas.");
+        $("#content3_disciplina_ts").text("Bodybuilding tiene como objetivo la obtención de una musculatura fuerte y definida. En nuestras instalaciones puedes encontrar todo el equipo necesario y entrenadores especializados en bodybuilding.");
         $("#disciplina_ts").text("Bodybuilding");
         $("#img_disciplina_ts").attr("src", "assets/bodybuilding_ts.jpg");
         //Cambio de contenido de galeria
@@ -202,8 +202,8 @@ $(document).ready(function () {
         $("#audio").attr("src", "assets/audio/crossfit.mp3");
         $(".swichtab-contents").css("margin-bottom", "0px");
         $("#content1_disciplina_ts").text("Es una técnica de entrenamiento bastante reciente, nacida en el 2001 de la mano de Greg Glasman, dicha técnica fue usada para entrenar policías y gracias a sus buenos resultados, sirvió también para entrenar bomberos y militares.");
-        $("#content2_disciplina_ts").text("Crossfit es un programa de acondicionamiento diseñado para ayudar a las personas a mejorar su condición física.")
-        $("#content3_disciplina_ts").text("¿Te cansas rápido por las noches? ¡Venga! ven y empieza a hacer crossfit y adquiere la condición física que te hace falta.");
+        $("#content2_disciplina_ts").text("Crossfit es un programa de acondicionamiento diseñado para ayudar a las personas a mejorar su condición física.");
+        $("#content3_disciplina_ts").text("¿Te cansas rápido por las noches? ¡Venga! Empieza a hacer crossfit y adquiere la condición física que te hace falta.");
         $("#disciplina_ts").text("Crossfit");
         $("#img_disciplina_ts").attr("src", "assets/crossfit_ts.jpg");
         //Cambio de contenido de galeria
@@ -249,7 +249,7 @@ $(document).ready(function () {
         $("#audio").attr("src", "assets/audio/gimnasio.mp3");
         $(".swichtab-contents").css("margin-bottom", "0px");
         $("#content1_disciplina_ts").text("¿Sabías que?");
-        $("#content2_disciplina_ts").text("Para los griegos, la educación física era tan importante como el aprendizaje cognitivo. Muchos de estos gimnasios griegos tenían bibliotecas que se podían utilizar después de un baño relajante.")
+        $("#content2_disciplina_ts").text("Para los griegos, la educación física era tan importante como el aprendizaje cognitivo. Muchos de estos gimnasios griegos tenían bibliotecas que se podían utilizar después de un baño relajante.");
         $("#content3_disciplina_ts").text("¡Venga levanta e inscríbete a nuestro gimnasio! Contamos con una amplia variedad de máquinas e instructores calificados.");
         $("#disciplina_ts").text("GYM");
         $("#img_disciplina_ts").attr("src", "assets/gym2_ts.jpg");

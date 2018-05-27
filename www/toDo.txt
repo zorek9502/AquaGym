@@ -11,6 +11,9 @@ reemplazar tours
 	corregir audios de tour 2 y 3
 	checar y cambiar id's duplicados en carousel-item
 iframe transform rotate para videos
+En Unete
+    En Verifica tus datos, poner signos de pesos junto a los números
+    Poner textos de labels más grandes
 grabar nuevos audios para 3 tours
 reemplazar confirm para inscribeme?
 

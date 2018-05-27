@@ -311,7 +311,7 @@ function _generarPDF(now) {
     pdf.text(20, 83, `Folio: ${folio}`);
     pdf.text(20, 90, `Fecha: ${fechaPago}`);
     let fechaLimite = _addDays(now, 5);
-    pdf.text(20, 97, `Paguese antes de: ${fechaLimite.getFullYear()}/${fechaLimite.getMonth() + 1}/${fechaLimite.getDate()}`);
+    pdf.text(20, 97, `Páguese antes de: ${fechaLimite.getFullYear()}/${fechaLimite.getMonth() + 1}/${fechaLimite.getDate()}`);
     pdf.line(18, 102, 192, 102);
     pdf.text(86, 109, "Datos del cliente");
     pdf.line(18, 112, 192, 112);
