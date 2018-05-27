@@ -392,7 +392,13 @@ function _generarPDF(now) {
 
 
 function onLoad() {
-    document.addEventListener("deviceready", onDeviceReady, false);
+    if (GENERATE_FROM_CORDOVA) {
+        document.addEventListener("deviceready", onDeviceReady, false);
+    } else {
+        $('#btnConfirmacion').on('click', function () {
+            registrar();
+        });
+    }
 }
 
 function onDeviceReady() {
