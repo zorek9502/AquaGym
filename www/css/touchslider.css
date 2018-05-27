@@ -86,3 +86,18 @@ h2 {
     background-color: rgba(4, 4, 4, 0.35);
     border-color: rgb(42, 44, 44);
 }
+
+.touchSliderVideo{
+    height: calc(100vh - 105px);
+    width: 100vw;    
+}
+
+#tsVideo{
+    transform: rotate(90deg);
+    position: absolute;
+    left: 0;
+    top: -87vw;
+    width: 83vh;
+    height: 58vh;
+    transform-origin: 0% 100%;    
+}

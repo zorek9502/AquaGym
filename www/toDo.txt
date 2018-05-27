@@ -7,13 +7,13 @@ musica en 2do info
 ajustar botón del audio
 	posible: agregar animación cuando reproduzca
 botones negros en carrusel cuando no se distingan
+
 reemplazar tours
 	corregir audios de tour 2 y 3
 	checar y cambiar id's duplicados en carousel-item
-iframe transform rotate para videos
-En Unete
-    En Verifica tus datos, poner signos de pesos junto a los números
-    Poner textos de labels más grandes
+
+   
+    
 grabar nuevos audios para 3 tours
 reemplazar confirm para inscribeme?
 
@@ -22,7 +22,7 @@ añadir en Info video de comercial?
 
 
 ipad
-	textos mas grandes en Inicio -> cada disciplina
+	textos mas grandes en Inicio -> cada disciplina(primero verificar apariencia real en el ipad)
 	textos mas grandes en Info
 ---------------------------
 *cupo

@@ -400,6 +400,8 @@
 					_this._link = true;
 				},50);
 			}
+			detenerVideos();	
+			
 		},
 		
 		position : function (d) { 

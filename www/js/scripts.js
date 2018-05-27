@@ -2,8 +2,9 @@ let discValida = false;
 let horarioValido = false;
 let periodoValido = false;
 let cuponValido = true;
+let reproductor ="";
 $(document).ready(function () {
-
+    jQuery('iframe').addClass("youtube-iframe");
     /*Scripts relacionados con tab de Inicio y disciplinas*/
     var tMatutino_height = $("tMatutino").height();
     $("#touchSlider").touchSlider({
@@ -83,8 +84,11 @@ $(document).ready(function () {
         $("#galImg1").css("background-image", "url('assets/TouchSlider_imgs/natacion/gallery_img1.jpg')");
         $("#galImg2").css("background-image", "url('assets/TouchSlider_imgs/natacion/gallery_img2.jpg')");
         $("#galImg3").css("background-image", "url('assets/TouchSlider_imgs/natacion/gallery_img3.jpg')");
-        $("#galVideo").attr("src", "https://www.youtube.com/embed/MMeXA-2xJEQ??rel=0&amp;showinfo=0&amp;start=5");
-        //Cambio Horarios
+        $("#galImg4").css("background-image", "url('assets/TouchSlider_imgs/natacion/gallery_img4.jpg')");
+        reproductor="YT";
+        $("#tsVideo").attr("src", "https://www.youtube.com/embed/MMeXA-2xJEQ?enablejsapi=1&version=3??rel=0&amp;showinfo=0&amp;start=5");
+                                   https://www.youtube.com/embed/MMeXA-2xJEQ?enablejsapi=1&version=3??rel=0&amp;showinfo=0&amp;start=5
+        //Cambio Horarios          https://www.youtube.com/embed/MMeXA-2xJEQ?version=3&enablejsapi=1?rel=0&amp;showinfo=0&amp;start=5
         $("#tMatutino").empty();
         $("#tVespertino").empty();
         $("#tMatutino").append('<li id="GrupoA" class="btn-outline-primary list-group-item d-flex justify-content-between align-items-center">Grupo A<span>6:00 - 7:00</span></li>');
@@ -130,7 +134,9 @@ $(document).ready(function () {
         $("#galImg1").css("background-image", "url('assets/TouchSlider_imgs/waterpolo/gallery_img1.jpg')");
         $("#galImg2").css("background-image", "url('assets/TouchSlider_imgs/waterpolo/gallery_img2.jpg')");
         $("#galImg3").css("background-image", "url('assets/TouchSlider_imgs/waterpolo/gallery_img3.jpg')");
-        $("#galVideo").attr("src", "https://www.youtube.com/embed/T2pm4WW9rxk?rel=0&amp;showinfo=0");
+        $("#galImg4").css("background-image", "url('assets/TouchSlider_imgs/waterpolo/gallery_img4.jpg')");
+        reproductor="YT";
+        $("#tsVideo").attr("src", "https://www.youtube.com/embed/T2pm4WW9rxk?enablejsapi=1&version=3??rel=0&amp;showinfo=0");
         //Cambio de horarios
         $("#tMatutino").empty();
         $("#tVespertino").empty();
@@ -165,7 +171,9 @@ $(document).ready(function () {
         $("#galImg1").css("background-image", "url('assets/TouchSlider_imgs/bodybuilding/gallery_img1.jpg')");
         $("#galImg2").css("background-image", "url('assets/TouchSlider_imgs/bodybuilding/gallery_img2.jpg')");
         $("#galImg3").css("background-image", "url('assets/TouchSlider_imgs/bodybuilding/gallery_img3.jpg')");
-        $("#galVideo").attr("src", "https://www.youtube.com/embed/UYaZIAG9P8U?rel=0&amp;showinfo=0");
+        $("#galImg4").css("background-image", "url('assets/TouchSlider_imgs/bodybuilding/gallery_img4.jpg')");
+        reproductor="YT";
+        $("#tsVideo").attr("src", "https://www.youtube.com/embed/UYaZIAG9P8U?enablejsapi=1&version=3??rel=0&amp;showinfo=0");
         $("#tMatutino").empty();
         $("#tVespertino").empty();
         $("#tMatutino").append('<li id="GrupoA" class="btn-outline-primary list-group-item d-flex justify-content-between align-items-center">Grupo A<span>6:00 - 7:00</span></li>');
@@ -197,6 +205,7 @@ $(document).ready(function () {
         });
     });
     $("#Crossfit").on('tap', function () {
+        
         $("#disciplinas").slideToggle("fast");
         document.getElementById('audio').pause();
         $("#audio").attr("src", "assets/audio/crossfit.mp3");
@@ -210,7 +219,9 @@ $(document).ready(function () {
         $("#galImg1").css("background-image", "url('assets/TouchSlider_imgs/crossfit/gallery_img1.jpg')");
         $("#galImg2").css("background-image", "url('assets/TouchSlider_imgs/crossfit/gallery_img2.jpg')");
         $("#galImg3").css("background-image", "url('assets/TouchSlider_imgs/crossfit/gallery_img3.jpg')");
-        $("#galVideo").attr("src", "https://player.vimeo.com/video/257366224?title=0&byline=0&portrait=0");
+        $("#galImg4").css("background-image", "url('assets/TouchSlider_imgs/crossfit/gallery_img4.jpg')");
+        reproductor="VIM";
+        $("#tsVideo").attr("src", "https://player.vimeo.com/video/257366224?enablejsapi=1&version=3??title=0&byline=0&portrait=0");
         //Cambio horarios
         $("#tMatutino").empty();//Limpian hijos de tMatutino
         $("#tVespertino").empty();//Limpian hijos de tVespertino
@@ -257,7 +268,9 @@ $(document).ready(function () {
         $("#galImg1").css("background-image", "url('assets/TouchSlider_imgs/gym/gallery_img1.jpg')");
         $("#galImg2").css("background-image", "url('assets/TouchSlider_imgs/gym/gallery_img2.jpg')");
         $("#galImg3").css("background-image", "url('assets/TouchSlider_imgs/gym/gallery_img3.jpg')");
-        $("#galVideo").attr("src", "https://www.youtube.com/embed/Wzb2Naz5LuU?rel=0&amp;showinfo=0");
+        $("#galImg4").css("background-image", "url('assets/TouchSlider_imgs/gym/gallery_img4.jpg')");
+        reproductor="VIM";
+        $("#tsVideo").attr("src", "https://player.vimeo.com/video/159519391?color=a0d404");
         //Cambio horarios
         $("#tMatutino").empty();//Limpian hijos de tMatutino
         $("#tVespertino").empty();//Limpian hijos de tVespertino
@@ -294,7 +307,7 @@ $(document).ready(function () {
         $("#disciplinas").slideToggle("fast");
         document.getElementById('audio').currentTime = 0;
         document.getElementById('audio').pause();
-        document.getElementById("galVideo").src = "";
+        detenerVideos();
         $(".swichtab-contents").removeAttr("style");
         $(".swichtab-contents").css("margin-bottom", "60px");
         $("li.is-active>a").css("background", "rgba(0,183,234,1)");
@@ -305,7 +318,7 @@ $(document).ready(function () {
 
 
     $("#Inicio").on('tap', function () {
-        document.getElementById("galVideo").src = "";
+        detenerVideos();
         document.getElementById('audio').currentTime = 0;
         document.getElementById('audio').pause();
         document.getElementById('audio-carousel').currentTime = 0;
@@ -321,7 +334,7 @@ $(document).ready(function () {
 
     /*Scripts relacionados con tab de Unete*/
     $("#Unete").on('tap', function () {
-        document.getElementById("galVideo").src = "";
+        detenerVideos();
         document.getElementById('audio').currentTime = 0;
         document.getElementById('audio').pause();
         document.getElementById('audio-carousel').currentTime = 0;
@@ -387,7 +400,7 @@ $(document).ready(function () {
 
     /*Scripts relacionados con tab de Info*/
     $("#Info").on('tap', function () {
-        document.getElementById("galVideo").src = "";
+        detenerVideos();
         document.getElementById('audio').currentTime = 0;
         document.getElementById('audio').pause();
         document.getElementById('audio-carousel').currentTime = 0;
@@ -425,18 +438,6 @@ $(document).ready(function () {
         document.getElementById('audio-carousel').pause();
     });
 
-
-    $("#carousel-next-gal").on("tap", function () {
-        var path = new String(document.getElementById("galVideo").getAttribute("src").toString());
-        document.getElementById("galVideo").src = "";
-        document.getElementById("galVideo").src = path;
-    });
-    $("#carousel-prev-gal").on("tap", function () {
-        var path = new String(document.getElementById("galVideo").getAttribute("src").toString());
-        document.getElementById("galVideo").src = "";
-        document.getElementById("galVideo").src = path;
-    });
-
     $("#carousel-prev").on("tap", function(){
         document.getElementById('audio-carousel').currentTime = 0;
         document.getElementById('audio-carousel').pause();
@@ -469,7 +470,7 @@ $(document).ready(function () {
     });
 
     $("#Promos").on('tap', function () {
-        document.getElementById("galVideo").src = "";
+        detenerVideos();
         document.getElementById('audio').currentTime = 0;
         document.getElementById('audio').pause();
         document.getElementById('audio-carousel').currentTime = 0;
@@ -720,3 +721,14 @@ function activarBotonF0() {
     }
 }
 
+function detenerVideos(){
+    if(reproductor=="YT"){
+        $('#tsVideo')[0].contentWindow.postMessage('{"event":"command","func":"' + 'stopVideo' + '","args":""}', '*');	
+    }else if (reproductor =="VIM"){
+        let iframe = document.getElementById('tsVideo');
+        let player = $f(iframe);
+        player.api("unload");
+    }else{
+        $('#tsVideo').removeAt
+    }
+}
