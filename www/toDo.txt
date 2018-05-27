@@ -5,17 +5,16 @@ musica en 2do info
 
 ---------------------------------------------
 ajustar botón del audio
-	posible: agregar animación cuando reproduzca
-botones negros en carrusel cuando no se distingan
+	
 
 reemplazar tours
-	corregir audios de tour 2 y 3
-	checar y cambiar id's duplicados en carousel-item
+	corregir audios de tour 2 y 3 <PERALTA>
+	
 
    
     
-grabar nuevos audios para 3 tours
-reemplazar confirm para inscribeme?
+grabar nuevos audios para 3 tours <PERALTA>
+reemplazar confirm para inscribeme? 
 
 añadir en Info video de comercial?
 	https://youtu.be/4vKacfGVjTw

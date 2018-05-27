@@ -399,9 +399,7 @@
 				setTimeout(function () {
 					_this._link = true;
 				},50);
-			}
-			detenerVideos();	
-			
+			}			
 		},
 		
 		position : function (d) { 
@@ -575,6 +573,8 @@
 		},
 		
 		get_page : function () {
+			console.log("cambiando pagina");
+			detenerVideos();
 			return {
 				obj : this,
 				total : Math.ceil(this._len / this._view),

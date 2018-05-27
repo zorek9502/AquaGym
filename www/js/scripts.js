@@ -2,7 +2,7 @@ let discValida = false;
 let horarioValido = false;
 let periodoValido = false;
 let cuponValido = true;
-let reproductor ="";
+
 $(document).ready(function () {
     jQuery('iframe').addClass("youtube-iframe");
     /*Scripts relacionados con tab de Inicio y disciplinas*/
@@ -26,7 +26,7 @@ $(document).ready(function () {
         document.getElementById('audio').pause();
     });
     $("#carouselInfo").on('swipeleft', function (e) {
-        
+
         document.getElementById('audio-carousel').currentTime = 0;
         document.getElementById('audio-carousel').pause();
     });
@@ -35,7 +35,7 @@ $(document).ready(function () {
         document.getElementById('audio-carousel').pause();
     });
 
-    
+
     $("#Horarios").on('swipeup', function (e) {
         $("#tMatutino").slideToggle("fast");
     });
@@ -45,7 +45,6 @@ $(document).ready(function () {
     let screen_height = tamVentana()[1];
     let screen_width = tamVentana()[1];
     if (screen_height >= 1024 && screen_width >= 768) {
-        console.log("Ipha");
         $("button").addClass("btn-lg");
         $("a#btnBackF3").addClass("btn-lg");
         $("#botonSiguente").removeClass("col-3 offset-2");
@@ -75,7 +74,7 @@ $(document).ready(function () {
         $("#disciplinas").slideToggle();
         document.getElementById('audio').pause();
         $("#audio").attr("src", "assets/audio/natacion.mp3");
-        $(".swichtab-contents").css({"margin-bottom": "0px"});
+        $(".swichtab-contents").css({ "margin-bottom": "0px" });
         $("#content1_disciplina_ts").text("¿Sabías que?");
         $("#content2_disciplina_ts").text("La natación es consistentemente una de las principales actividades recreativas públicas, y en algunos países, las lecciones de natación son una parte obligatoria del currículo educativo.");
         $("#content3_disciplina_ts").text("En nuestras instalaciones contamos con alberca olímpica, ven y aprende con nuestros mejores instructores los 4 estilos básicos de natación: Crawl, Dorso, Pecho y Mariposa.");
@@ -85,10 +84,9 @@ $(document).ready(function () {
         $("#galImg2").css("background-image", "url('assets/TouchSlider_imgs/natacion/gallery_img2.jpg')");
         $("#galImg3").css("background-image", "url('assets/TouchSlider_imgs/natacion/gallery_img3.jpg')");
         $("#galImg4").css("background-image", "url('assets/TouchSlider_imgs/natacion/gallery_img4.jpg')");
-        reproductor="YT";
+
         $("#tsVideo").attr("src", "https://www.youtube.com/embed/MMeXA-2xJEQ?enablejsapi=1&version=3??rel=0&amp;showinfo=0&amp;start=5");
-                                   https://www.youtube.com/embed/MMeXA-2xJEQ?enablejsapi=1&version=3??rel=0&amp;showinfo=0&amp;start=5
-        //Cambio Horarios          https://www.youtube.com/embed/MMeXA-2xJEQ?version=3&enablejsapi=1?rel=0&amp;showinfo=0&amp;start=5
+        //Cambio Horarios          
         $("#tMatutino").empty();
         $("#tVespertino").empty();
         $("#tMatutino").append('<li id="GrupoA" class="btn-outline-primary list-group-item d-flex justify-content-between align-items-center">Grupo A<span>6:00 - 7:00</span></li>');
@@ -135,7 +133,7 @@ $(document).ready(function () {
         $("#galImg2").css("background-image", "url('assets/TouchSlider_imgs/waterpolo/gallery_img2.jpg')");
         $("#galImg3").css("background-image", "url('assets/TouchSlider_imgs/waterpolo/gallery_img3.jpg')");
         $("#galImg4").css("background-image", "url('assets/TouchSlider_imgs/waterpolo/gallery_img4.jpg')");
-        reproductor="YT";
+
         $("#tsVideo").attr("src", "https://www.youtube.com/embed/T2pm4WW9rxk?enablejsapi=1&version=3??rel=0&amp;showinfo=0");
         //Cambio de horarios
         $("#tMatutino").empty();
@@ -172,7 +170,7 @@ $(document).ready(function () {
         $("#galImg2").css("background-image", "url('assets/TouchSlider_imgs/bodybuilding/gallery_img2.jpg')");
         $("#galImg3").css("background-image", "url('assets/TouchSlider_imgs/bodybuilding/gallery_img3.jpg')");
         $("#galImg4").css("background-image", "url('assets/TouchSlider_imgs/bodybuilding/gallery_img4.jpg')");
-        reproductor="YT";
+
         $("#tsVideo").attr("src", "https://www.youtube.com/embed/UYaZIAG9P8U?enablejsapi=1&version=3??rel=0&amp;showinfo=0");
         $("#tMatutino").empty();
         $("#tVespertino").empty();
@@ -205,7 +203,7 @@ $(document).ready(function () {
         });
     });
     $("#Crossfit").on('tap', function () {
-        
+
         $("#disciplinas").slideToggle("fast");
         document.getElementById('audio').pause();
         $("#audio").attr("src", "assets/audio/crossfit.mp3");
@@ -220,8 +218,8 @@ $(document).ready(function () {
         $("#galImg2").css("background-image", "url('assets/TouchSlider_imgs/crossfit/gallery_img2.jpg')");
         $("#galImg3").css("background-image", "url('assets/TouchSlider_imgs/crossfit/gallery_img3.jpg')");
         $("#galImg4").css("background-image", "url('assets/TouchSlider_imgs/crossfit/gallery_img4.jpg')");
-        reproductor="VIM";
-        $("#tsVideo").attr("src", "https://player.vimeo.com/video/257366224?enablejsapi=1&version=3??title=0&byline=0&portrait=0");
+
+        $("#tsVideo").attr("src", "https://www.youtube.com/embed/jYBhg90EQPI?enablejsapi=1&version=3??rel=0&amp;showinfo=0");
         //Cambio horarios
         $("#tMatutino").empty();//Limpian hijos de tMatutino
         $("#tVespertino").empty();//Limpian hijos de tVespertino
@@ -269,8 +267,9 @@ $(document).ready(function () {
         $("#galImg2").css("background-image", "url('assets/TouchSlider_imgs/gym/gallery_img2.jpg')");
         $("#galImg3").css("background-image", "url('assets/TouchSlider_imgs/gym/gallery_img3.jpg')");
         $("#galImg4").css("background-image", "url('assets/TouchSlider_imgs/gym/gallery_img4.jpg')");
-        reproductor="VIM";
-        $("#tsVideo").attr("src", "https://player.vimeo.com/video/159519391?color=a0d404");
+
+        $("#tsVideo").attr("src", "https://www.youtube.com/embed/XRfsQwwklA4?enablejsapi=1&version=3??rel=0&amp;showinfo=0");
+
         //Cambio horarios
         $("#tMatutino").empty();//Limpian hijos de tMatutino
         $("#tVespertino").empty();//Limpian hijos de tVespertino
@@ -303,6 +302,38 @@ $(document).ready(function () {
         });
     });
 
+    let sentidoGiro = "VH";
+    $('#girarVideo').on('click', function () {
+        switch (sentidoGiro) {
+            case "VH":
+                $("#tsVideo").removeClass("animaGiroHV");
+                setTimeout(function () {
+                    $("#tsVideo").addClass("animaGiroVH");
+                    $("#tsVideo").bind("animationend  webkitAnimationEnd oAnimationEnd  MSAnimationEnd", function () {
+                        $("#tsVideo").css({
+                            "width": "50%",
+                            "height": "50%",
+                            "transform": "rotate(90deg) scale(1.35)",
+                            "flex-grow": "1"
+                        });
+                    });
+                }, 10);
+                sentidoGiro = "HV";
+                break;
+            case "HV":
+                $("#tsVideo").removeClass("animaGiroVH");
+                setTimeout(function () {
+                    $("#tsVideo").addClass("animaGiroHV");
+                    $("#tsVideo").bind("animationend  webkitAnimationEnd oAnimationEnd  MSAnimationEnd", function () {
+                        $("#tsVideo").removeAttr("style");
+                    });
+                }, 10);
+                sentidoGiro = "VH";
+                break;
+        }
+    });
+
+
     $(".btn-back").on('tap', function () {
         $("#disciplinas").slideToggle("fast");
         document.getElementById('audio').currentTime = 0;
@@ -328,7 +359,7 @@ $(document).ready(function () {
         $(".swichtab-contents").removeAttr("style");
         $(".swichtab-contents").css("margin-bottom", "60px");
         $("#touchSlider").removeAttr("style");
-        $("#touchSlider").css({"display": "none"});
+        $("#touchSlider").css({ "display": "none" });
 
     });
 
@@ -343,14 +374,14 @@ $(document).ready(function () {
         $(".swichtab-controller>li").css("background", " rgb(6, 0, 85)");
         $(".swichtab-contents").css("margin-bottom", "auto");
         $("#touchSlider").removeAttr("style");
-        $("#touchSlider").css({"display": "none!important"});
+        $("#touchSlider").css({ "display": "none!important" });
     });
     $("#btnNextF0").on('click', function () {
         $("#Form0").css("display", "none");
-        $(".bgFormulario").css("background-image", "url('assets/bg_form4.jpg ')",);
+        $(".bgFormulario").css("background-image", "url('assets/bg_form4.jpg ')", );
         $("#Form1").css("display", "block");
         $("#barraProgreso").attr("style", "width:25%");
-        $("#Form1").animate({opacity: '1'});
+        $("#Form1").animate({ opacity: '1' });
     });
 
     $("#btnBackF1").on('click', function () {
@@ -358,7 +389,7 @@ $(document).ready(function () {
         $(".bgFormulario").css("background-image", "url('assets/bg_form0.jpg ')");
         $("#Form0").css("display", "block");
         $("#barraProgreso").attr("style", "width:0%");
-        $("#Form0").animate({opacity: '1'});
+        $("#Form0").animate({ opacity: '1' });
     });
 
     $("#btnNextF1").on('click', function () {
@@ -366,7 +397,7 @@ $(document).ready(function () {
         $("#Form1").css("display", "none");
         $("#Form2").css("display", "block");
         $("#barraProgreso").attr("style", "width:50%");
-        $("#Form2").animate({opacity: '1'});
+        $("#Form2").animate({ opacity: '1' });
     });
 
     $("#btnBackF2").on('click', function () {
@@ -374,7 +405,7 @@ $(document).ready(function () {
         $("#Form2").css("display", "none");
         $("#Form1").css("display", "block");
         $("#barraProgreso").attr("style", "width:25%");
-        $("#Form1").animate({opacity: '1'});
+        $("#Form1").animate({ opacity: '1' });
     });
 
     $("#btnNextF2").on('click', function () {
@@ -384,7 +415,7 @@ $(document).ready(function () {
         $("#Form3").css("display", "block");
         $("#head_inscripcion").text("Verifica tus datos");
         $("#barraProgreso").attr("style", "width:100%");
-        $("#Form3").animate({opacity: '1'});
+        $("#Form3").animate({ opacity: '1' });
 
     });
 
@@ -394,7 +425,7 @@ $(document).ready(function () {
         $("#head_inscripcion").text("¡¡¡INSCRIBETE!!!");
         $("#Form2").css("display", "block");
         $("#barraProgreso").attr("style", "width:50%");
-        $("#Form2").animate({opacity: '1'});
+        $("#Form2").animate({ opacity: '1' });
     });
 
 
@@ -409,7 +440,7 @@ $(document).ready(function () {
         $(".swichtab-controller>li").css("background", " rgb(6, 0, 85)");
         $(".swichtab-contents").css("margin-bottom", "auto");
         $("#touchSlider").removeAttr("style");
-        $("#touchSlider").css({"display": "none!important"});
+        $("#touchSlider").css({ "display": "none!important" });
     });
 
 
@@ -418,9 +449,13 @@ $(document).ready(function () {
             $("#audio-carousel").attr("src", "assets/audio/Info01.mp3");
         } else if ($("#info-membresia-bg").hasClass("active")) {
             $("#audio-carousel").attr("src", "assets/audio/Info02.mp3");
-        } else if ($("#info-tour-bg").hasClass("active")) {
-            $("#audio-carousel").attr("src", "assets/audio/Info03.mp3");
-        } else if ($("#info-carateristicas-bg").hasClass("active")) {
+        } else if ($("#info-tour-alberca").hasClass("active")) {
+            $("#audio-carousel").attr("src", "assets/audio/Info03-1.mp3");
+        } else if ($("#info-tour-gym").hasClass("active")) {
+            $("#audio-carousel").attr("src", "assets/audio/Info03-2.mp3");
+        }else if ($("#info-tour-estudio").hasClass("active")) {
+            $("#audio-carousel").attr("src", "assets/audio/Info03-3.mp3");
+        }else if ($("#info-carateristicas-bg").hasClass("active")) {
             $("#audio-carousel").attr("src", "assets/audio/Info04.mp3");
         } else if ($("#info-mapa-bg").hasClass("active")) {
             $("#audio-carousel").attr("src", "assets/audio/Info05.mp3");
@@ -438,34 +473,44 @@ $(document).ready(function () {
         document.getElementById('audio-carousel').pause();
     });
 
-    $("#carousel-prev").on("tap", function(){
+    $("#carousel-prev").on("tap", function () {
         document.getElementById('audio-carousel').currentTime = 0;
         document.getElementById('audio-carousel').pause();
-        if ($("#info-historia-bg").hasClass("active")){
+        if ($("#info-historia-bg").hasClass("active")) {
             $("#audio-carouselo").attr("style", "color: black");
-        }else if ($("#info-membresia-bg").hasClass("active")){
+            $(".btnControl").css("color", "black");
+        } else if ($("#info-membresia-bg").hasClass("active")) {
             $("#audio-carouselo").attr("style", "color: white");
-        }else if ($("#info-tour-bg").hasClass("active")){
+            $(".btnControl").css("color", "white");
+        } else if ($("#info-tour-bg").hasClass("active")) {
             $("#audio-carouselo").attr("style", "color: white");
-        }else if ($("#info-carateristicas-bg").hasClass("active")){
+            $(".btnControl").css("color", "white");
+        } else if ($("#info-carateristicas-bg").hasClass("active")) {
             $("#audio-carouselo").attr("style", "color: white");
-        }else if ($("#info-mapa-bg").hasClass("active")){
+            $(".btnControl").css("color", "white");
+        } else if ($("#info-mapa-bg").hasClass("active")) {
             $("#audio-carouselo").attr("style", "color: white");
+            $(".btnControl").css("color", "white");
         }
     });
-    $("#carousel-next").on("tap", function(){
+    $("#carousel-next").on("tap", function () {
         document.getElementById('audio-carousel').currentTime = 0;
         document.getElementById('audio-carousel').pause();
-        if ($("#info-historia-bg").hasClass("active")){
+        if ($("#info-historia-bg").hasClass("active")) {
             $("#audio-carouselo").attr("style", "color: white");
-        }else if ($("#info-membresia-bg").hasClass("active")){
+            $(".btnControl").css("color", "white");
+        } else if ($("#info-membresia-bg").hasClass("active")) {
             $("#audio-carouselo").attr("style", "color: white");
-        }else if ($("#info-tour-bg").hasClass("active")){
+            $(".btnControl").css("color", "white");
+        } else if ($("#info-tour-bg").hasClass("active")) {
             $("#audio-carouselo").attr("style", "color: white");
-        }else if ($("#info-carateristicas-bg").hasClass("active")){
+            $(".btnControl").css("color", "white");
+        } else if ($("#info-carateristicas-bg").hasClass("active")) {
             $("#audio-carouselo").attr("style", "color: black");
-        }else if ($("#info-mapa-bg").hasClass("active")){
+            $(".btnControl").css("color", "black");
+        } else if ($("#info-mapa-bg").hasClass("active")) {
             $("#audio-carouselo").attr("style", "color: white");
+            $(".btnControl").css("color", "white");
         }
     });
 
@@ -479,7 +524,7 @@ $(document).ready(function () {
         $(".swichtab-controller>li").css("background", " rgb(6, 0, 85)");
         $(".swichtab-contents").css("margin-bottom", "auto");
         $("#touchSlider").removeAttr("style");
-        $("#touchSlider").css({"display": "none!important"});
+        $("#touchSlider").css({ "display": "none!important" });
     });
 
     $("select").on('change', function () {
@@ -509,7 +554,7 @@ $(document).ready(function () {
                 } else {
                     periodoValido = true;
                     let textoCupon = document.getElementById("inputCupon").value;
-                    if(textoCupon === "DONT-STOP-BELIEVING" && this.value == "12") {
+                    if (textoCupon === "DONT-STOP-BELIEVING" && this.value == "12") {
                         verificaInputCupon(true);
                     }
                 }
@@ -652,7 +697,6 @@ function rellenaHorarios(mapa) {
         option.text = mapa[llave];
         select.add(option);
     }
-    console.log("llamando a colores");
     colores(select);
 }
 
@@ -716,19 +760,11 @@ function tamVentana() {
 }
 
 function activarBotonF0() {
-    if(discValida && horarioValido && periodoValido && cuponValido) {
+    if (discValida && horarioValido && periodoValido && cuponValido) {
         $("#btnNextF0").prop('disabled', false);
     }
 }
 
-function detenerVideos(){
-    if(reproductor=="YT"){
-        $('#tsVideo')[0].contentWindow.postMessage('{"event":"command","func":"' + 'stopVideo' + '","args":""}', '*');	
-    }else if (reproductor =="VIM"){
-        let iframe = document.getElementById('tsVideo');
-        let player = $f(iframe);
-        player.api("unload");
-    }else{
-        $('#tsVideo').removeAt
-    }
+function detenerVideos() {
+    $('#tsVideo')[0].contentWindow.postMessage('{"event":"command","func":"' + 'stopVideo' + '","args":""}', '*');
 }

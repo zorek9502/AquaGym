@@ -75,7 +75,7 @@ header, footer, section, article, aside, nav, hgroup, details, menu, figure, fig
 
 a:link, a:visited {
     text-decoration: none;
-    color: #666;
+    color: rgb(255, 255, 255);
 }
 
 a:active, a:hover, a:focus {

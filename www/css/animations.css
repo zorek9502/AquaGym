@@ -26,3 +26,55 @@
         opacity: 0;
     }
 }
+
+@keyframes girarVideoVH{
+    10%{
+        width: 50%;
+        height: 50%;    
+    }
+    30%{
+        width: 50%;
+        height: 50%; 
+        flex-grow: 1;
+        transform: rotate(90deg);
+    }
+
+    70%{
+        width: 50%;
+        height: 50%; 
+        flex-grow: 1;
+        transform: rotate(90deg) scale(.8);
+    }
+    100%{
+        width: 50%;
+        height: 50%; 
+        transform: rotate(90deg) scale(1.35);
+        flex-grow: 1;
+    }
+}
+
+@keyframes girarVideoHV{
+    10%{
+        width: 50%;
+        height: 50%;    
+    }
+    30%{
+        width: 50%;
+        height: 50%; 
+        flex-grow: 1;
+        transform: rotate(0deg) scale(.8);
+    }
+
+    70%{
+        width: 50%;
+        height: 50%; 
+        flex-grow: 1;
+        transform: rotate(0deg) scale(1);
+    }
+    100%{
+        width: 100%;
+        height: 100%; 
+        flex-grow: 1;
+        transform: rotate(0deg) scale(1);
+    }
+}

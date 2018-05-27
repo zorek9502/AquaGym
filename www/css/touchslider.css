@@ -88,16 +88,34 @@ h2 {
 }
 
 .touchSliderVideo{
+    background: rgb(10, 10, 10);
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
     height: calc(100vh - 105px);
-    width: 100vw;    
+}
+
+.animaGiroVH{
+    animation: girarVideoVH;
+    animation-duration:3s;
+    animation-iteration-count: 1;
+}
+.animaGiroHV{
+    animation: girarVideoHV;
+    animation-duration:3s;
+    animation-iteration-count: 1;
 }
 
 #tsVideo{
-    transform: rotate(90deg);
-    position: absolute;
-    left: 0;
-    top: -87vw;
-    width: 83vh;
-    height: 58vh;
-    transform-origin: 0% 100%;    
+    transform-origin: 50% 50%;
+    flex-grow: 1;
+    height: 100%;   
+}
+
+#girarVideo{
+    display: flex!important;
+    justify-content: center;
+    align-items: center;
+    padding-left: 0px;
 }
