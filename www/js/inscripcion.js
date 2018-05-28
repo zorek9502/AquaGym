@@ -409,13 +409,19 @@ function onDeviceReady() {
 
 
 function _guardarPDFCordova(now) {
-    solicitarFS(now);
+    resolverURL(now);
 }
 
-function solicitarFS(now) {
-    window.resolveLocalFileSystemURL(cordova.file.externalDataDirectory, function (fs) {
-        crearArchivo(fs, NOMBRE_ARCHIVO, false, now);
-    }, onErrorLoadFs);
+function resolverURL(now) {
+    if (device.platform.toLowerCase() == "android") {
+        window.resolveLocalFileSystemURL(cordova.file.externalDataDirectory, onFileSystemSuccess, onErrorLoadFs);
+    } else if (device.platform.toLowerCase() == "ios") {
+        window.resolveLocalFileSystemURL(cordova.file.dataDirectory, onFileSystemSuccess, onErrorLoadFs);
+    }
+    
+    function onFileSystemSuccess(dirEntry) {
+        crearArchivo(dirEntry, NOMBRE_ARCHIVO, false, now);
+    }
 
     function onErrorLoadFs() {
         alert("Error FS");
@@ -434,7 +440,6 @@ function crearArchivo(dirEntry, fileName, isAppend, now) {
 
 function escribirArchivo(fileEntry, now) {
     let pdf = _generarPDF(now);
-
     let pdfOutput = pdf.output('blob');
 
     fileEntry.createWriter(function (fileWriter) {
@@ -451,8 +456,14 @@ function escribirArchivo(fileEntry, now) {
 }
 
 function abrirPDF() {
+    let dir;
+    if (device.platform.toLowerCase() == "android") {
+        dir = cordova.file.externalDataDirectory;
+    } else if (device.platform.toLowerCase() == "ios") {
+        dir = cordova.file.dataDirectory;
+    }
     cordova.plugins.fileOpener2.showOpenWithDialog(
-        cordova.file.externalDataDirectory + NOMBRE_ARCHIVO,
+        dir + NOMBRE_ARCHIVO,
         'application/pdf',
         {
             error : function(e) {

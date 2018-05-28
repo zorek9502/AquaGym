@@ -1,34 +1,48 @@
 subir a aws
 speech
+	modal "things you can ask me"
+		nav secciones
+		nav disc
+		ubicación, teléfono, correo
+		video x_disc
+
 gifs
 musica en 2do info
+canal aquagymap
+	Body https://www.youtube.com/watch?v=-jpGdMX0mj8
+	Crossfit https://www.youtube.com/watch?v=m9au0rpfSRY
+	Motiv Gym https://www.youtube.com/watch?v=v0CbXNtqA2s
+	Natacion https://www.youtube.com/watch?v=cvxHQ-ylmOM
+	Waterpolo https://www.youtube.com/watch?v=HNuhZjUZlyU
+
+	Gym https://www.youtube.com/watch?v=NqtGQWJDQMM
+	fitness https://www.youtube.com/watch?v=Yiy8BKbiAfQ
+	Pool https://www.youtube.com/watch?v=HzqxLCRIWxw
+ios pdf y speech
+reemplazar confirm para inscribeme
 
 ---------------------------------------------
 ajustar botón del audio
-	
-
+	posible: agregar animación cuando reproduzca
+botones negros en carrusel cuando no se distingan
 reemplazar tours
-	corregir audios de tour 2 y 3 <PERALTA>
-	
-
-   
-    
-grabar nuevos audios para 3 tours <PERALTA>
-reemplazar confirm para inscribeme? 
-
-añadir en Info video de comercial?
-	https://youtu.be/4vKacfGVjTw
-
+	corregir audios de tour 2 y 3
+	checar y cambiar id's duplicados en carousel-item
+iframe transform rotate para videos
+En Unete
+    En Verifica tus datos, poner signos de pesos junto a los números
+    Poner textos de labels más grandes
+grabar nuevos audios para 3 tours
 
 ipad
-	textos mas grandes en Inicio -> cada disciplina(primero verificar apariencia real en el ipad)
+	textos mas grandes en Inicio -> cada disciplina
 	textos mas grandes en Info
 ---------------------------
 *cupo
 
 
 ------------------------------------------------------------------------------
-CAMBIAR GENERATE_FROM_CORDOVA a true para pruebas en móvil
+cambiar GENERATE_FROM_CORDOVA a true para pruebas en móvil
 
 
 https://stackoverflow.com/questions/37206408/opening-a-pdf-in-cordova-javascript#37208103
@@ -37,4 +51,5 @@ https://github.com/pwlin/cordova-plugin-file-opener2
 https://stackoverflow.com/questions/38115834/how-to-create-and-save-pdf-file-using-cordova-on-mobile-device#38120804
 https://cordova.apache.org/docs/en/latest/reference/cordova-plugin-file/#where-to-store-files
 https://stackoverflow.com/questions/22564617/jspdf-with-cordova-adding-images#22610594
+https://ourcodeworld.com/articles/read/401/how-to-use-the-speech-recognition-api-in-cordova
 

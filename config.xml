@@ -75,6 +75,8 @@
     <preference name="AndroidExtraFilesystems" value="files,files-external,documents,sdcard,cache,cache-external,assets,root" />
     <plugin name="cordova-plugin-file-opener2" spec="^2.0.19" />
     <plugin name="cordova-android-support-gradle-release" spec="^1.4.2">
-    	 <variable name="ANDROID_SUPPORT_VERSION" value="21.+" />
+        <variable name="ANDROID_SUPPORT_VERSION" value="21.+" />
     </plugin>
+    <plugin name="cordova-plugin-speechrecognition" spec="^1.2.0" />
+    <plugin name="cordova-plugin-dialogs" spec="^2.0.1" />
 </widget>
