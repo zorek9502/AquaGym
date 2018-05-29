@@ -5,7 +5,6 @@ let cuponValido = true;
 
 $(document).ready(function () {
     jQuery('iframe').addClass("youtube-iframe");
-    /*Scripts relacionados con tab de Inicio y disciplinas*/
     var tMatutino_height = $("tMatutino").height();
     $("#touchSlider").touchSlider({
         roll: true,
@@ -25,25 +24,16 @@ $(document).ready(function () {
         document.getElementById('audio').currentTime = 0;
         document.getElementById('audio').pause();
     });
-    $("#carouselInfo").on('swipeleft', function (e) {
-
-        document.getElementById('audio-carousel').currentTime = 0;
-        document.getElementById('audio-carousel').pause();
-    });
-    $("#carouselInfo").on('swiperight', function (e) {
-        document.getElementById('audio-carousel').currentTime = 0;
-        document.getElementById('audio-carousel').pause();
-    });
-
-
+    
     $("#Horarios").on('swipeup', function (e) {
         $("#tMatutino").slideToggle("fast");
     });
     $("#Horarios").on('swipedown', function (e) {
         $("#tMatutino").slideToggle("fast");
     });
+
     let screen_height = tamVentana()[1];
-    let screen_width = tamVentana()[1];
+    let screen_width = tamVentana()[0];
     if (screen_height >= 1024 && screen_width >= 768) {
         $("button").addClass("btn-lg");
         $("a#btnBackF3").addClass("btn-lg");
@@ -54,18 +44,6 @@ $(document).ready(function () {
         $("#encabezado_texto").removeClass("col-10");
         $("#encabezado_texto").addClass("col-7 offset-2  ");
         $("input.form-control").addClass("form-control-lg");
-        $("h4").css({
-            "font-size": "2.5rem"
-        });
-        $("h5").css({
-            "font-size": "1.8rem"
-        });
-        $("p").css({
-            "font-size": "1.5rem"
-        });
-        $("strong").css({
-            "font-size": "1.5rem"
-        });
         $("select.form-control").addClass("form-control-lg");
     }
     /*Scripts relacionados con tab Inicio c/u disciplinas*/
@@ -328,6 +306,7 @@ $(document).ready(function () {
                     $("#tsVideo").addClass("animaGiroHV");
                     $("#tsVideo").bind("animationend  webkitAnimationEnd oAnimationEnd  MSAnimationEnd", function () {
                         $("#tsVideo").removeAttr("style");
+                        $("#tsVideo").css("height", "50%");
                     });
                 }, 10);
                 sentidoGiro = "VH";

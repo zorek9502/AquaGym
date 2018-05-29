@@ -1,5 +1,5 @@
 function verificaReconocimiento() {
-    alert("verificando si reconocimiento esta disponible");
+    //alert("verificando si reconocimiento esta disponible");
     // Verify if recognition is available
     window.plugins.speechRecognition.isRecognitionAvailable(function (available) {
         if (!available) {
@@ -7,17 +7,17 @@ function verificaReconocimiento() {
         }
 
         // Check if has permission to use the microphone
-        alert("viendo si se tienen permisos");
+        //alert("viendo si se tienen permisos");
         window.plugins.speechRecognition.hasPermission(function (isGranted) {
             if (isGranted) {
-                alert("se tienen permisos, iniciando reconocimiento");
+                //alert("se tienen permisos, iniciando reconocimiento");
                 iniciaRecon();
             } else {
                 // Request the permission
-                alert("pidiendo permisos");
+                //alert("pidiendo permisos");
                 window.plugins.speechRecognition.requestPermission(function () {
                     // Request accepted, start recognition
-                    alert("se otorgaron permisos, iniciando reconocimiento");
+                    //alert("se otorgaron permisos, iniciando reconocimiento");
                     iniciaRecon();
                 }, function (err) {
                     alert(err);
@@ -39,7 +39,7 @@ function iniciaRecon() {
             minusculas.push(result[i].toLowerCase());
         }
 
-        alert(minusculas);
+        //alert(minusculas);
 
         if (minusculas.includes('unete')) {
             $("#Unete").trigger('click');

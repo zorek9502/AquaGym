@@ -40,7 +40,9 @@
   color: #fff;
 }
 
-
+#informacion{
+  height: 100%;
+}
 
 .swichtab-contents {
   margin-bottom: 60px;

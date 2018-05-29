@@ -7,9 +7,12 @@
     #Horarios ul li {
         font-size: 18pt;
     }
+    h4.disciplina_ts {
+        font-size: 3rem;
+    }
     #descripcion {
-        font-size: 15pt;
-        color: rgb(255, 0, 0);
+        font-size: 1.5rem;
+        /*color: rgb(255, 0, 0);*/
     }
     .card-title {
         font-size: 4.5rem;
@@ -27,13 +30,40 @@
     select.form-control {
         margin-bottom: 5%;
     }
-    div.form-group>label{
+    div.form-group>label {
         font-size: 1.5rem;
     }
-    input.form-control{
+    input.form-control {
         margin-bottom: 5%;
     }
-   
+    h1#encabezado-info-s1 {
+        font-size: 5rem;
+    }
+    p#texto-info-s1{
+        font-size: 2rem;
+    }
+    h3#tour_header{
+        font-size: 3rem;
+    }
+    h3#encabezado-info-s2{
+        font-size: 4rem;
+        line-height: 4.5rem;
+    }
+    p.description{
+        font-size: 1.7rem;
+    }
+    strong{
+        font-size: 1.6rem;
+    }
+    i.material-icons{
+        font-size: 3rem;
+    }
+    h4.info-title {
+        font-size: 3rem;
+    }
+    p.serv-text{
+        font-size: 1.4rem;
+    }
 }
 
 @media (max-height: 1366px) {
@@ -73,12 +103,6 @@
     .caract {
         margin-top: 0.7rem!important;
         height: 25%;
-    }
-    h4 {
-        font-size: 1rem!important;
-    }
-    p {
-        font-size: 0.9rem!important;
     }
 }
 
@@ -134,7 +158,7 @@
     }
     #descripcion {
         font-size: 14pt;
-        color: rgb(0, 255, 0);
+        /*color: rgb(0, 255, 0);*/
     }
     .card-title {
         font-size: 2.5rem;
@@ -156,19 +180,20 @@
         font-size: 12pt;
     }
     #descripcion {
-        font-size: 11.5pt;
-        color: rgb(0, 0, 255);
+        font-size: 1rem;
+        /*color: rgb(0, 0, 255);*/
     }
+    
     .swichtab-controller>li>a {
         font-size: 1rem;
     }
     select.form-control {
         margin-bottom: 5%;
     }
-    div.form-group>label{
+    div.form-group>label {
         font-size: .8rem;
     }
-    input.form-control{
+    input.form-control {
         margin-bottom: 0%;
     }
 }
@@ -187,13 +212,41 @@
         font-size: 12pt;
     }
     #descripcion {
-        font-size: 10pt;
-        color: rgb(238, 255, 0);
+        font-size: .78rem;
+        /*color: rgb(238, 255, 0);*/
     }
     #head_inscripcion {
         text-align: center;
         font-size: 1.8rem;
         margin-bottom: 1.5rem;
+    }
+    h1#encabezado-info-s1 {
+        font-size: 2.5rem;
+    }
+    p#texto-info-s1{
+        font-size: 1rem;
+    }
+    h3#tour_header{
+        font-size: 1.5rem;
+    }
+    h3#encabezado-info-s2{
+        font-size: 1.85rem;
+        line-height: 2rem;
+    }
+    p.description{
+        font-size: .9rem;
+    }
+    strong{
+        font-size: 1rem;
+    }
+    i.material-icons{
+        font-size: 1.5rem;
+    }
+    h4.info-title {
+        font-size: 1.5rem;
+    }
+    p.serv-text{
+        font-size: 1rem;
     }
     #btnBackF1, #btnNextF1, #btnBackF2, #btnNextF2, #btnBackF3, #btnConfirmacion {
         padding: .25rem .5rem;
@@ -207,10 +260,10 @@
     select.form-control {
         margin-bottom: 5%;
     }
-    div.form-group>label{
+    div.form-group>label {
         font-size: .9rem;
     }
-    input.form-control{
+    input.form-control {
         margin-bottom: 0%;
     }
 }

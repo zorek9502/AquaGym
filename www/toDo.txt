@@ -2,14 +2,12 @@ Añadir evento para speech
     - Debe llamar a verificaReconocimiento()
     - Añadir en funcion onDeviceReady() de inscripción.js
 Quitar alerts (excepto las de errores) en speech.js cuando funcione
-En Unete
-    Poner textos de labels más grandes
-quitar textos de colores
-3 fondos animados en info
 
-ipad
-	textos mas grandes en Inicio -> cada disciplina
-	textos mas grandes en Info
+
+
+
+
+
 ---------------------------------------------
 subir a aws
 speech

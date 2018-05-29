@@ -85,6 +85,7 @@ h2 {
     color: #fff;
     background-color: rgba(4, 4, 4, 0.35);
     border-color: rgb(42, 44, 44);
+    font-size: 1.2rem;
 }
 
 .touchSliderVideo{
@@ -117,4 +118,5 @@ h2 {
     justify-content: center;
     align-items: center;
     padding-left: 0px;
+    font-size: 1.2rem;
 }
