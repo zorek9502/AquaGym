@@ -72,6 +72,7 @@ $(document).ready(function () {
 
     $("#Natacion").on('tap', function () {
         $("#disciplinas").slideToggle();
+        $("a#carousel-prev-gal,a#carousel-next-gal").css("color","black");
         document.getElementById('audio').pause();
         $("#audio").attr("src", "assets/audio/natacion.mp3");
         $(".swichtab-contents").css({ "margin-bottom": "0px" });
@@ -120,6 +121,7 @@ $(document).ready(function () {
 
     $("#Waterpolo").on('tap', function () {
         $("#disciplinas").slideToggle("fast");
+        $("a#carousel-prev-gal,a#carousel-next-gal").css("color","black");
         document.getElementById('audio').pause();
         $("#audio").attr("src", "assets/audio/waterpolo.mp3");
         $(".swichtab-contents").css("margin-bottom", "0px");
