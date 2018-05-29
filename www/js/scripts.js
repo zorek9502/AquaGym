@@ -85,7 +85,7 @@ $(document).ready(function () {
         $("#galImg3").css("background-image", "url('assets/TouchSlider_imgs/natacion/gallery_img3.jpg')");
         $("#galImg4").css("background-image", "url('assets/TouchSlider_imgs/natacion/gallery_img4.jpg')");
 
-        $("#tsVideo").attr("src", "https://www.youtube.com/embed/MMeXA-2xJEQ?enablejsapi=1&version=3??rel=0&amp;showinfo=0&amp;start=5");
+        $("#tsVideo").attr("src", "https://www.youtube.com/embed/cvxHQ-ylmOM?enablejsapi=1&version=3??rel=0&amp;showinfo=0&amp;start=5");
         //Cambio Horarios          
         $("#tMatutino").empty();
         $("#tVespertino").empty();
@@ -134,7 +134,7 @@ $(document).ready(function () {
         $("#galImg3").css("background-image", "url('assets/TouchSlider_imgs/waterpolo/gallery_img3.jpg')");
         $("#galImg4").css("background-image", "url('assets/TouchSlider_imgs/waterpolo/gallery_img4.jpg')");
 
-        $("#tsVideo").attr("src", "https://www.youtube.com/embed/T2pm4WW9rxk?enablejsapi=1&version=3??rel=0&amp;showinfo=0");
+        $("#tsVideo").attr("src", "https://www.youtube.com/embed/HNuhZjUZlyU?enablejsapi=1&version=3??rel=0&amp;showinfo=0");
         //Cambio de horarios
         $("#tMatutino").empty();
         $("#tVespertino").empty();
@@ -171,7 +171,7 @@ $(document).ready(function () {
         $("#galImg3").css("background-image", "url('assets/TouchSlider_imgs/bodybuilding/gallery_img3.jpg')");
         $("#galImg4").css("background-image", "url('assets/TouchSlider_imgs/bodybuilding/gallery_img4.jpg')");
 
-        $("#tsVideo").attr("src", "https://www.youtube.com/embed/UYaZIAG9P8U?enablejsapi=1&version=3??rel=0&amp;showinfo=0");
+        $("#tsVideo").attr("src", "https://www.youtube.com/embed/-jpGdMX0mj8?enablejsapi=1&version=3??rel=0&amp;showinfo=0");
         $("#tMatutino").empty();
         $("#tVespertino").empty();
         $("#tMatutino").append('<li id="GrupoA" class="btn-outline-primary list-group-item d-flex justify-content-between align-items-center">Grupo A<span>6:00 - 7:00</span></li>');
@@ -219,7 +219,7 @@ $(document).ready(function () {
         $("#galImg3").css("background-image", "url('assets/TouchSlider_imgs/crossfit/gallery_img3.jpg')");
         $("#galImg4").css("background-image", "url('assets/TouchSlider_imgs/crossfit/gallery_img4.jpg')");
 
-        $("#tsVideo").attr("src", "https://www.youtube.com/embed/jYBhg90EQPI?enablejsapi=1&version=3??rel=0&amp;showinfo=0");
+        $("#tsVideo").attr("src", "https://www.youtube.com/embed/m9au0rpfSRY?enablejsapi=1&version=3??rel=0&amp;showinfo=0");
         //Cambio horarios
         $("#tMatutino").empty();//Limpian hijos de tMatutino
         $("#tVespertino").empty();//Limpian hijos de tVespertino
@@ -268,7 +268,7 @@ $(document).ready(function () {
         $("#galImg3").css("background-image", "url('assets/TouchSlider_imgs/gym/gallery_img3.jpg')");
         $("#galImg4").css("background-image", "url('assets/TouchSlider_imgs/gym/gallery_img4.jpg')");
 
-        $("#tsVideo").attr("src", "https://www.youtube.com/embed/XRfsQwwklA4?enablejsapi=1&version=3??rel=0&amp;showinfo=0");
+        $("#tsVideo").attr("src", "https://www.youtube.com/embed/v0CbXNtqA2s?enablejsapi=1&version=3??rel=0&amp;showinfo=0");
 
         //Cambio horarios
         $("#tMatutino").empty();//Limpian hijos de tMatutino
