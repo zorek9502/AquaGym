@@ -109,8 +109,7 @@ h2 {
 
 #tsVideo{
     transform-origin: 50% 50%;
-    flex-grow: 1;
-    height: 100%;   
+    flex-grow: 1;   
 }
 
 #girarVideo{

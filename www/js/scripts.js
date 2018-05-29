@@ -661,9 +661,9 @@ function datosPntConf() {
             cantidadPago = _aplicarPromo();
         }
 
-        $("#C_membresia").text(precioMembresia);
-        $("#C_mensualidad").text(mensualidad);
-        $("#C_total").text(cantidadPago);
+        $("#C_membresia").text("$"+precioMembresia);
+        $("#C_mensualidad").text("$"+mensualidad);
+        $("#C_total").text("$"+cantidadPago);
     });
 
     if (document.getElementById("inputCupon").value === "") {

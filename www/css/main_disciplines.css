@@ -17,7 +17,7 @@ img[class ~= "card-img"] {
 .flotante {
     top: 5%;
     position: absolute;
-    left: 85%;
+    left: 80%;
     z-index: 1;
     color: #def9ff;
 }

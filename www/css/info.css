@@ -8,6 +8,9 @@
     height: calc(100% - 60px);
 }
 
+
+
+
 #info-historia-bg {
     background-image: url("../assets/info/info.jpg");
     width: 100%;
@@ -76,7 +79,7 @@
 .info{
     max-width: 360px;
     margin:0 auto;
-    padding: 70px 0px 30px;
+    padding: 50px 0px 30px;
     text-align: center;
 }
 
@@ -142,11 +145,11 @@
 iframe.virtual-guide {
     margin-bottom: 1.5rem;
     width: 112%;
-    height: 83%;
+    height: 80%;
 }
 
 #info-carateristicas-bg{
-    background-image: url("../assets/info/caracteristicas.jpg");
+    background-image: url("../assets/gifs/1-ipad.gif");
     width: 100%;
     height: 100%;
     background-size: cover;
@@ -155,4 +158,16 @@ iframe.virtual-guide {
 
 #info-mapa-bg{
     background: rgb(0, 58, 52);
+}
+
+video {
+    background-size: cover;
+    bottom: 0;
+    height: 100%;
+    min-height: 100%;
+    min-width: 100%;
+    position: fixed;
+    right: 0;
+    width: auto;
+    z-index: -100;
 }
