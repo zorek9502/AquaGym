@@ -18,8 +18,11 @@ const DISCIPLINA_WATERPOLO = "waterpolo";
 const HASH_KEY_MEMBRESIA = "membresia";
 const SIN_CUPON = "no le gustan los descuentos eh?";
 const MENSAJE_CONFIRMACION = "¡Estás a punto de inscribirte al mejor gimnasio! ¿Tus datos son correctos?";
+const TITULO_CONFIRMACION = "¡Atención valioso cliente!";
+const MENSAJE_ALERT_DE_SPEECH = "Puedes navegar entre secciones mencionando su nombre ¡Inténtalo!";
+const TITULO_ALERT_DE_SPEECH = "¡Bienvenido!";
 const NOMBRE_ARCHIVO = "aqua-gym.pdf";
-const GENERATE_FROM_CORDOVA = false;
+const GENERATE_FROM_CORDOVA = true;
 
 let cupon = "";
 let disciplina = "";
@@ -155,16 +158,59 @@ function registrar() {
                 apellidoInstructor = data.Item.info.apellido;
                 horario = data.Item.info.horario;
 
-                if(GENERATE_FROM_CORDOVA) {
-                    _guardarPDFCordova(now);
-                } else {
-                    let pdf = _generarPDF(now);
-                    pdf.save(NOMBRE_ARCHIVO);
-                }
+                let pdf = _generarPDF(now);
+                pdf.save(NOMBRE_ARCHIVO);
             })
             .catch(function (err) {
                 console.log(err);
             });
+    }
+}
+
+function registrarCordova() {
+    navigator.notification.confirm(MENSAJE_CONFIRMACION, confirmCallback, TITULO_CONFIRMACION, ['Sí', 'Déjame revisar']);
+
+    function confirmCallback(buttonIndex) {
+        if(buttonIndex == 1) {
+            let now = new Date();
+            _obtenerValores(now);
+            _crearInscripcion()
+                .then(_obtenerMembresia)
+                .then(function (data) {
+                    console.log("Se obtuvo la membresia: " + "\n" + JSON.stringify(data, undefined, 2));
+                    precioMembresia = data.Item.precio;
+                })
+                .then(_obtenerDisciplina)
+                .then(function (data) {
+                    console.log("Se obtuvo la disciplina: " + "\n" + JSON.stringify(data, undefined, 2));
+                    mensualidad = data.Item.mensualidad;
+                })
+                .then(_buscarPromo)
+                .then(function (data) {
+                    if (data === SIN_CUPON) {
+                        console.log("No se aplico cupon");
+                        cantidadPago = precioMembresia + (mensualidad * totalMeses);
+                    } else {
+                        console.log("Se obtuvo la promocion: " + "\n" + JSON.stringify(data, undefined, 2));
+                        descuento = data.Item.descuento;
+                        instrucciones = data.Item.instrucciones;
+                        cantidadPago = _aplicarPromo();
+                    }
+                })
+                .then(_crearPago)
+                .then(_obtenerInstructor)
+                .then(function (data) {
+                    console.log("Se obtuvo el instructor: " + "\n" + JSON.stringify(data, undefined, 2));
+                    nombreInstructor = data.Item.info.nombre;
+                    apellidoInstructor = data.Item.info.apellido;
+                    horario = data.Item.info.horario;
+
+                    _guardarPDFCordova(now);
+                })
+                .catch(function (err) {
+                    console.log(err);
+                });
+        }
     }
 }
 
@@ -402,9 +448,15 @@ function onLoad() {
 }
 
 function onDeviceReady() {
+    navigator.notification.alert(MENSAJE_ALERT_DE_SPEECH, alertDismissed, TITULO_ALERT_DE_SPEECH, 'Entendido');
+    function alertDismissed() {
+        // do something
+    }
+
     $('#btnConfirmacion').on('click', function () {
-       registrar();
+        registrarCordova();
     });
+    verificaReconocimiento();
 }
 
 
@@ -414,22 +466,22 @@ function _guardarPDFCordova(now) {
 
 function resolverURL(now) {
     if (device.platform.toLowerCase() == "android") {
-        window.resolveLocalFileSystemURL(cordova.file.externalDataDirectory, onFileSystemSuccess, onErrorLoadFs);
+        window.resolveLocalFileSystemURL(cordova.file.externalDataDirectory, onFileSystemSuccess, onErrorLoadURL);
     } else if (device.platform.toLowerCase() == "ios") {
-        window.resolveLocalFileSystemURL(cordova.file.dataDirectory, onFileSystemSuccess, onErrorLoadFs);
+        window.resolveLocalFileSystemURL(cordova.file.dataDirectory, onFileSystemSuccess, onErrorLoadURL);
     }
-    
+
     function onFileSystemSuccess(dirEntry) {
         crearArchivo(dirEntry, NOMBRE_ARCHIVO, false, now);
     }
 
-    function onErrorLoadFs() {
-        alert("Error FS");
+    function onErrorLoadURL() {
+        alert("Error URL");
     }
 }
 
 function crearArchivo(dirEntry, fileName, isAppend, now) {
-    dirEntry.getFile(fileName, {create: true, exclusive: false}, function(fileEntry) {
+    dirEntry.getFile(fileName, {create: true, exclusive: false}, function (fileEntry) {
         escribirArchivo(fileEntry, now);
     }, onErrorCreateFile);
 
@@ -443,7 +495,7 @@ function escribirArchivo(fileEntry, now) {
     let pdfOutput = pdf.output('blob');
 
     fileEntry.createWriter(function (fileWriter) {
-        fileWriter.onwriteend = function() {
+        fileWriter.onwriteend = function () {
             abrirPDF();
         };
 
@@ -466,11 +518,11 @@ function abrirPDF() {
         dir + NOMBRE_ARCHIVO,
         'application/pdf',
         {
-            error : function(e) {
+            error: function (e) {
                 alert('Error status: ' + e.status + ' - Error message: ' + e.message);
             },
-            success : function () {
-                alert('file opened successfully');
+            success: function () {
+
             }
         }
     )

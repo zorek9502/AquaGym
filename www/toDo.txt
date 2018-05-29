@@ -1,48 +1,41 @@
-subir a aws
-speech
-	modal "things you can ask me"
-		nav secciones
-		nav disc
-		ubicación, teléfono, correo
-		video x_disc
-
-gifs
-musica en 2do info
-canal aquagymap
-	Body https://www.youtube.com/watch?v=-jpGdMX0mj8
-	Crossfit https://www.youtube.com/watch?v=m9au0rpfSRY
-	Motiv Gym https://www.youtube.com/watch?v=v0CbXNtqA2s
-	Natacion https://www.youtube.com/watch?v=cvxHQ-ylmOM
-	Waterpolo https://www.youtube.com/watch?v=HNuhZjUZlyU
-
-	Gym https://www.youtube.com/watch?v=NqtGQWJDQMM
-	fitness https://www.youtube.com/watch?v=Yiy8BKbiAfQ
-	Pool https://www.youtube.com/watch?v=HzqxLCRIWxw
-ios pdf y speech
-reemplazar confirm para inscribeme
-
----------------------------------------------
-ajustar botón del audio
-	posible: agregar animación cuando reproduzca
-botones negros en carrusel cuando no se distingan
-reemplazar tours
-	corregir audios de tour 2 y 3
-	checar y cambiar id's duplicados en carousel-item
-iframe transform rotate para videos
+Añadir evento para speech
+    - Debe llamar a verificaReconocimiento()
+    - Añadir en funcion onDeviceReady() de inscripción.js
+Quitar alerts (excepto las de errores) en speech.js cuando funcione
 En Unete
-    En Verifica tus datos, poner signos de pesos junto a los números
     Poner textos de labels más grandes
-grabar nuevos audios para 3 tours
+quitar textos de colores
+3 fondos animados en info
 
 ipad
 	textos mas grandes en Inicio -> cada disciplina
 	textos mas grandes en Info
+---------------------------------------------
+subir a aws
+speech
+	modal "things you can ask me"
+		nav secciones
+		ubicación, teléfono, correo
+		nav disc
+
+ios
 ---------------------------
 *cupo
 
-
 ------------------------------------------------------------------------------
-cambiar GENERATE_FROM_CORDOVA a true para pruebas en móvil
+CAMBIAR GENERATE_FROM_CORDOVA a true para pruebas en móvil
+CAMBIAR GENERATE_FROM_CORDOVA a false para pruebas locales
+------------------------------------------------------------------------------
+
+Body https://www.youtube.com/watch?v=-jpGdMX0mj8
+Crossfit https://www.youtube.com/watch?v=m9au0rpfSRY
+Motiv Gym https://www.youtube.com/watch?v=v0CbXNtqA2s
+Natacion https://www.youtube.com/watch?v=cvxHQ-ylmOM
+Waterpolo https://www.youtube.com/watch?v=HNuhZjUZlyU
+
+Gym https://www.youtube.com/watch?v=NqtGQWJDQMM
+fitness https://www.youtube.com/watch?v=Yiy8BKbiAfQ
+Pool https://www.youtube.com/watch?v=HzqxLCRIWxw
 
 
 https://stackoverflow.com/questions/37206408/opening-a-pdf-in-cordova-javascript#37208103
