@@ -1,21 +1,13 @@
-Añadir evento para speech
-    - Debe llamar a verificaReconocimiento()
-    - Añadir en funcion onDeviceReady() de inscripción.js
-Quitar alerts (excepto las de errores) en speech.js cuando funcione
+limpiar formulario cuando se inscriba
+revisar tap vs click
+ipad
+	textos mas grandes en Info -> Misión, Visión, Encuéntranos
+	Video se expande encima de barra
+	Acerca de sale desplazado
 
-
-
-
-
-
+Borrar caché
 ---------------------------------------------
-subir a aws
-speech
-	modal "things you can ask me"
-		nav secciones
-		ubicación, teléfono, correo
-		nav disc
-
+subir a aws (cambiar links)
 ios
 ---------------------------
 *cupo

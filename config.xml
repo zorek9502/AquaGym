@@ -67,7 +67,6 @@
         <splash src="res/screen/ios/Default@2x~ipad~comany.png" />
         <preference name="Orientation" value="portrait" />
     </platform>
-    <engine name="ios" spec="^4.5.4" />
     <plugin name="cordova-plugin-file" spec="^6.0.1" />
     <plugin name="cordova-plugin-device" spec="^2.0.2" />
     <preference name="phonegap-version" value="cli-8.0.0" />
@@ -79,4 +78,5 @@
     </plugin>
     <plugin name="cordova-plugin-speechrecognition" spec="^1.2.0" />
     <plugin name="cordova-plugin-dialogs" spec="^2.0.1" />
+    <engine name="ios" spec="^4.5.4" />
 </widget>

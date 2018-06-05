@@ -19,9 +19,8 @@ const HASH_KEY_MEMBRESIA = "membresia";
 const SIN_CUPON = "no le gustan los descuentos eh?";
 const MENSAJE_CONFIRMACION = "¡Estás a punto de inscribirte al mejor gimnasio! ¿Tus datos son correctos?";
 const TITULO_CONFIRMACION = "¡Atención valioso cliente!";
-const MENSAJE_ALERT_DE_SPEECH = "Puedes navegar entre secciones activando el reconocimiento de voz haciendo swipe a la izquierda sobre la barra de navegacion, despues menciona el nombre de la seccion ¡Inténtalo!";
 const TITULO_ALERT_DE_SPEECH = "¡Bienvenido!";
-const NOMBRE_ARCHIVO = "aqua-gym.pdf";
+const MENSAJE_ALERT_DE_SPEECH = "Puedes navegar con voz deslizando a la izquierda en la barra inferior y mencionando el nombre de la seccion ¡Inténtalo!";
 const GENERATE_FROM_CORDOVA = true;
 
 let cupon = "";
@@ -450,15 +449,15 @@ function onLoad() {
 function onDeviceReady() {
     navigator.notification.alert(MENSAJE_ALERT_DE_SPEECH, alertDismissed, TITULO_ALERT_DE_SPEECH, 'Entendido');
     function alertDismissed() {
-        $(".swichtab-controller").on("swipeleft", function(){
-            verificaReconocimiento();        
-        });
+        // do something
     }
 
     $('#btnConfirmacion').on('click', function () {
         registrarCordova();
     });
-    
+    $(".swichtab-controller").on("swipeleft", function(){
+        verificaReconocimiento();
+    });
 }
 
 
