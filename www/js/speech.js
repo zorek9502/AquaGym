@@ -70,22 +70,22 @@ function iniciaRecon() {
             $("#Promos").trigger('click');
         } else if (minusculas.includes('natacion')) {
             $("#Inicio").trigger('click');
-            $("#Natacion").trigger('tap');
+            $("#Natacion").trigger('click');
         } else if (minusculas.includes('waterpolo')) {
             $("#Inicio").trigger('click');
-            $("#Waterpolo").trigger('tap');
+            $("#Waterpolo").trigger('click');
         } else if (minusculas.includes('bodybuilding')) {
             $("#Inicio").trigger('click');
-            $("#Bodybuilding").trigger('tap');
+            $("#Bodybuilding").trigger('click');
         } else if (minusculas.includes('crossfit')) {
             $("#Inicio").trigger('click');
-            $("#Crossfit").trigger('tap');
+            $("#Crossfit").trigger('click');
         } else if (minusculas.includes('gym')) {
             $("#Inicio").trigger('click');
-            $("#Gym").trigger('tap');
+            $("#Gym").trigger('click');
         } else if (minusculas.includes('gimnasio')) {
             $("#Inicio").trigger('click');
-            $("#Gym").trigger('tap');
+            $("#Gym").trigger('click');
         } else if (minusculas.includes('calle')) {
             direccion();
         } else if (minusculas.includes('direccion')) {

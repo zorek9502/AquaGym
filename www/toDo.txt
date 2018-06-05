@@ -1,9 +1,9 @@
 limpiar formulario cuando se inscriba
-revisar tap vs click
+revisar tap vs click **Corregido
 ipad
-	textos mas grandes en Info -> Misión, Visión, Encuéntranos
-	Video se expande encima de barra
-	Acerca de sale desplazado
+	textos mas grandes en Info -> Misión, Visión, Encuéntranos **Corregido
+	Video se expande encima de barra **Corregido
+	Acerca de sale desplazado **Corregido
 
 Borrar caché
 ---------------------------------------------

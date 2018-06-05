@@ -64,6 +64,9 @@
     p.serv-text{
         font-size: 1.4rem;
     }
+    #tsVideo{
+        flex-grow: 0.75!important;
+    }
 }
 
 @media (max-height: 1366px) {

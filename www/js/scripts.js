@@ -42,13 +42,13 @@ $(document).ready(function () {
         $("#botonSiguente2").removeClass("col-3 offset-2");
         $("#botonSiguente2").addClass("col-2 offset-2");
         $("#encabezado_texto").removeClass("col-10");
-        $("#encabezado_texto").addClass("col-7 offset-2  ");
+        $("#encabezado_texto").addClass("col-7");
         $("input.form-control").addClass("form-control-lg");
         $("select.form-control").addClass("form-control-lg");
     }
     /*Scripts relacionados con tab Inicio c/u disciplinas*/
 
-    $("#Natacion").on('tap', function () {
+    $("#Natacion").on('click', function () {
         $("#disciplinas").slideToggle();
         $("a#carousel-prev-gal,a#carousel-next-gal").css("color","black");
         document.getElementById('audio').pause();
@@ -97,7 +97,7 @@ $(document).ready(function () {
         });
     });
 
-    $("#Waterpolo").on('tap', function () {
+    $("#Waterpolo").on('click', function () {
         $("#disciplinas").slideToggle("fast");
         $("a#carousel-prev-gal,a#carousel-next-gal").css("color","black");
         document.getElementById('audio').pause();
@@ -135,7 +135,7 @@ $(document).ready(function () {
         });
     });
 
-    $("#Bodybuilding").on('tap', function () {
+    $("#Bodybuilding").on('click', function () {
         $("#disciplinas").slideToggle("fast");
         document.getElementById('audio').pause();
         $("#audio").attr("src", "assets/audio/bodybuilding.mp3");
@@ -182,7 +182,7 @@ $(document).ready(function () {
             "animation-iteration-count": "3"
         });
     });
-    $("#Crossfit").on('tap', function () {
+    $("#Crossfit").on('click', function () {
 
         $("#disciplinas").slideToggle("fast");
         document.getElementById('audio').pause();
@@ -232,7 +232,7 @@ $(document).ready(function () {
         });
     });
 
-    $("#Gym").on('tap', function () {
+    $("#Gym").on('click', function () {
         $("#disciplinas").slideToggle("fast");
         document.getElementById('audio').pause();
         $("#audio").attr("src", "assets/audio/gimnasio.mp3");
@@ -315,7 +315,7 @@ $(document).ready(function () {
     });
 
 
-    $(".btn-back").on('tap', function () {
+    $(".btn-back").on('click', function () {
         $("#disciplinas").slideToggle("fast");
         document.getElementById('audio').currentTime = 0;
         document.getElementById('audio').pause();
@@ -329,7 +329,7 @@ $(document).ready(function () {
     });
 
 
-    $("#Inicio").on('tap', function () {
+    $("#Inicio").on('click', function () {
         detenerVideos();
         document.getElementById('audio').currentTime = 0;
         document.getElementById('audio').pause();
@@ -345,7 +345,7 @@ $(document).ready(function () {
     });
 
     /*Scripts relacionados con tab de Unete*/
-    $("#Unete").on('tap', function () {
+    $("#Unete").on('click', function () {
         detenerVideos();
         document.getElementById('audio').currentTime = 0;
         document.getElementById('audio').pause();
@@ -411,7 +411,7 @@ $(document).ready(function () {
 
 
     /*Scripts relacionados con tab de Info*/
-    $("#Info").on('tap', function () {
+    $("#Info").on('click', function () {
         detenerVideos();
         document.getElementById('audio').currentTime = 0;
         document.getElementById('audio').pause();
@@ -495,7 +495,7 @@ $(document).ready(function () {
         }
     });
 
-    $("#Promos").on('tap', function () {
+    $("#Promos").on('click', function () {
         detenerVideos();
         document.getElementById('audio').currentTime = 0;
         document.getElementById('audio').pause();
