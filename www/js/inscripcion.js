@@ -1,8 +1,9 @@
 AWS.config.update({
     region: "us-west-2",
-    endpoint: "http://localhost:8000",
-    accessKeyId: "fakeMyKeyId",
-    secretAccessKey: "fakeSecretAccessKey"
+    credentials: new AWS.CognitoIdentityCredentials({
+        IdentityPoolId: "us-west-2:35f955b1-8211-4867-a541-ed6caa3a9f3a",
+        RoleArn: "arn:aws:iam::127097389292:role/Cognito_DynamoPoolUnauth"
+    })
 });
 
 let docClient = new AWS.DynamoDB.DocumentClient();
@@ -19,8 +20,9 @@ const HASH_KEY_MEMBRESIA = "membresia";
 const SIN_CUPON = "no le gustan los descuentos eh?";
 const MENSAJE_CONFIRMACION = "¡Estás a punto de inscribirte al mejor gimnasio! ¿Tus datos son correctos?";
 const TITULO_CONFIRMACION = "¡Atención valioso cliente!";
-const TITULO_ALERT_DE_SPEECH = "¡Bienvenido!";
 const MENSAJE_ALERT_DE_SPEECH = "Puedes navegar con voz deslizando a la izquierda en la barra inferior y mencionando el nombre de la seccion ¡Inténtalo!";
+const TITULO_ALERT_DE_SPEECH = "¡Bienvenido!";
+const NOMBRE_ARCHIVO = "aqua-gym.pdf";
 const GENERATE_FROM_CORDOVA = true;
 
 let cupon = "";
@@ -159,6 +161,7 @@ function registrar() {
 
                 let pdf = _generarPDF(now);
                 pdf.save(NOMBRE_ARCHIVO);
+                resetearFormulario();
             })
             .catch(function (err) {
                 console.log(err);
@@ -205,6 +208,7 @@ function registrarCordova() {
                     horario = data.Item.info.horario;
 
                     _guardarPDFCordova(now);
+                    resetearFormulario();
                 })
                 .catch(function (err) {
                     console.log(err);
@@ -527,4 +531,38 @@ function abrirPDF() {
             }
         }
     )
+}
+
+function resetearFormulario() {
+    $("#inputName").val('');
+    $("#inputLastname").val('');
+    $("#inputEmail").val('');
+    $("#inputPhone").val('');
+    $("#inputf_nac").val('');
+
+    $("#inputCalle").val('');
+    $("#inputNumcasa").val('');
+    $("#inputColonia").val('');
+    $("#inputCP").val('');
+
+    $("#C_nombre").text('');
+    $("#C_apellidos").text('');
+    $("#C_telefono").text('');
+    $("#C_email").text('');
+    $("#C_fnac").text('');
+    $("#C_calle").text('');
+    $("#C_colonia").text('');
+    $("#C_numcasa").text('');
+    $("#C_cp").text('');
+
+    $("#Form3").css("display", "none");
+    $(".bgFormulario").css("background-image", "url('assets/bg_form0.jpg')");
+    $("#Form0").css("display", "block");
+    $("#barraProgreso").attr("style", "width:0%");
+    $("#Form0").animate({ opacity: '1' });
+    $("#btnNextF0").prop('disabled', true);
+    $("#btnNextF1").prop('disabled', true);
+    $("#btnNextF2").prop('disabled', true);
+
+    $("#Inicio").trigger('click');
 }
